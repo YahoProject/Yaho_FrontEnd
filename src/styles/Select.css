@@ -1,0 +1,47 @@
+.cal-button {
+    background: #FFCDB7;
+    border: 2px solid #FF4E00;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: black;
+    padding: 10px 50px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px; 
+    transition: background 0.3s, color 0.3s; 
+    justify-content: center;
+}
+
+.cal-button.active {
+    border-bottom-color:white;
+    border-bottom-width:0cap;
+    background: white; /* 활성화된 버튼 배경 색상 */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 10px; 
+    padding: 0 10px;
+    z-index: 10; /* 버튼이 달력 위에 표시되도록 설정 */
+    border-bottom: 2px solid #FF4E00 ; /* 버튼 아래 경계선 */
+}
+
+.button-container .cal-button.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px; /* 버튼 아래로 연결되게 */
+    height: 4px; /* 연결선 높이 */
+    background: white; /* 연결선 색상 */
+}
+
+.button-container .cal-button:not(.active) {
+    border-bottom: 3px solid transparent; /* 비활성화된 버튼 하단 테두리 */
+}
+
