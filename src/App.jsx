@@ -1,16 +1,22 @@
-import './App.css'
+import React from 'react';
+import './styles/styles.css';
+import BackButton from './components/BackButton';
+import MenuButton from './components/MenuButton';
+import Select from './components/Select';
 
-function App() {
 
+const App = () => {
   return (
-    <Browserrouter>
-      <div className="app">
-        <Routes>
-          
-        </Routes>
+    <div className="app">
+      <div className = "header">
+        <BackButton/>
+        <MenuButton/>
       </div>
-    </Browserrouter>
-  )
-}
+      <p>야구 일기</p>
+      <Select/>
+ 
+    </div>
+  );
+};
 
-export default App
+export default App;
