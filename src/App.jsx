@@ -1,15 +1,15 @@
 import './App.css'
+import Loading from './components/Loading'
 
 function App() {
-
   return (
-    <Browserrouter>
+    <BrowserRouter>
       <div className="app">
         <Routes>
-          
+          <Route path="/" element={<Loading />} />
         </Routes>
       </div>
-    </Browserrouter>
+    </BrowserRouter>
   )
 }
 
