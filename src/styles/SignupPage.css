@@ -1,0 +1,110 @@
+.title-box { 
+  position: absolute;
+  width: 390px;
+  height: 57px;
+  top: 59px;
+  border-bottom: 1px solid #CACACA;
+}
+
+.title {
+  position: absolute;
+  width: 70px;
+  height: 24px;
+  top: 75px;
+  left: 45px;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.email-label {
+  position: absolute;
+  width: 89px;
+  height: 20px;
+  top: 195px;
+  left: 45px;
+  font-size: 14px;
+}
+
+.email-input {
+  position: absolute;
+  width: 222px;
+  height: 47px;
+  top: 221px;
+  left: 31px;
+  border-radius: 10px;
+  background-color: #FAFAFA;
+  border-color: #FAFAFA;
+}
+
+.email-check {
+  position: absolute;
+  width: 110px;
+  height: 47px;
+  top: 221px;
+  left: 264px;
+  background-color: #EEEEEE;
+  color: #818181;
+}
+
+.email-error {
+  position: absolute;
+  width: 299px;
+  height: 32px;
+  top: 274px;
+  left: 45px;
+  font-size: 12px;
+  color: #BF4139;
+}
+
+.pwd-label {
+  position: absolute;
+  width: 53px;
+  height: 20px;
+  top: 339px;
+  left: 45px;
+  font-size: 14px;
+}
+
+.pwd-input {
+  position: absolute;
+  width: 336px;
+  height: 47px;
+  top: 365px;
+  left: 32px;
+  border-radius: 10px;
+  color: #FAFAFA;
+  border-color: #FAFAFA;
+}
+
+.pwd-check {
+  position: absolute;
+  width: 336px;
+  height: 47px;
+  top: 425px;
+  left: 32px;
+  border-radius: 10px;
+  color: #FAFAFA;
+  border-color: #FAFAFA;
+}
+
+.pwd-error {
+  position: absolute;
+  width: 306px;
+  height: 32px;
+  top: 478px;
+  left: 45px;
+  font-size: 12px;
+  color: #BF4139;
+}
+
+.submit-btn {
+  position: absolute;
+  width: 336px;
+  height: 47px;
+  top: 633px;
+  left: 32px;
+  border-radius: 10px;
+  padding: 4px 8px;
+  background-color: #FF4E00;
+  color: white;
+}
