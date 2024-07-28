@@ -1,15 +1,9 @@
 import './App.css'
+import Login from './components/Login.jsx'
 
 function App() {
-
   return (
-    <Browserrouter>
-      <div className="app">
-        <Routes>
-          
-        </Routes>
-      </div>
-    </Browserrouter>
+    <Login />
   )
 }
 
