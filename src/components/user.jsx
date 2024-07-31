@@ -7,7 +7,7 @@ const kakaoLogin = () => {
 
   axios({
     method: "GET",
-    url: `https://dev.yahho.shop/oauth/callback/kakao?code=${code}`, 
+    url: `http://localhost:8080/oauth/callback/kakao?code=${code}`, 
   })
     .then((res) => {
       console.log(res);
