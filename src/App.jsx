@@ -1,15 +1,16 @@
 import './App.css'
+import WinRate from './components/WinRate'
 
 function App() {
 
   return (
-    <Browserrouter>
+ 
       <div className="app">
-        <Routes>
-          
-        </Routes>
+
+          <WinRate/>
+
       </div>
-    </Browserrouter>
+
   )
 }
 
