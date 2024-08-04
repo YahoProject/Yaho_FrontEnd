@@ -1,4 +1,4 @@
-const REDIRECT_URI='http://localhost:5173/oauth/callback/kakao';
-const REST_API_KEY='3fe9748de9767b5649437add91e54655';
+const redirect_uri=import.meta.env.VITE_REDIRECT_URI;
+const rest_api_key=import.meta.env.VITE_REST_API_KEY;
 
-export const KAKAO_AUTH_URL=`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`;
+export const KAKAO_AUTH_URL=`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${rest_api_key}&redirect_uri=${redirect_uri}`;
