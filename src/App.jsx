@@ -10,17 +10,12 @@ function App() {
       <Routes>
         <Route path="/login" exact element={<Login />} />
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
+        <Route path="/winrate" element={<WinRate/>}/>
       </Routes>
     </BrowserRouter>
   );
  
-      <div className="app">
 
-          <WinRate/>
-
-      </div>
-
-  )
 }
 
 export default App;
