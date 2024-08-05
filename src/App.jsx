@@ -11,7 +11,7 @@ import TermPage from './components/TermPage.jsx';
 
 function App() {
   return (
-    <Browserrouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/login" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
@@ -22,7 +22,7 @@ function App() {
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
         <Route path="/winrate" element={<WinRate/>}/>
       </Routes>
-    </Browserrouter>
+    </BrowserRouter>
   )
 }
 
