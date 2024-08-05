@@ -33,12 +33,12 @@ const TermPage = () => {
     <div className="term-page">
       <div className="title-box"></div>
       <h1 className="title">약관 동의</h1>
-      <p className="description">서비스 이용을 위해 이용약관 동의가 필요해요.</p>
+      <p className="description">서비스 이용을 위해<br />이용약관 동의가 필요해요.</p>
 
       <div className="checkbox-group">
         <div className="checkbox-container" onClick={() => handleToggle('all')}>
           <div className={`checkbox ${checkedItems.all ? 'checked' : ''}`}>
-            {checkedItems.all && <span className="checkmark">✔</span>}
+            {checkedItems.all && <span className="checkmark">✓</span>}
           </div>
           <div className="check-all">
             전체 동의
@@ -47,34 +47,32 @@ const TermPage = () => {
         <div className="line-box"></div>
         <div className="checkbox-container" onClick={() => handleToggle('term1')}>
           <div className={`checkbox1 ${checkedItems.term1 ? 'checked' : ''}`}>
-            {checkedItems.term1 && <span className="checkmark">✔</span>}
+            {checkedItems.term1 && <span className="checkmark">✓</span>}
           </div>
-          <div className="check1">
-            이용약관 및 개인정보처리방침 (필수)
-          </div>
-          <Link to='/termdetail'>
-            <span className="arrow1">{'>'}</span>
+          <div className="check-text">이용약관 및 개인정보처리방침 (필수)</div>
+          <Link to='/termone'>
+            <span className="arrow arrow1">{'>'}</span>
           </Link>
         </div>
 
         <div className="checkbox-container" onClick={() => handleToggle('term2')}>
           <div className={`checkbox2 ${checkedItems.term2 ? 'checked' : ''}`}>
-            {checkedItems.term2 && <span className="checkmark">✔</span>}
+            {checkedItems.term2 && <span className="checkmark">✓</span>}
           </div>
-          <div className="check2">
-            만 14세 이상 확인 (필수)
-          </div>
-          <span className="arrow2">{'>'}</span>
+          <div className="check-text">만 14세 이상 확인 (필수)</div>
+          <Link to='/termtwo'>
+            <span className="arrow arrow2">{'>'}</span>
+          </Link>
         </div>
 
         <div className="checkbox-container" onClick={() => handleToggle('term3')}>
           <div className={`checkbox3 ${checkedItems.term3 ? 'checked' : ''}`}>
-            {checkedItems.term3 && <span className="checkmark">✔</span>}
+            {checkedItems.term3 && <span className="checkmark">✓</span>}
           </div>
-          <div className="check3">
-            마케팅 활용 동의 (선택)
-          </div>
-          <span className="arrow3">{'>'}</span>
+          <div className="check-text">마케팅 활용 동의 (선택)</div>
+          <Link to='/termthree'>
+            <span className="arrow arrow3">{'>'}</span>
+          </Link>
         </div>
       </div>
       
