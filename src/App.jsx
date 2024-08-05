@@ -1,7 +1,8 @@
-import "./App.css";
 import Login from "./components/Login.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RedirectPage from "./components/RedirectPage.jsx";
+import './App.css'
+import WinRate from './components/WinRate'
 
 function App() {
   return (
@@ -12,6 +13,14 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
+ 
+      <div className="app">
+
+          <WinRate/>
+
+      </div>
+
+  )
 }
 
 export default App;
