@@ -3,6 +3,7 @@
   width: 390px;
   height: 57px;
   top: 59px;
+  left: 0px;
   border-bottom: 1px solid #CACACA;
 }
 
@@ -27,15 +28,15 @@
 }
 
 .checkbox-group {
-  position: absolute;
-  top: 300px; 
+  position: relative;
+  left: 0px;
 }
 
 .checkbox-container {
   display: flex;
-  align-items: center;
+  justify-content: left;
   font-size: 16px;
-  margin-left: 27px;
+  margin-left: 20px;
   margin-bottom: 15px;
 }
 
