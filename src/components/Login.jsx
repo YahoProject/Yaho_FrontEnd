@@ -1,9 +1,11 @@
 import "../styles/Login.css";
 import kakaoIcon from "../assets/kakao.svg";
 import { KAKAO_AUTH_URL } from "./OAuth_kakao";
-import useStore from "./store";
 
 const Login = () => {
+
+  const name = localStorage.getItem("name");
+  console.log("name : ",name);
 
 
   return (

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import useStore from "./store";
 import axios from "axios";
+import '../styles/RedirectPage.css';
+import yahoIcon from "../assets/yaho.svg";
 
 const RedirectPage = () => {
   const code = new URL(window.location.href).searchParams.get("code");
@@ -20,6 +21,7 @@ const RedirectPage = () => {
           localStorage.setItem("name",res.data.result.member.nickname);
 
           const storedName = localStorage.getItem("name");
+          //setName(res.data.result.member.nickname);
         console.log("저장된 이름:", storedName);
           window.location.replace("/"); 
         })
@@ -34,9 +36,12 @@ const RedirectPage = () => {
   }, [code]);
 
   return (
-    <>
-      <h1>로딩중입니다</h1>
-    </>
+      <div className="redirect">
+        <div>Loading...</div>
+        <div>
+        <img src={yahoIcon} alt="Yaho" /></div>
+    </div>
+
   );
 };
 

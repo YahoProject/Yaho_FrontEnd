@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact element={<Login />} />
+        <Route path="/login" exact element={<Login />} />
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
       </Routes>
     </BrowserRouter>
