@@ -5,6 +5,7 @@ import './styles/styles.css';
 import Calendar from './components/Calendar';
 import Login from "./components/Login.jsx";
 import RedirectPage from "./components/RedirectPage.jsx";
+import Sidebar from "./components/Sidebar.jsx";
 import './App.css'
 import WinRate from './components/WinRate'
 import ProfilePage from './components/ProfilePage.jsx';
@@ -17,6 +18,7 @@ import TermPage from './components/TermPage.jsx';
 function App() {
   return (
     <BrowserRouter>
+      <Sidebar />
       <Routes>
         <Route path="/login" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 

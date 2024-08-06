@@ -1,0 +1,138 @@
+@keyframes slidein {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 60px;
+  }
+  70% {
+    width: 140px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+
+@keyframes slideout {
+  0% {
+    width: 200px;
+  }
+  30% {
+    width: 140px;
+  }
+  70% {
+    width: 60px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  
+
+.sidebar .menu {
+  line-height: 300%;
+  margin-left: 120px;
+  background-color: #FF4E00;
+  position: fixed;
+    right: 0;
+    z-index: 10;
+    width: 400px;
+    margin-right: -80px;
+    height: 100vh;
+    animation: slidein 0.15s;
+    top:0;
+    border-radius: 50px;
+    box-shadow: -3px 5px 15px rgba(0, 0, 0, 0.3);
+    color:white;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sidebar img {
+  width: 20px;
+}
+
+.openButton {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  right:10px;
+  top:10px;
+  position: fixed;
+}
+
+.sidebar .close .menu {
+  animation: slideout 0.15s forwards;
+}
+
+
+.sidebar .close .closeButton{
+  display: none;
+}
+
+.sidebar .closeButton{
+  right:10px;
+  top:10px;
+  position: fixed;
+  z-index: 100;
+}
+
+.sidebar a{
+  color:white;
+margin-left: -210px;
+text-align: center;
+}
+
+.sidebar .menu button{
+  background-color: white;
+  z-index: 100;
+  margin-left:-200px;
+  position: absolute;
+}
+
+.menu img{
+  width:80px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left:-220px;
+}
+
+.sidebar a, .sidebar .menu button, .sidebar img {
+  transition: opacity 0.15s; /* 추가: 부드러운 전환 효과 */
+}
+
+.sidebar ul{
+  list-style: none;
+  margin-left:-150px;
+  margin-top: -30px;
+  font-size: 0.9em;
+  line-height: 140%;
+}
+
+.sidebar ul .teamName{
+  color:rgba(255, 255, 255, 0.705);
+}
+
+.sidebar ul .userNickname{
+  font-size:1.6em;
+}
+
+.logoutCategory{
+  margin-top: -80px;
+}
+
+.diaryCategory{
+ margin-bottom: -20px;
+}
+
+.scheduleCategory{
+  margin-bottom: -20px;
+}
+
+
+}

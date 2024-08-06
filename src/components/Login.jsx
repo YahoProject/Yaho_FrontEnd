@@ -1,5 +1,7 @@
 import "../styles/Login.css";
 import kakaoIcon from "../assets/kakao.svg";
+import yahoIcon from "../assets/yaho.svg";
+
 import { KAKAO_AUTH_URL } from "./OAuth_kakao";
 
 const Login = () => {
@@ -9,25 +11,11 @@ const Login = () => {
 
 
   return (
-    <form>
-      <input type="text" placeholder="아이디" />
-      <br />
-      <input type="password" placeholder="비밀번호" />
-      <br />
-      <br />
-      <br />
-
-      <button type="submit" className="login">
-        로그인
-      </button>
-      <br />
-      <button type="submit" className="join">
-        회원가입
-      </button>
-      <br />
-      <br />
-      <br />
-      <br />
+    <div className="LoginPage">
+        <div className="text">당신의 야구 놀이를 더 즐겁게</div>
+        <div>
+        <img className='LoginIcon' src={yahoIcon} alt="Yaho" /></div>
+    
 
       <br />
       <button
@@ -38,7 +26,7 @@ const Login = () => {
         <img src={kakaoIcon} alt="Kakao" />
         카카오로 시작하기
       </button>
-    </form>
+    </div>
   );
 };
 

@@ -37,7 +37,7 @@ const RedirectPage = () => {
 
   return (
       <div className="redirect">
-        <div>Loading...</div>
+        <div className="text">Loading...</div>
         <div>
         <img src={yahoIcon} alt="Yaho" /></div>
     </div>

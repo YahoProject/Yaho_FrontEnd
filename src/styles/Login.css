@@ -5,42 +5,23 @@
     justify-content: center;
   }
 
-  input {
-    border: none; 
-    border-bottom: 2px solid black; 
-    outline: none; 
-    width: 70vw; 
-    display: flex;
-    padding-bottom: 5px;
-}
+ 
+  
 
 
-button{
+.LoginPage button{
   display: flex;
   align-items: center;
   justify-content: center;
   width: 70vw;
   left:50%;
   margin-bottom: -5px;
+
 }
 
-.login{
-  width:70vw;
-  background-color: #FF4E00;
-  color: #FFFFFF;
 
-  display:flex;
-  justify-content: center;
-  align-items: center;
 
-  height:50px;
-  margin-bottom:-10px;
-  }
 
-  .join{
-    background-color: #D9D9D9;
-    height:50px;
-  }
 
   .social img {
     width: 20px; 
@@ -60,25 +41,27 @@ button{
     background-color: #FFEB00;
   }
 
-  .google{
-    background-color:  #FFFFFF;
-    border: 1px solid #DADADA;
+
+ 
+  .LoginPage{
+    background-color: #FF4E00;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column;
   }
 
-  .google img{
-    width:30px;
-    height: auto;
-  }
-
-  .naver{
-    background-color: #27D34A;
-    color:white;
+  .text{
+    font-size: 1.2em;
   }
   
-  input::placeholder{
-  font-size:16px;
-  margin-bottom: 10px;
+  .LoginIcon{
+    margin-top: 40px;
+    margin-bottom: 100px;
   }
+  
 
-
+  
 }
