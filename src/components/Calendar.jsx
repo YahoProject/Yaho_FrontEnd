@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CustomCalendar from './CustomCalendar';
 import '../styles/Calendar.css';
+import WinRate from './WinRate';
 
 const Calendar = () => {
   const [activeButton, setActiveButton] = useState('diary'); // 현재 활성화된 버튼 상태
@@ -33,7 +34,7 @@ const Calendar = () => {
           </button>
         </div>
         {activeButton === 'diary' && <CustomCalendar />}
-        {activeButton === 'stats' && <></>}
+        {activeButton === 'stats' && <WinRate/>}
       </div>
     </div>
   );
