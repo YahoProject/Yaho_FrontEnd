@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CustomCalendar from './CustomCalendar';
+import WinRate from './WinRate';
 import '../styles/Calendar.css';
 
 const Calendar = () => {
@@ -7,17 +8,19 @@ const Calendar = () => {
 
   const handleButtonClick = (buttonType) => {
     setActiveButton(buttonType);
+
+
+    
   };
+  
 
   return (
     <div>
-      <div className="top-button-container">
-        <button className="back-button">←</button>
+
         <p className="title">야구일기</p>
-        <button className="menu-button">☰</button>
-      </div>
+
       
-      <div className="select-container">
+
         <div className="button-container">
           <button 
             className={`cal-button ${activeButton === 'diary' ? 'active' : ''}`} 
@@ -32,9 +35,10 @@ const Calendar = () => {
             승률 계산
           </button>
         </div>
+  
         {activeButton === 'diary' && <CustomCalendar />}
-        {activeButton === 'stats' && <></>}
-      </div>
+        {activeButton === 'stats' && <WinRate/>}
+      
     </div>
   );
 };
