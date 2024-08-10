@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import CustomCalendar from './CustomCalendar';
-import '../styles/Calendar.css';
 import WinRate from './WinRate';
+import '../styles/Calendar.css';
+
 
 const Calendar = () => {
   const [activeButton, setActiveButton] = useState('diary'); // 현재 활성화된 버튼 상태
 
   const handleButtonClick = (buttonType) => {
     setActiveButton(buttonType);
+
+
+    
   };
+  
 
   return (
     <div>
-      <div className="top-button-container">
-        <button className="back-button">←</button>
+
         <p className="title">야구일기</p>
-        <button className="menu-button">☰</button>
-      </div>
+
       
-      <div className="select-container">
+
         <div className="button-container">
           <button 
             className={`cal-button ${activeButton === 'diary' ? 'active' : ''}`} 
@@ -33,10 +36,12 @@ const Calendar = () => {
             승률 계산
           </button>
         </div>
+  
         {activeButton === 'diary' && <CustomCalendar />}
         {activeButton === 'stats' && <WinRate/>}
+
       </div>
-    </div>
+    
   );
 };
 

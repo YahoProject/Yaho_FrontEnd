@@ -9,7 +9,6 @@ const Login = () => {
   const name = localStorage.getItem("name");
   console.log("name : ",name);
 
-
   return (
     <div className="LoginPage">
         <div className="text">당신의 야구 놀이를 더 즐겁게</div>

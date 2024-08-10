@@ -91,8 +91,9 @@ const CustomCalendar = () => {
           </div>
         </div>
       ) : (
-        // 선택한 날짜의 StickerScreen 컴포넌트 표시
+        <div className="overlay">
         <StickerScreen selectedDate={selectedDate} />
+        </div>
       )}
     </div>
   );

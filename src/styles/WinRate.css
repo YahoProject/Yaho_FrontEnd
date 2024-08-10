@@ -7,8 +7,12 @@
     display: flex;
     flex-direction: column;
     font-family: 'Pretendard';
-    width:390px;
+  
     
+}
+
+.Header{
+    height: 193.71px;
 }
 
 

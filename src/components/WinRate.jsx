@@ -39,6 +39,7 @@ const WinRate = () => {
 
     return (
         <div className="WinRate">
+            <div className='Header'></div>
             <div className="underPart">
                 <div className="Countings">
                     <div className="upper">

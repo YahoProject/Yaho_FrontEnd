@@ -16,6 +16,8 @@
     "html2canvas": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-easy-panzoom": "^0.4.4",
+    "react-pinch-zoom-pan": "^1.4.5",
     "react-router-dom": "^6.25.1",
     "zustand": "^4.5.4"
   },
