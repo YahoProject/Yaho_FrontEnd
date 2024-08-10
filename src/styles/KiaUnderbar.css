@@ -5,7 +5,6 @@
   width:80px;
   height:30px;
   margin-right: 10px;
-
 }
 
 .underbar h3{
@@ -21,8 +20,6 @@
   display: flex;
   margin-top:10px;
 }
-
-
 
 .underbar{
   margin-top: 557px;
@@ -43,3 +40,102 @@
   margin-left:-65px;
 }
 
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 299px;
+  background: white;
+  width: 390px;
+  border-radius: 10px 10px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.drag-handle {
+  width: 50px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 2.5px;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.popup h2 {
+  text-align: center;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+.popup-floor p {
+  position: absolute;
+  margin-top: 10px;
+  width: 41px;
+  height: 22px;
+  top: 62px;
+  left: 122px;
+  border-radius: 30px;
+  background-color: #FFE4D8;
+  color: #FF4E00;
+  font-size: 14px;
+}
+
+.popup-visit p {
+  position: absolute;
+  margin-top: 10px;
+  width: 99px;
+  height: 22px;
+  top: 62px;
+  left: 167px;
+  border-radius: 30px;
+  background-color: #FFE4D8;
+  color: #FF4E00;
+  font-size: 14px;
+}
+
+.popup-address p {
+  text-align: center;
+  width: 160px;
+  height: 18px;
+  top: 650px;
+  left: 115px;
+  font-size: 14px;
+  color: #1F1F1F;
+  display: flex;
+  white-space: nowrap;
+}
+
+.popup-images-container {
+  display: flex;
+  overflow-y: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.popup-imagesone {
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-right: 5px;
+  width: 153px;
+  height: 104px;
+}
+
+.popup-imagestwo {
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-right: 5px;  
+  width: 153px;
+  height: 104px;
+}
+
+.popup-imagesthree {
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-right: 5px;  
+  width: 153px;
+  height: 104px;
+}
