@@ -3,6 +3,7 @@ import CustomCalendar from './CustomCalendar';
 import WinRate from './WinRate';
 import '../styles/Calendar.css';
 
+
 const Calendar = () => {
   const [activeButton, setActiveButton] = useState('diary'); // 현재 활성화된 버튼 상태
 
@@ -38,8 +39,9 @@ const Calendar = () => {
   
         {activeButton === 'diary' && <CustomCalendar />}
         {activeButton === 'stats' && <WinRate/>}
-      
-    </div>
+
+      </div>
+    
   );
 };
 
