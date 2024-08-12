@@ -1,0 +1,42 @@
+.sticker-screen {
+    width: 390px;
+    height: 544px;
+    margin-top:340px;
+    gap: 0px;
+    border-radius: 15px 15px 0px 0px;
+    opacity: 0px;
+    background-color: white;
+
+}
+.stickers {
+    margin-top:35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.sticker {
+    width: 95px;
+    height: 140px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.sticker img {
+    width: 90%; 
+    height: auto; 
+    border-radius: 8px;
+}
+
+.sticker-text {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    padding-bottom: 5px; 
+}
+
