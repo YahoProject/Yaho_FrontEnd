@@ -24,7 +24,7 @@ const Underbar = () => {
   const [isResizing, setIsResizing] = useState(false);
   const [initialY, setInitialY] = useState(0);
   const [marginTop, setMarginTop] = useState(400); 
-  const [height, setHeight] = useState(530); 
+  const [height, setHeight] = useState(450); 
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleMouseDown = (e) => {
@@ -40,15 +40,15 @@ const Underbar = () => {
   const handleMouseMove = (e) => {
     if (isResizing) {
       const newMarginTop = marginTop + e.clientY - initialY;
-      const newHeight = 938-newMarginTop; 
+      const newHeight = 858-newMarginTop; 
       setInitialY(e.clientY);
-      if (newMarginTop >= 0 && newMarginTop <= 878) { 
+      if (newMarginTop >= 0 && newMarginTop <= 818) { 
         setMarginTop(newMarginTop);
-        console.log('marginTop: ' + newMarginTop);
+        //console.log('marginTop: ' + newMarginTop);
       }
-      if (newHeight >= 60 && newHeight <= 938) { 
+      if (newHeight >= 60 && newHeight <= 858) { 
         setHeight(newHeight);
-        console.log('height: ' + newHeight);
+        //console.log('height: ' + newHeight);
       }
     }
   };
