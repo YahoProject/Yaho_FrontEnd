@@ -1,7 +1,7 @@
 .custom-calendar-wrapper{
   background-color: white;
   padding-top:50px;
-  margin-top:0;
+  margin-top:-230px;
   padding-bottom:20px;
   padding-right:20px;
   padding-left:20px;
@@ -18,7 +18,7 @@
 .calendar-header {
   position:absolute;
   display: flex;
-  top:232px;
+  top:222px;
   max-width:390px;
   width:90%;
   left:15px;
