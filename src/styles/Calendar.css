@@ -25,7 +25,7 @@
 
 .cal-button {
     position: relative;
-    top: -1.8px;
+    top: -2px;
     width: 160px;
     left: 8px;
     background: #FFCDB7;
@@ -44,3 +44,4 @@
     margin-bottom: -0.5px; 
     z-index: 2; 
 }
+
