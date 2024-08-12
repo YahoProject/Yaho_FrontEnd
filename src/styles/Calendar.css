@@ -1,46 +1,46 @@
-.body{
-    margin:0;
-    place-items:center;
+
+.body {
+    margin: 0;
+    place-items: center;
 }
 
-
-p{
-    position:fixed;
-    display:flex;
+.title{
+    position: fixed;
     margin-top: auto;
-    font-weight:bolder;
- 
+    font-weight: bolder;
 }
 
 .button-container {
-    position:fixed;
-    display:flex;
-    border-bottom: 2px solid #FF4E00;
-    width: 390px;
+    position: fixed;
+    display: flex;
+    border-bottom: 2px solid #FF4E00; 
+    background-color:#fafafa;
+    width: 400px;
     height: 36px;
     top: 139px;
-    left:0;
-    gap: 0px;  
+    left: 0;
+    gap: 0px;
 
 }
 
 .cal-button {
     position: relative;
-    top: -1.7px;
+    top: -1.8px;
     width: 160px;
-    left:8px;
+    left: 8px;
     background: #FFCDB7;
     border: 2px solid #FF4E00;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-right: 10px; 
+    margin-right: 10px;
+
 }
 
 .cal-button.active {
-    background: white; 
-    border-bottom-color: white;
-    border-bottom-width: 2px;
+    background: white;
+    border-bottom: 2px solid white; 
+    margin-bottom: -0.5px; 
+    z-index: 2; 
 }
-

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import xoxo from "../assets/xoxoHotdog.svg";
 import xoxoone from "../assets/xoxoone.svg";
@@ -33,6 +34,7 @@ const Underbar = () => {
     setInitialY(e.clientY);
   };
 
+
   const handleMouseUp = () => {
     setIsResizing(false);
   };
@@ -49,6 +51,7 @@ const Underbar = () => {
       if (newHeight >= 60 && newHeight <= 858) { 
         setHeight(newHeight);
         //console.log('height: ' + newHeight);
+
       }
     }
   };
@@ -76,6 +79,7 @@ const Underbar = () => {
     setSelectedCategory(null);  
   };
 
+
   const categories = [
     {
       name: "xoxoHotdog",
@@ -87,6 +91,7 @@ const Underbar = () => {
       popupfloor: "1F",
       popupimgone: xoxoone,
       popupimgtwo: xoxotwo,
+
     },
     {
       name: "maseong",
@@ -98,6 +103,7 @@ const Underbar = () => {
       popupfloor: "3F",
       popupimgone: maseongone,
       popupimgtwo: maseongtwo
+
     },
     {
       name: "family",
@@ -108,6 +114,7 @@ const Underbar = () => {
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "3F",
       popupimgone: familyone
+
     },
     {
       name: "station",
@@ -120,6 +127,7 @@ const Underbar = () => {
       popupimgone: stationone,
       popupimgtwo: stationtwo,
       popupimgthree: stationthree
+
     },
     {
       name: "oneshot",
@@ -132,6 +140,7 @@ const Underbar = () => {
       popupimgone: oneshotone,
       popupimgtwo: oneshottwo,      
       popupimgthree: oneshotthree
+
     },
   ];
 
@@ -144,6 +153,7 @@ const Underbar = () => {
   }, [className]);
 
   return (
+
     <div className={`underbar ${className}`} style={{ marginTop, height }}>
       <div className='bar' onMouseDown={handleMouseDown}>
         <img src={bar} /><br />
@@ -155,10 +165,12 @@ const Underbar = () => {
         <button onClick={() => handleClassChange('all')}>전체보기</button>
       </div><br /><br />
 
+
       <div>
         {categories
           .filter(category => className === 'all' || category.floor === className)
           .map(category => (
+
             <div key={category.name} onClick={() => handleCategoryClick(category)}>
               <img src={category.img} alt={category.text} />
               <br />
@@ -168,6 +180,7 @@ const Underbar = () => {
       {selectedCategory && (
         <Popup category={selectedCategory} onClose={closePopup} />
       )}
+
     </div>
   );
 }

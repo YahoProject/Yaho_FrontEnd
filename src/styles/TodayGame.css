@@ -1,0 +1,94 @@
+/* 전체 감싸는 div */
+.today-game-wrapper {
+    position: fixed; /* 화면의 고정 위치에 배치 */
+    bottom: 0; /* 화면 하단에 위치 */
+    left: 0;
+    width: 100%; /* 화면 너비를 차지 */
+    height: 26vh; /* 최대 높이를 화면의 26%로 제한 */
+    box-sizing: border-box; /* 패딩을 포함하여 너비와 높이 계산 */
+    margin: 0; /* 마진 제거 */
+    padding: 0; /* 패딩 제거 */
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향으로 배치 */
+    background-color: white; /* 배경색 흰색으로 설정 */
+}
+
+/* "오늘의 경기" 제목 */
+.today-game-title {
+    position:absolute;
+    position: sticky; /* 스크롤 시 제목을 고정 */
+    top: 0; /* 상단에 위치 */
+    width: 100%; /* 화면 너비를 차지 */
+    z-index: 1; /* 제목이 카드 위에 표시되도록 설정 */
+    font-size: 24px;
+    font-weight: 400;
+    color: black;
+    margin: 0; /* 기본 마진 제거 */
+    padding: 10px 20px; /* 상하좌우 패딩 추가 */
+    box-sizing: border-box; /* 패딩을 포함하여 너비와 높이 계산 */
+    background-color: white; /* 제목 배경 색상 */
+    
+}
+
+/* 카드 목록을 담는 div */
+.game-list {
+    width: 100%; /* 전체 너비를 차지하도록 설정 */
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: center; /* 가로 방향 중앙 정렬 */
+    overflow-y: auto; /* 수직 스크롤 활성화 */
+    box-sizing: border-box; /* 패딩을 포함하여 너비와 높이 계산 */
+    flex: 1; /* 남은 공간을 차지하도록 설정 */
+    margin-top:0;
+    margin-left:20px;
+    background-color:white;
+    
+}
+
+/* 개별 경기 정보를 담는 카드 */
+.game-card {
+    display: flex;
+    margin-top:10px;
+    margin-left:10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 360px; /* 카드 너비를 부모의 너비에 맞게 조정 */
+    max-width: 350px; /* 최대 너비를 350px로 제한 */
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px #00000040;
+    margin-bottom: 15px; /* 카드 사이 간격 증가 */
+    padding: 13px; /* 카드 내부 여백 추가 */
+    background-color: white;
+    box-sizing: border-box; /* 패딩을 포함하여 너비와 높이 계산 */
+    height: 80px; /* 카드 높이 설정 */
+}
+
+/* 경기 정보 및 시간 스타일 */
+.game-info {
+    display: center; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향으로 배치 */
+}
+
+.teams {
+    font-size: 20px; /* 글자 크기 증가 */
+    font-weight: 500;
+    color: #FF4E00;
+}
+
+.stadium {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+.vs {
+    font-size: 20px;
+    color: #FF4E00;
+}
+
+.game-time {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+

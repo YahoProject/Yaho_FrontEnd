@@ -35,6 +35,7 @@ const KiaFood = () => {
           <img src={kia} alt="Kia Stadium Map" style={{ width: '100%', height: 'auto' }} />
         </PanZoom>
       </div>
+
     </div>
   );
 }
