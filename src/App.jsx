@@ -36,6 +36,7 @@ const MainContent = () => {
         <Route path="/winrate" element={<WinRate />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/food/kia" element={<KiaFood />} />
+
       </Routes>
     </>
   );
