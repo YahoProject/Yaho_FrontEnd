@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import xoxo from "../assets/xoxoHotdog.svg";
+import xoxoone from "../assets/xoxoone.svg";
+import xoxotwo from "../assets/xoxotwo.svg";
 import maseong from "../assets/maseong.svg";
+import maseongone from "../assets/maseongone.svg";
+import maseongtwo from "../assets/maseongtwo.svg";
 import family from "../assets/family.svg";
+import familyone from "../assets/familyone.svg";
 import station from "../assets/station.svg";
+import stationone from "../assets/stationone.svg";
+import stationtwo from "../assets/stationtwo.svg";
+import stationthree from "../assets/stationthree.svg";
 import oneshot from "../assets/oneshot.svg";
+import oneshotone from "../assets/oneshotone.svg";
+import oneshottwo from "../assets/oneshottwo.svg";
+import oneshotthree from "../assets/oneshotthree.svg";
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
+import Popup from './Popup';  
 
 const Underbar = () => {
   const [className, setClassName] = useState('all'); 
@@ -14,6 +25,7 @@ const Underbar = () => {
   const [initialY, setInitialY] = useState(0);
   const [marginTop, setMarginTop] = useState(400); 
   const [height, setHeight] = useState(530); 
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleMouseDown = (e) => {
     e.preventDefault();
@@ -56,41 +68,70 @@ const Underbar = () => {
     };
   }, [isResizing]);
 
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);  
+  };
+
+  const closePopup = () => {
+    setSelectedCategory(null);  
+  };
+
   const categories = [
     {
       name: "xoxoHotdog",
       text: "xoxo핫도그",
-      path: "/xoxo핫도그",
       floor: 'f1f2',
-      img: xoxo
+      img:xoxo,
+      popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "1F",
+      popupimgone: xoxoone,
+      popupimgtwo: xoxotwo,
     },
     {
       name: "maseong",
       text: "마성떡볶이",
-      path: "/마성떡볶이",
       floor: 'f3f4',
-      img: maseong
+      img:maseong,
+      popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "3F",
+      popupimgone: maseongone,
+      popupimgtwo: maseongtwo
     },
     {
       name: "family",
       text: "짝태패밀리",
-      path: "/짝태패밀리",
       floor: 'f3f4',
-      img: family
+      img:family,
+      popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "3F",
+      popupimgone: familyone
     },
     {
       name: "station",
       text: "스테이션",
-      path: "/스테이션",
       floor: 'f3f4',
-      img: station
+      img:station,
+      popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "3F",
+      popupimgone: stationone,
+      popupimgtwo: stationtwo,
+      popupimgthree: stationthree
     },
     {
       name: "oneshot",
       text: "광주원샷",
-      path: "/광주원샷",
       floor: 'f3f4',
-      img: oneshot
+      img:oneshot,
+      popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "4F",
+      popupimgone: oneshotone,
+      popupimgtwo: oneshottwo,      
+      popupimgthree: oneshotthree
     },
   ];
 
@@ -118,12 +159,15 @@ const Underbar = () => {
         {categories
           .filter(category => className === 'all' || category.floor === className)
           .map(category => (
-            <Link key={category.name} to={category.path}>
+            <div key={category.name} onClick={() => handleCategoryClick(category)}>
               <img src={category.img} alt={category.text} />
               <br />
-            </Link>
+            </div>
           ))}
       </div>
+      {selectedCategory && (
+        <Popup category={selectedCategory} onClose={closePopup} />
+      )}
     </div>
   );
 }
