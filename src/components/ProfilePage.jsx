@@ -1,6 +1,5 @@
 import '../styles/ProfilePage.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ProfileImg from '/public/profile.svg';
 
 const ProfilePage = () => {
@@ -77,9 +76,9 @@ const ProfilePage = () => {
         <button type="button" className="team-check">설정완료</button>
                 
         <div>
-        <Link to="/term">
-          <button type="submit" className="next-btn">다음으로</button>        
-        </Link>
+        
+        <button type="submit" className="next-btn">다음으로</button>        
+        
         </div>
       </form>
     </div>

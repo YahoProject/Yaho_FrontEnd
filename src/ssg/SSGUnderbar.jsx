@@ -1,8 +1,20 @@
 import useUnderbar from "../hooks/useUnderbar.jsx";
 import station_ssg from "../assets/station_ssg.svg";
+import station_ssgone from "../assets/station_ssgone.svg";
+import station_ssgtwo from "../assets/station_ssgtwo.svg";
+import station_ssgthree from "../assets/station_ssgthree.svg";
 import heogal from "../assets/heogal.svg";
+import heogalone from "../assets/heogalone.svg";
+import heogaltwo from "../assets/heogaltwo.svg";
+import heogalthree from "../assets/heogalthree.svg";
 import bukchon from "../assets/bukchon.svg";
+import bukchonone from "../assets/bukchonone.svg";
+import bukchontwo from "../assets/bukchontwo.svg";
+import bukchonthree from "../assets/bukchonthree.svg";
 import ssgburger from "../assets/ssgburger.svg";
+import ssgburgerone from "../assets/ssgburgerone.svg";
+import ssgburgertwo from "../assets/ssgburgertwo.svg";
+import ssgburgerthree from "../assets/ssgburgerthree.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
@@ -26,44 +38,48 @@ const SSGUnderbar = () => {
       text: "스테이션",
       floor: "f1",
       img: station_ssg,
-      /*popupvisits: "7월 방문 수 1위",
+      popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
+      popupimgone: station_ssgone,
+      popupimgtwo: station_ssgtwo,
+      popupimgthree: station_ssgthree
     },
     {
       name: "heogal",
       text: "허갈 닭강정",
       floor: "f1",
       img: heogal,
-      /*popupvisits: "7월 방문 수 1위",
+      popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
+      popupimgone: heogalone,
+      popupimgtwo: heogaltwo,
+      popupimgthree: heogalthree
     },
     {
       name: "bukchon",
       text: "북촌손만두",
       floor: "f1",
       img: bukchon,
-      /*popupvisits: "7월 방문 수 1위",
+      popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
+      popupimgone: bukchonone,
+      popupimgtwo: bukchontwo,
+      popupimgthree: bukchonthree
     },   
     {
       name: "ssgburger",
       text: "쓱 버거 트레일러",
       floor: "f1",
       img: ssgburger,
-      /*popupvisits: "7월 방문 수 1위",
+      popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
+      popupimgone: ssgburgerone,
+      popupimgtwo: ssgburgertwo,
+      popupimgthree: ssgburgerthree
     }, 
   ];
 
