@@ -14,7 +14,7 @@ import hanmanduthree from "../assets/hanmanduthree.svg";
 import ojic from "../assets/ojic.svg";
 import ojicone from "../assets/ojicone.svg";
 import ojictwo from "../assets/ojictwo.svg";
-import ojicthree from "../assets/ojicvthree.svg";
+import ojicthree from "../assets/ojicthree.svg";
 import station_s from "../assets/station_s.svg";
 import station_sone from "../assets/station_sone.svg";
 import station_stwo from "../assets/station_stwo.svg";
