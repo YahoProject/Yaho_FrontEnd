@@ -76,7 +76,6 @@
 
 .sidebar .menu {
   line-height: 300%;
-  margin-left: 120px;
   background-color: #FF4E00;
   position: fixed;
     right: 0;
@@ -132,6 +131,19 @@
   width: 50px;
 }
 
+.sidebar .logoutButton{
+  z-index:100;
+  background-color: #FF7C42;
+  position:fixed;
+  color:white;
+  margin-top: 600px;
+  margin-left:35px;
+  width:220px;
+  height:40px;
+  font-size:19px;
+  padding-top:5px;
+}
+
 
 .sidebar .closeButton img{
   width:28px;
@@ -142,16 +154,10 @@
 margin-left: 40px;
 }
 
-.sidebar .menu button{
-  background-color: white;
-  z-index: 100;
-  margin-left:-200px;
-  position: absolute;
-}
 
 .menu img{
   width:80px;
-  margin-top: 40px;
+  margin-top: -100px;
   margin-bottom: 40px;
   margin-left:40px;
 }
@@ -177,8 +183,8 @@ margin-left: 40px;
 }
 
 .mypageCategory{
-  margin-top: -80px;
-  margin-bottom: -10px;
+  margin-top: -70px;
+  margin-bottom: -20px;
 }
 
 .diaryCategory{
@@ -193,5 +199,17 @@ margin-left: 40px;
   margin-bottom: -30px;
 }
 
+.unregisterLink{
+  font-weight: 100;
+  font-size: 12px;
+  margin-top: 700px;
+  margin-left: 35px;
+  color:rgba(255, 255, 255, 0.767);
+}
+
+.unregisterLink a{
+  margin-left: 5px;
+  text-decoration: underline;
+}
 
 }

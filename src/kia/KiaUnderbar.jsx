@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import xoxo from "../assets/xoxoHotdog.svg";
 import xoxoone from "../assets/xoxoone.svg";
 import xoxotwo from "../assets/xoxotwo.svg";
@@ -17,71 +17,27 @@ import oneshottwo from "../assets/oneshottwo.svg";
 import oneshotthree from "../assets/oneshotthree.svg";
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-import Popup from './Popup';  
+import Popup from '../components/Popup.jsx';  
+import useUnderbar from '../hooks/useUnderbar.jsx'; // 커스텀 훅을 가져옵니다.
 
 const Underbar = () => {
-  const [className, setClassName] = useState('all'); 
-  const [isResizing, setIsResizing] = useState(false);
-  const [initialY, setInitialY] = useState(0);
-  const [marginTop, setMarginTop] = useState(400); 
-  const [height, setHeight] = useState(450); 
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleMouseDown = (e) => {
-    e.preventDefault();
-    setIsResizing(true);
-    setInitialY(e.clientY);
-  };
-
-  const handleMouseUp = () => {
-    setIsResizing(false);
-  };
-
-  const handleMouseMove = (e) => {
-    if (isResizing) {
-      const newMarginTop = marginTop + e.clientY - initialY;
-      const newHeight = 858-newMarginTop; 
-      setInitialY(e.clientY);
-      if (newMarginTop >= 0 && newMarginTop <= 818) { 
-        setMarginTop(newMarginTop);
-        //console.log('marginTop: ' + newMarginTop);
-      }
-      if (newHeight >= 60 && newHeight <= 858) { 
-        setHeight(newHeight);
-        //console.log('height: ' + newHeight);
-      }
-    }
-  };
-
-
-  useEffect(() => {
-    if (isResizing) {
-      window.addEventListener("mouseup", handleMouseUp);
-      window.addEventListener("mousemove", handleMouseMove);
-    } else {
-      window.removeEventListener("mouseup", handleMouseUp);
-      window.removeEventListener("mousemove", handleMouseMove);
-    }
-    return () => {
-      window.removeEventListener("mouseup", handleMouseUp);
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [isResizing]);
-
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);  
-  };
-
-  const closePopup = () => {
-    setSelectedCategory(null);  
-  };
+  const {
+    className,
+    marginTop,
+    height,
+    selectedCategory,
+    handleMouseDown,
+    handleCategoryClick,
+    closePopup,
+    handleClassChange,
+  } = useUnderbar(); // 커스텀 훅 사용
 
   const categories = [
     {
       name: "xoxoHotdog",
       text: "xoxo핫도그",
       floor: 'f1f2',
-      img:xoxo,
+      img: xoxo,
       popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
@@ -92,7 +48,7 @@ const Underbar = () => {
       name: "maseong",
       text: "마성떡볶이",
       floor: 'f3f4',
-      img:maseong,
+      img: maseong,
       popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "3F",
@@ -103,7 +59,7 @@ const Underbar = () => {
       name: "family",
       text: "짝태패밀리",
       floor: 'f3f4',
-      img:family,
+      img: family,
       popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "3F",
@@ -113,7 +69,7 @@ const Underbar = () => {
       name: "station",
       text: "스테이션",
       floor: 'f3f4',
-      img:station,
+      img: station,
       popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "3F",
@@ -125,7 +81,7 @@ const Underbar = () => {
       name: "oneshot",
       text: "광주원샷",
       floor: 'f3f4',
-      img:oneshot,
+      img: oneshot,
       popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "4F",
@@ -134,14 +90,6 @@ const Underbar = () => {
       popupimgthree: oneshotthree
     },
   ];
-
-  const handleClassChange = (newClass) => {
-    setClassName(newClass); 
-  };
-
-  useEffect(() => {
-    console.log(`${className}`);
-  }, [className]);
 
   return (
     <div className={`underbar ${className}`} style={{ marginTop, height }}>
@@ -157,7 +105,7 @@ const Underbar = () => {
 
       <div>
         {categories
-          .filter(category => className === 'all' || category.floor === className)
+          .filter(category => className === 'all' || category.floor.includes( className))
           .map(category => (
             <div key={category.name} onClick={() => handleCategoryClick(category)}>
               <img src={category.img} alt={category.text} />

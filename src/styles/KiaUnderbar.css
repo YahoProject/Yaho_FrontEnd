@@ -9,7 +9,7 @@
 
 .underbar h3{
   margin-top:30px;
-  margin-left:-210px;
+  margin-left:10px;
 }
 
 .underbar img{
@@ -31,6 +31,7 @@
 .underbar{
   margin-top: 557px;
   margin-left:0px;
+  padding-left:15px;
   z-index: 10;
   position: fixed;
   background-color: white;
@@ -38,6 +39,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
   border-radius: 10px;
   overflow: scroll;
   height: 100vh;
@@ -45,7 +47,7 @@
 }
 
 .firstButton{
-  margin-left:-65px;
+  margin-left:10px;
 }
 
 
@@ -150,4 +152,9 @@
   margin-right: 5px;  
   width: 153px;
   height: 104px;
+}
+
+.underbarButton{
+  align-items: flex-start;
+  justify-content: flex-start;
 }
