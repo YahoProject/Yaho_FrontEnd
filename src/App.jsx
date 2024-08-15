@@ -8,7 +8,6 @@ import Sidebar from "./components/Sidebar.jsx";
 import './App.css';
 import WinRate from './components/WinRate';
 import ProfilePage from './components/ProfilePage.jsx';
-import TermPage from './components/TermPage.jsx';
 import KiaUnderbar from './components/KiaUnderbar.jsx';
 import KiaFood from './components/KiaFood.jsx';
 import LG_DSUnderbar from './lg&ds/LG_DSUnderbar.jsx';
@@ -64,7 +63,6 @@ const MainContent = () => {
       <Routes>
         <Route path="/login" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
-        <Route path="/term" element={<TermPage />} />
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
         <Route path="/winrate" element={<WinRate />} />
         <Route path="/calendar" element={<Calendar />} />
