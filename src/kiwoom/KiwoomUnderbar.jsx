@@ -15,7 +15,14 @@ import gangneungtwo from "../assets/gangneungtwo.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-
+import icecream from"../../public/kiwoom/icecream.svg"
+import mawangjokbal from"../../public/kiwoom/mawangjokbal.svg"
+import shrim1p from"../../public/kiwoom/shrimp.svg"
+import street from"../../public/kiwoom/street.svg"
+  
+import React, { useEffect, useRef, useContext } from 'react';
+import { CategoryContext } from '../components/categoryProvider.jsx';
+import '../styles/KiaUnderbar.css';
 
 const KiwoomUnderbar = () => {
   const {
@@ -28,7 +35,7 @@ const KiwoomUnderbar = () => {
     closePopup,
     handleClassChange,
   } = useUnderbar();
-
+  const { setSelectedCategory } = useContext(CategoryContext);
   const categories = [
     {
       name: "shrimp",
@@ -40,7 +47,12 @@ const KiwoomUnderbar = () => {
       popupfloor: "2F",
       popupimgone: shrimpone,
       popupimgtwo: shrimptwo,
-      popupimgthree: shrimpthree
+      popupimgthree: shrimpthree,
+      
+      
+      pin: [216,404],
+      map:shrim1p
+      
     },
     {
       name: "mawang",
@@ -52,6 +64,9 @@ const KiwoomUnderbar = () => {
       popupfloor: "2F",
       popupimgone: mawangone,
       popupimgtwo: mawangtwo,
+      
+           pin: [293,201],
+      map:mawangjokbal
     },
     {
       name: "streetchuros",
@@ -63,6 +78,9 @@ const KiwoomUnderbar = () => {
       popupfloor: "2F",
       popupimgone: streetchurosone,
       popupimgtwo: streetchurostwo,
+      
+         pin: [322,160],
+      map:street
     },   
     {
       name: "gangneung",
@@ -74,35 +92,45 @@ const KiwoomUnderbar = () => {
       popupfloor: "2F",
       popupimgone: gangneungone,
       popupimgtwo: gangneungtwo,
+      
+       pin: [192,161],
+      map:icecream
     }, 
   ];
+
+  const handleClick = (category) => {
+    handleCategoryClick(category);
+    setSelectedCategory(category);
+  };
 
   return (
     <div className={`underbar ${className}`} style={{ marginTop, height }}>
       <div className='bar' onMouseDown={handleMouseDown}>
-        <img src={bar} /><br />
+        <img src={bar} alt="drag bar" />
       </div>
       <h3>필수 방문 맛집</h3>
       <div className="underbarButton">
-        <button className="firstButton" onClick={() => handleClassChange('f2')}>2F</button>
+        <button className="firstButton" onClick={() => handleClassChange('f1f2')}>1F&2F</button>
+        <button onClick={() => handleClassChange('f3f4')}>3F&4F</button>
         <button onClick={() => handleClassChange('all')}>전체보기</button>
-      </div><br /><br />
+      </div>
 
       <div>
         {categories
-          .filter(category => className === 'all' || category.floor.includes( className))
+          .filter(category => className === 'all' || category.floor.includes(className))
           .map(category => (
-            <div key={category.name} onClick={() => handleCategoryClick(category)}>
+            <div key={category.name} onClick={() => handleClick(category)}>
               <img src={category.img} alt={category.text} />
-              <br />
             </div>
           ))}
       </div>
+
       {selectedCategory && (
         <Popup category={selectedCategory} onClose={closePopup} />
       )}
     </div>
   );
 };
+
 
 export default KiwoomUnderbar;
