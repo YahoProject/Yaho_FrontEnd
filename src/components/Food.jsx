@@ -74,7 +74,7 @@ const Food = () => {
     }, [dropdownRef]);
 
     return (
-        <div style={{ backgroundColor: '#F5F5F5', width: '100vw', height: '100vh' }}>
+        <div style={{ backgroundColor: 'white', width: '100vw', height: '100vh' }}>
             <div>
                 <div className="IphoneHeader"></div>
                 <div className="header">
