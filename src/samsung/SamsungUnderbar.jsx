@@ -22,7 +22,14 @@ import station_sthree from "../assets/station_sthree.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-
+import React, { useEffect, useRef, useContext } from 'react';
+import { CategoryContext } from '../components/categoryProvider.jsx';
+import '../styles/KiaUnderbar.css';
+import ohjic from "../../public/samsung/5jic.svg"
+import Dangdangchickin from "../../public/samsung/Dangdangchickin.svg"
+import hanmando from "../../public/samsung/hanmando.svg"
+import happychesse from "../../public/samsung/happychesse.svg"
+import stationSamsung from "../../public/samsung/stationSamsung.svg"
 
 const SamsungUnderbar = () => {
   const {
@@ -35,6 +42,8 @@ const SamsungUnderbar = () => {
     closePopup,
     handleClassChange,
   } = useUnderbar();
+  const { setSelectedCategory } = useContext(CategoryContext);
+
 
   const categories = [
     {
@@ -47,7 +56,14 @@ const SamsungUnderbar = () => {
       popupfloor: "5F",
       popupimgone: happyCheeseSmileone,
       popupimgtwo: happyCheeseSmiletwo,
-      popupimgthree: happyCheeseSmilethree
+      popupimgthree: happyCheeseSmilethree,
+      /*popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "1F",
+      popupimgone: xoxoone,
+      popupimgtwo: xoxotwo,*/
+      map:happychesse,
+      pin:[280,190]
     },
     {
       name: "ddangddang",
@@ -59,7 +75,14 @@ const SamsungUnderbar = () => {
       popupfloor: "2F",
       popupimgone: ddangddangone,
       popupimgtwo: ddangddangtwo,
-      popupimgthree: ddangddangthree
+      popupimgthree: ddangddangthree,
+      /*popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "1F",
+      popupimgone: xoxoone,
+      popupimgtwo: xoxotwo,*/
+      map:Dangdangchickin,
+      pin:[310,77]
     },
     {
       name: "hanmandu",
@@ -71,7 +94,14 @@ const SamsungUnderbar = () => {
       popupfloor: "2F",
       popupimgone: hanmanduone,
       popupimgtwo: hanmandutwo,
-      popupimgthree: hanmanduthree
+      popupimgthree: hanmanduthree,
+      /*popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "1F",
+      popupimgone: xoxoone,
+      popupimgtwo: xoxotwo,*/
+      map:hanmando,
+      pin:[370,64]
     },   
     {
       name: "ojic",
@@ -83,7 +113,15 @@ const SamsungUnderbar = () => {
       popupfloor: "2F",
       popupimgone: ojicone,
       popupimgtwo: ojictwo,
-      popupimgthree: ojicthree
+      popupimgthree: ojicthree,
+      /*popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "1F",
+      popupimgone: xoxoone,
+      popupimgtwo: xoxotwo,*/
+      map:ohjic
+      ,
+      pin:[291,102]
     }, 
     {
       name: "station_s",
@@ -95,32 +133,44 @@ const SamsungUnderbar = () => {
       popupfloor: "2F",
       popupimgone: station_sone,
       popupimgtwo: station_stwo,
-      popupimgthree: station_sthree
+      popupimgthree: station_sthree,
+      /*popupvisits: "7월 방문 수 1위",
+      popupaddress: "맛있다구 동글동 3거리 22-4",
+      popupfloor: "1F",
+      popupimgone: xoxoone,
+      popupimgtwo: xoxotwo,*/
+      map:stationSamsung,
+      pin:[144,360]
     },
   ];
+
+  const handleClick = (category) => {
+    handleCategoryClick(category);
+    setSelectedCategory(category);
+  };
 
   return (
     <div className={`underbar ${className}`} style={{ marginTop, height }}>
       <div className='bar' onMouseDown={handleMouseDown}>
-        <img src={bar} /><br />
+        <img src={bar} alt="drag bar" />
       </div>
       <h3>필수 방문 맛집</h3>
       <div className="underbarButton">
-        <button className="firstButton" onClick={() => handleClassChange('f2f3')}>2F&3F</button>
-        <button onClick={() => handleClassChange('f4f5')}>4F&5F</button>
+        <button className="firstButton" onClick={() => handleClassChange('f1f2')}>1F&2F</button>
+        <button onClick={() => handleClassChange('f3f4')}>3F&4F</button>
         <button onClick={() => handleClassChange('all')}>전체보기</button>
-      </div><br /><br />
+      </div>
 
       <div>
         {categories
           .filter(category => className === 'all' || category.floor.includes(className))
           .map(category => (
-            <div key={category.name} onClick={() => handleCategoryClick(category)}>
+            <div key={category.name} onClick={() => handleClick(category)}>
               <img src={category.img} alt={category.text} />
-              <br />
             </div>
           ))}
       </div>
+
       {selectedCategory && (
         <Popup category={selectedCategory} onClose={closePopup} />
       )}

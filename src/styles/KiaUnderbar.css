@@ -30,7 +30,7 @@
 }
 
 .underbar{
-  margin-top: 557px;
+  margin-top: 657px;
 
   margin-left:0px;
   padding-left:15px;
@@ -44,7 +44,7 @@
   align-items: flex-start;
   border-radius: 10px;
   overflow: scroll;
-  height: 100vh;
+  
   
 }
 

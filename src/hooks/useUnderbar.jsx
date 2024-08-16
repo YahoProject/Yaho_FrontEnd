@@ -5,9 +5,9 @@ const useUnderbar = () => {
   const [className, setClassName] = useState('all');
   const [isResizing, setIsResizing] = useState(false);
   const [initialY, setInitialY] = useState(0);
-  const [marginTop, setMarginTop] = useState(400);
+  const [marginTop, setMarginTop] = useState(543);
   const [height, setHeight] = useState(450);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(0);
 
   const handleMouseDown = (e) => {
     e.preventDefault();
@@ -30,6 +30,7 @@ const useUnderbar = () => {
       if (newHeight >= 60 && newHeight <= 858) {
         setHeight(newHeight);
       }
+
     }
   };
 
@@ -52,7 +53,12 @@ const useUnderbar = () => {
   };
 
   const closePopup = () => {
-    setSelectedCategory(null);
+    setSelectedCategory(
+      {
+        name: "",   
+        pin:[0,0]
+      }
+    );
   };
 
   const handleClassChange = (newClass) => {
