@@ -51,7 +51,8 @@ const SSGUnderbar = () => {
       popupfloor: "1F",
       popupimgone: station_ssgone,
       popupimgtwo: station_ssgtwo,
-      popupimgthree: station_ssgthree,
+      popupimgthree: station_ssgthree
+,
       map:stationssg,
       pin:[245,20]
     },
@@ -63,8 +64,12 @@ const SSGUnderbar = () => {
       popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
+      popupimgone: heogalone,
+      popupimgtwo: heogaltwo,
+      popupimgthree: heogalthree
+      ,
+      map:hergal,
+      pin:[135,34]
     },
     {
       name: "bukchon",
@@ -74,8 +79,12 @@ const SSGUnderbar = () => {
       popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
+      popupimgone: bukchonone,
+      popupimgtwo: bukchontwo,
+      popupimgthree: bukchonthree
+      ,
+      map: bookchonsonmando,
+      pin:[68,137]
     },   
     {
       name: "ssgburger",
@@ -85,8 +94,12 @@ const SSGUnderbar = () => {
       popupvisits: "7월 방문 수 1위",
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
+      popupimgone: ssgburgerone,
+      popupimgtwo: ssgburgertwo,
+      popupimgthree: ssgburgerthree
+      ,
+      map:ssburger,
+      pin:[318,70]
     }, 
   ];
 

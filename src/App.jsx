@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import './styles/styles.css';
-import Calendar from './components/Calendar';
+import Calendar from './components/Calendar.jsx';
 import Login from "./components/Login.jsx";
 import RedirectPage from "./components/RedirectPage.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import './App.css';
-import WinRate from './components/WinRate';
+import WinRate from './components/WinRate.jsx';
 import ProfilePage from './components/ProfilePage.jsx';
-import TermPage from './components/TermPage.jsx';
+
 import Food from './components/Food.jsx';
 import KiaUnderbar from './components/KiaUnderbar.jsx';
 import KiaFood from './components/KiaFood.jsx';
@@ -29,8 +29,8 @@ import NCFood from './nc/NCFood.jsx';
 import SamsungFood from './samsung/SamsungFood.jsx';
 import SSGFood from './ssg/SSGFood.jsx';
 import Home from './components/Home.jsx';
-import KiaFood from './components/KiaFood.jsx';
-import KiaUnderbar from './components/KiaUnderbar.jsx';
+
+
 
 import { CategoryProvider } from './components/categoryProvider.jsx'; // CategoryProvider 추가
 
@@ -71,7 +71,7 @@ const MainContent = () => {
       <Routes>
         <Route path="/login" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
-        <Route path="/term" element={<TermPage />} />
+
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
         <Route path="/winrate" element={<WinRate />} />
         <Route path="/calendar" element={<Calendar />} />
