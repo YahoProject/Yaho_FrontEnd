@@ -1,0 +1,102 @@
+.header{
+    border-bottom: 1px solid rgb(204, 200, 200);
+    width: 390px;
+    height: 85px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Pretendard';
+}
+.Button{
+    background-color: #F5F5F5;
+}
+.Text{
+    text-align:center;
+    margin-top:20px;
+    font-weight:600;
+    font-size:x-large;
+}
+.image{
+    width: 193px;
+    height: 193.4px;
+    margin:auto;
+    margin-top:20px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.image img {
+    width: 100%; 
+    height:100%;
+    border-radius: 8px;
+}
+.stadium-selection-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    width:340px;
+    height:50px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+.custom-dropdown {
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+}
+
+.selected-option {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: left;
+    margin-left:5px;
+    margin-top:4px;
+}
+
+.options-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #FFE4D8;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    list-style: none;
+    padding: 0;
+    margin:0;
+    max-height: 350px;
+    overflow-y: auto;
+    z-index: 10;
+    width:210px;
+}
+
+.options-list li {
+    padding: 7px;
+    cursor: pointer;
+    text-align: left;
+    margin-left:5px;
+}
+
+
+.search-button {
+    margin-left: 10px;
+    background-color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
