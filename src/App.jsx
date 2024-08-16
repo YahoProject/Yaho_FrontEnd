@@ -8,6 +8,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import './App.css';
 import WinRate from './components/WinRate';
 import ProfilePage from './components/ProfilePage.jsx';
+import Food from './components/Food.jsx';
 import KiaUnderbar from './components/KiaUnderbar.jsx';
 import KiaFood from './components/KiaFood.jsx';
 import LG_DSUnderbar from './lg&ds/LG_DSUnderbar.jsx';
@@ -27,7 +28,6 @@ import NCFood from './nc/NCFood.jsx';
 import SamsungFood from './samsung/SamsungFood.jsx';
 import SSGFood from './ssg/SSGFood.jsx';
 import Home from './components/Home.jsx';
-import Food from './components/Food.jsx';
 
 function App() {
   return (
