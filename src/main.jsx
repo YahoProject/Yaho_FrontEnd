@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Loading from './components/Loading'
+import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Loading />
+    <App />
   </React.StrictMode>,
 )

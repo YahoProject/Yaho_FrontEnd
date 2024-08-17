@@ -1,0 +1,18 @@
+*{
+  align-items: center;
+  justify-content: center;
+}
+
+.redirect{
+  background-color: #FF4E00;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
+}
+
+.redirect img{
+  margin-top: 40px;
+}

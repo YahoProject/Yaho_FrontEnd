@@ -1,1 +1,67 @@
-/*로그인*/
+@media (max-width:767px){
+
+  *{
+    align-items: center;
+    justify-content: center;
+  }
+
+ 
+  
+
+
+.LoginPage button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  left:50%;
+  margin-bottom: -5px;
+
+}
+
+
+
+
+
+  .social img {
+    width: 20px; 
+    height: auto; 
+    margin-right: 8px; 
+    vertical-align: middle; 
+    margin-left:-40px;
+    margin-right: 40px;
+  }
+
+  .social{
+  height:45px;
+  margin-bottom: -10px;
+  }
+  
+  .kakao{
+    background-color: #FFEB00;
+  }
+
+
+ 
+  .LoginPage{
+    background-color: #FF4E00;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column;
+  }
+
+  .text{
+    font-size: 1.2em;
+  }
+  
+  .LoginIcon{
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+  
+
+  
+}
