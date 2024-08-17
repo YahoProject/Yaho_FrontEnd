@@ -7,7 +7,7 @@ const useUnderbar = () => {
   const [initialY, setInitialY] = useState(0);
   const [marginTop, setMarginTop] = useState(543);
   const [height, setHeight] = useState(450);
-  const [selectedCategory, setSelectedCategory] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleMouseDown = (e) => {
     e.preventDefault();

@@ -114,6 +114,10 @@
   padding-left: 12.5px;
 }
 
+.sidebar .initial .menu{
+  display: none;
+}
+
 .sidebar .close .menu {
   animation: slideout 0.3s forwards;
 }

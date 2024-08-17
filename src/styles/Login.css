@@ -53,9 +53,14 @@
     flex-direction: column;
   }
 
+  .textBold{
+    font-weight: bold;
+  }
+
   .text{
     font-size: 1.2em;
   }
+
   
   .LoginIcon{
     margin-top: 40px;
