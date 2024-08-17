@@ -2,7 +2,8 @@ import React from 'react';
 import '../styles/KiaUnderbar.css';
 
 const Popup = ({ category, onClose }) => {
-  if (!category) return null;
+
+  if (category.name=="") return null;
 
   return (
     <div className="popup">
