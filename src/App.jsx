@@ -31,6 +31,8 @@ import SSGFood from './ssg/SSGFood.jsx';
 import Home from './components/Home.jsx';
 import Modal from './components/Modal.jsx';
 import Diary from './components/Diary.jsx';
+import MyPage from './components/MyPage.jsx';
+import FixPage from './components/FixPage.jsx';
 
 
 import { CategoryProvider } from './components/categoryProvider.jsx'; // CategoryProvider 추가
@@ -89,6 +91,8 @@ const MainContent = () => {
         <Route path="/" element={<Home />} />
         <Route path="/modal" element={<Modal/>}/>
         <Route path="/diary" element={<Diary/>}/>
+        <Route path="/mypage" element={<MyPage/>}/>
+        <Route path="/fixpage" element={<FixPage/>}/>
       </Routes>
     </>
   );
