@@ -9,6 +9,8 @@ import boyoung_kttwo from "../assets/boyoung_kttwo.svg";
 import boyoung_ktthree from "../assets/boyoung_ktthree.svg";
 import samgu from "../assets/samgu.svg";
 import samguone from "../assets/samguone.svg";
+import samgutwo from "../assets/samgutwo.svg";
+import samguthree from "../assets/samguthree.svg";
 import idaero from "../assets/idaero.svg";
 import idaeroone from "../assets/idaeroone.svg";
 import idaerotwo from "../assets/idaerotwo.svg";
@@ -52,11 +54,6 @@ const KTUnderbar = () => {
       popupimgone: jinmione,
       popupimgtwo: jinmitwo,
       popupimgthree: jinmithree,
-      /*popupvisits: "7월 방문 수 1위",
-      popupaddress: "맛있다구 동글동 3거리 22-4",
-      popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
       pin:[318,147],
       map:Jinmi
     },
@@ -71,11 +68,6 @@ const KTUnderbar = () => {
       popupimgone: boyoung_ktone,
       popupimgtwo: boyoung_kttwo,
       popupimgthree: boyoung_ktthree,
-      /*popupvisits: "7월 방문 수 1위",
-      popupaddress: "맛있다구 동글동 3거리 22-4",
-      popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
       pin:[378,210],
       map:ktBoyoungmando
     },
@@ -88,11 +80,8 @@ const KTUnderbar = () => {
       popupaddress: "그린존 2층 하단",
       popupfloor: "2F",
       popupimgone: samguone,
-      /*popupvisits: "7월 방문 수 1위",
-      popupaddress: "맛있다구 동글동 3거리 22-4",
-      popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
+      popupimgtwo: samgutwo,
+      popupimgthree: samguthree,
       pin:[407,252],
       map:sam
     },   
@@ -107,11 +96,6 @@ const KTUnderbar = () => {
       popupimgone: idaeroone,
       popupimgtwo: idaerotwo,
       popupimgthree: idaerothree,
-      /*popupvisits: "7월 방문 수 1위",
-      popupaddress: "맛있다구 동글동 3거리 22-4",
-      popupfloor: "1F",
-      popupimgone: xoxoone,
-      popupimgtwo: xoxotwo,*/
       pin:[429,264],
       map:idarotongsamgyup
     }, 

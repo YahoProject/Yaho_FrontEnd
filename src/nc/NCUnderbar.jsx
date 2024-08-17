@@ -6,6 +6,7 @@ import cheilthree from "../assets/cheilthree.svg";
 import ssago from "../assets/ssago.svg";
 import ssagoone from "../assets/ssagoone.svg";
 import ssagotwo from "../assets/ssagotwo.svg";
+import ssagothree from "../assets/ssagothree.svg";
 import gongryong from "../assets/gongryong.svg";
 import gongryongone from "../assets/gongryongone.svg";
 import gongryongtwo from "../assets/gongryongtwo.svg";
@@ -60,7 +61,6 @@ const NCUnderbar = () => {
       popupimgone: cheilone,
       popupimgtwo: cheiltwo,
       popupimgthree: cheilthree,
-
       pin:[180+30,399+30],
       map:jeilburger
     },
@@ -74,6 +74,7 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: ssagoone,
       popupimgtwo: ssagotwo,
+      popupimgthree: ssagothree,
       pin:[180+30,326+30],
       map:ssaum
     },
@@ -87,7 +88,8 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: gongryongone,
       popupimgtwo: gongryongtwo,
-      popupimgthree: gongryongthree,pin:[258+30,164+30],
+      popupimgthree: gongryongthree,
+      pin:[258+30,164+30],
       map:gongyrongsanghwe
     },   
     {
@@ -100,7 +102,8 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: shirmp_ncone,
       popupimgtwo: shirmp_nctwo,
-      popupimgthree: shirmp_ncthree,pin:[286+30,122+30],
+      popupimgthree: shirmp_ncthree,
+      pin:[286+30,122+30],
       map:shirmpshef
     }, 
     {
@@ -113,7 +116,8 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: pmmone,
       popupimgtwo: pmmtwo,
-      popupimgthree: pmmthree,pin:[320+30,143+30],
+      popupimgthree: pmmthree,
+      pin:[320+30,143+30],
       map:pyonmilmil
     }, 
     {
@@ -126,7 +130,8 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: koaone,
       popupimgtwo: koatwo,
-      popupimgthree: koathree,pin:[368+30,140+30],
+      popupimgthree: koathree,
+      pin:[368+30,140+30],
       map:Koa
     }, 
   ];
