@@ -29,6 +29,7 @@ import NCFood from './nc/NCFood.jsx';
 import SamsungFood from './samsung/SamsungFood.jsx';
 import SSGFood from './ssg/SSGFood.jsx';
 import Home from './components/Home.jsx';
+import Modal from './components/Modal.jsx';
 
 
 
@@ -86,6 +87,7 @@ const MainContent = () => {
         <Route path="/food/samsung" element={<SamsungFood />} />
         <Route path="/food/ssg" element={<SSGFood />} />
         <Route path="/" element={<Home />} />
+        <Route path="/modal" element={<Modal/>}/>
       </Routes>
     </>
   );
