@@ -5,6 +5,7 @@
   width:80px;
   height:30px;
   margin-right: 10px;
+  margin-bottom: 30px;
 }
 
 .underbar h3{
@@ -30,7 +31,7 @@
 }
 
 .underbar{
-  margin-top: 557px;
+  margin-top: 657px;
 
   margin-left:0px;
   padding-left:15px;
@@ -44,7 +45,7 @@
   align-items: flex-start;
   border-radius: 10px;
   overflow: scroll;
-  height: 100vh;
+  
   
 }
 

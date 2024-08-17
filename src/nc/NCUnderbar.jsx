@@ -26,7 +26,15 @@ import koathree from "../assets/koathree.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-
+import pyonmilmil from "../../public/nc/pyonmilmil.svg"
+import shirmpshef from "../../public/nc/shirmpShef.svg"
+import ssaum from "../../public/nc/ssaum.svg"
+import gongyrongsanghwe from "../../public/nc/gongyrongsanghwe.svg"
+import jeilburger from "../../public/nc/jeilburger.svg"
+import Koa from "../../public/nc/koa.svg"
+import React, { useEffect, useRef, useContext } from 'react';
+import { CategoryContext } from '../components/categoryProvider.jsx';
+import '../styles/KiaUnderbar.css';
 
 const NCUnderbar = () => {
   const {
@@ -39,6 +47,7 @@ const NCUnderbar = () => {
     closePopup,
     handleClassChange,
   } = useUnderbar();
+  const { setSelectedCategory } = useContext(CategoryContext);
 
   const categories = [
     {
@@ -51,7 +60,9 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: cheilone,
       popupimgtwo: cheiltwo,
-      popupimgthree: cheilthree
+      popupimgthree: cheilthree,
+      pin:[180+30,399+30],
+      map:jeilburger
     },
     {
       name: "ssago",
@@ -63,7 +74,9 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: ssagoone,
       popupimgtwo: ssagotwo,
-      popupimgthree: ssagothree
+      popupimgthree: ssagothree,
+      pin:[180+30,326+30],
+      map:ssaum
     },
     {
       name: "gongryong",
@@ -75,7 +88,9 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: gongryongone,
       popupimgtwo: gongryongtwo,
-      popupimgthree: gongryongthree
+      popupimgthree: gongryongthree,
+      pin:[258+30,164+30],
+      map:gongyrongsanghwe
     },   
     {
       name: "shirmp_nc",
@@ -87,7 +102,9 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: shirmp_ncone,
       popupimgtwo: shirmp_nctwo,
-      popupimgthree: shirmp_ncthree
+      popupimgthree: shirmp_ncthree,
+      pin:[286+30,122+30],
+      map:shirmpshef
     }, 
     {
       name: "pmm",
@@ -99,7 +116,9 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: pmmone,
       popupimgtwo: pmmtwo,
-      popupimgthree: pmmthree
+      popupimgthree: pmmthree,
+      pin:[320+30,143+30],
+      map:pyonmilmil
     }, 
     {
       name: "koa",
@@ -111,31 +130,39 @@ const NCUnderbar = () => {
       popupfloor: "1F",
       popupimgone: koaone,
       popupimgtwo: koatwo,
-      popupimgthree: koathree
+      popupimgthree: koathree,
+      pin:[368+30,140+30],
+      map:Koa
     }, 
   ];
+
+  const handleClick = (category) => {
+    handleCategoryClick(category);
+    setSelectedCategory(category);
+  };
 
   return (
     <div className={`underbar ${className}`} style={{ marginTop, height }}>
       <div className='bar' onMouseDown={handleMouseDown}>
-        <img src={bar} /><br />
+        <img src={bar} alt="drag bar" />
       </div>
       <h3>필수 방문 맛집</h3>
       <div className="underbarButton">
-        <button className="firstButton" onClick={() => handleClassChange('f1')}>1F</button>
+        <button className="firstButton" onClick={() => handleClassChange('f1f2')}>1F&2F</button>
+        <button onClick={() => handleClassChange('f3f4')}>3F&4F</button>
         <button onClick={() => handleClassChange('all')}>전체보기</button>
-      </div><br /><br />
+      </div>
 
       <div>
         {categories
-          .filter(category => className === 'all' || category.floor.includes( className))
+          .filter(category => className === 'all' || category.floor.includes(className))
           .map(category => (
-            <div key={category.name} onClick={() => handleCategoryClick(category)}>
+            <div key={category.name} onClick={() => handleClick(category)}>
               <img src={category.img} alt={category.text} />
-              <br />
             </div>
           ))}
       </div>
+
       {selectedCategory && (
         <Popup category={selectedCategory} onClose={closePopup} />
       )}

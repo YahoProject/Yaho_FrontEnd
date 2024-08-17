@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import xoxo from "../assets/xoxoHotdog.svg";
 import xoxoone from "../assets/xoxoone.svg";
 import xoxotwo from "../assets/xoxotwo.svg";
@@ -21,8 +21,14 @@ import oneshottwo from "../assets/oneshottwo.svg";
 import oneshotthree from "../assets/oneshotthree.svg";
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-import Popup from '../components/Popup.jsx';  
-import useUnderbar from '../hooks/useUnderbar.jsx'; // 커스텀 훅을 가져옵니다.
+import Popup from './Popup.jsx';  
+import useUnderbar from '../hooks/useUnderbar.jsx';
+import { CategoryContext } from './categoryProvider.jsx';
+import KiaoneShotMap from "../assets/KiaoneShotMap.svg";
+import masungMap from "../assets/masungMap.svg";
+import stationsMap from "../assets/stationMap.svg";
+import xoxoMap from "../assets/xoxoMap.svg";
+import ZzacataeMap from "../assets/ZzactaeMap.svg";
 
 const Underbar = () => {
   const {
@@ -34,9 +40,9 @@ const Underbar = () => {
     handleCategoryClick,
     closePopup,
     handleClassChange,
-  } = useUnderbar(); // 커스텀 훅 사용
+  } = useUnderbar();
 
-
+  const { setSelectedCategory } = useContext(CategoryContext);
 
   const categories = [
     {
@@ -49,7 +55,9 @@ const Underbar = () => {
       popupfloor: "1F",
       popupimgone: xoxoone,
       popupimgtwo: xoxotwo,
-      popupimgthree: xoxothree
+      popupimgthree: xoxothree,
+      pin: [226+30, 243+30],
+      map: xoxoMap
     },
     {
       name: "maseong",
@@ -61,7 +69,9 @@ const Underbar = () => {
       popupfloor: "3F",
       popupimgone: maseongone,
       popupimgtwo: maseongtwo,
-      popupimgthree: maseongthree
+      popupimgthree: maseongthree,
+      pin: [152+30, 361+30],
+      map: masungMap
     },
     {
       name: "family",
@@ -73,7 +83,9 @@ const Underbar = () => {
       popupfloor: "3F",
       popupimgone: familyone,
       popupimgtwo: familytwo,
-      popupimgthree: familythree
+      popupimgthree: familythree,
+      pin: [220, 520+180],
+      map: ZzacataeMap
     },
     {
       name: "station",
@@ -85,7 +97,9 @@ const Underbar = () => {
       popupfloor: "3F",
       popupimgone: stationone,
       popupimgtwo: stationtwo,
-      popupimgthree: stationthree
+      popupimgthree: stationthree,
+      pin: [369+60, 544+160],
+      map: stationsMap
     },
     {
       name: "oneshot",
@@ -97,41 +111,44 @@ const Underbar = () => {
       popupfloor: "4F",
       popupimgone: oneshotone,
       popupimgtwo: oneshottwo,      
-      popupimgthree: oneshotthree
+      popupimgthree: oneshotthree,
+      pin: [433+30, 520+30],
+      map: KiaoneShotMap
     },
   ];
 
-  return (
+  const handleClick = (category) => {
+    handleCategoryClick(category);
+    setSelectedCategory(category);
+  };
 
+  return (
     <div className={`underbar ${className}`} style={{ marginTop, height }}>
       <div className='bar' onMouseDown={handleMouseDown}>
-        <img src={bar} /><br />
+        <img src={bar} alt="drag bar" />
       </div>
       <h3>필수 방문 맛집</h3>
       <div className="underbarButton">
         <button className="firstButton" onClick={() => handleClassChange('f1f2')}>1F&2F</button>
         <button onClick={() => handleClassChange('f3f4')}>3F&4F</button>
         <button onClick={() => handleClassChange('all')}>전체보기</button>
-      </div><br /><br />
-
+      </div>
 
       <div>
         {categories
-          .filter(category => className === 'all' || category.floor.includes( className))
+          .filter(category => className === 'all' || category.floor.includes(className))
           .map(category => (
-
-            <div key={category.name} onClick={() => handleCategoryClick(category)}>
+            <div key={category.name} onClick={() => handleClick(category)}>
               <img src={category.img} alt={category.text} />
-              <br />
             </div>
           ))}
       </div>
+
       {selectedCategory && (
         <Popup category={selectedCategory} onClose={closePopup} />
       )}
-
     </div>
   );
-}
+};
 
 export default Underbar;

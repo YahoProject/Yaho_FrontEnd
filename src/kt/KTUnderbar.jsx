@@ -18,9 +18,19 @@ import idaerothree from "../assets/idaerothree.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
+import idarotongsamgyup  from "../../public/kt/idarotongsamgyup.svg"
+import Jinmi from "../../public/kt/jinmi.svg"
+import ktBoyoungmando from "../../public/kt/ktBoyoungmando.svg"
+import sam from "../../public/kt/33.svg"
+
+  
+import React, { useEffect, useRef, useContext } from 'react';
+import { CategoryContext } from '../components/categoryProvider.jsx';
+import '../styles/KiaUnderbar.css';
 
 
 const KTUnderbar = () => {
+  const { setSelectedCategory } = useContext(CategoryContext);
   const {
     className,
     marginTop,
@@ -43,7 +53,9 @@ const KTUnderbar = () => {
       popupfloor: "2F",
       popupimgone: jinmione,
       popupimgtwo: jinmitwo,
-      popupimgthree: jinmithree
+      popupimgthree: jinmithree,
+      pin:[318,147],
+      map:Jinmi
     },
     {
       name: "boyoung_kt",
@@ -55,7 +67,9 @@ const KTUnderbar = () => {
       popupfloor: "2F",
       popupimgone: boyoung_ktone,
       popupimgtwo: boyoung_kttwo,
-      popupimgthree: boyoung_ktthree
+      popupimgthree: boyoung_ktthree,
+      pin:[378,210],
+      map:ktBoyoungmando
     },
     {
       name: "samgu",
@@ -67,7 +81,9 @@ const KTUnderbar = () => {
       popupfloor: "2F",
       popupimgone: samguone,
       popupimgtwo: samgutwo,
-      popupimgthree: samguthree
+      popupimgthree: samguthree,
+      pin:[407,252],
+      map:sam
     },   
     {
       name: "idaero",
@@ -79,31 +95,39 @@ const KTUnderbar = () => {
       popupfloor: "2F",
       popupimgone: idaeroone,
       popupimgtwo: idaerotwo,
-      popupimgthree: idaerothree
+      popupimgthree: idaerothree,
+      pin:[429,264],
+      map:idarotongsamgyup
     }, 
   ];
+
+  const handleClick = (category) => {
+    handleCategoryClick(category);
+    setSelectedCategory(category);
+  };
 
   return (
     <div className={`underbar ${className}`} style={{ marginTop, height }}>
       <div className='bar' onMouseDown={handleMouseDown}>
-        <img src={bar} /><br />
+        <img src={bar} alt="drag bar" />
       </div>
       <h3>필수 방문 맛집</h3>
       <div className="underbarButton">
-        <button className="firstButton" onClick={() => handleClassChange('f1')}>1F</button>
+        <button className="firstButton" onClick={() => handleClassChange('f1f2')}>1F&2F</button>
+        <button onClick={() => handleClassChange('f3f4')}>3F&4F</button>
         <button onClick={() => handleClassChange('all')}>전체보기</button>
-      </div><br /><br />
+      </div>
 
       <div>
         {categories
-          .filter(category => className === 'all' || category.floor.includes( className))
+          .filter(category => className === 'all' || category.floor.includes(className))
           .map(category => (
-            <div key={category.name} onClick={() => handleCategoryClick(category)}>
+            <div key={category.name} onClick={() => handleClick(category)}>
               <img src={category.img} alt={category.text} />
-              <br />
             </div>
           ))}
       </div>
+
       {selectedCategory && (
         <Popup category={selectedCategory} onClose={closePopup} />
       )}

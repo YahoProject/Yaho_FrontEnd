@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import './styles/styles.css';
-import Calendar from './components/Calendar';
+import Calendar from './components/Calendar.jsx';
 import Login from "./components/Login.jsx";
 import RedirectPage from "./components/RedirectPage.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import './App.css';
-import WinRate from './components/WinRate';
+import WinRate from './components/WinRate.jsx';
 import ProfilePage from './components/ProfilePage.jsx';
+
+import Food from './components/Food.jsx';
 import KiaUnderbar from './components/KiaUnderbar.jsx';
 import KiaFood from './components/KiaFood.jsx';
 import LG_DSUnderbar from './lg&ds/LG_DSUnderbar.jsx';
@@ -27,11 +29,18 @@ import NCFood from './nc/NCFood.jsx';
 import SamsungFood from './samsung/SamsungFood.jsx';
 import SSGFood from './ssg/SSGFood.jsx';
 import Home from './components/Home.jsx';
+import Modal from './components/Modal.jsx';
+
+
+
+import { CategoryProvider } from './components/categoryProvider.jsx'; // CategoryProvider 추가
 
 function App() {
   return (
     <BrowserRouter>
-      <MainContent />
+      <CategoryProvider>
+        <MainContent />
+      </CategoryProvider>
     </BrowserRouter>
   );
 }
@@ -39,14 +48,14 @@ function App() {
 const MainContent = () => {
   const location = useLocation();
   const showKiaUnderbar = location.pathname.startsWith('/food/kia');
-  const showLGDSUnderbar=location.pathname.startsWith('/food/jamsil');
-  const showKiwoomUnderbar=location.pathname.startsWith('/food/kiwoom');
-  const showSSGUnderbar=location.pathname.startsWith('/food/ssg');
-  const showKTUnderbar=location.pathname.startsWith('/food/kt');
-  const showLotteUnderbar=location.pathname.startsWith('/food/lotte');
-  const showSamsungUnderbar=location.pathname.startsWith('/food/samsung');
-  const showNCUnderbar=location.pathname.startsWith('/food/nc');
-  const showHanhwaUnderbar=location.pathname.startsWith('/food/hanhwa');
+  const showLGDSUnderbar = location.pathname.startsWith('/food/jamsil');
+  const showKiwoomUnderbar = location.pathname.startsWith('/food/kiwoom');
+  const showSSGUnderbar = location.pathname.startsWith('/food/ssg');
+  const showKTUnderbar = location.pathname.startsWith('/food/kt');
+  const showLotteUnderbar = location.pathname.startsWith('/food/lotte');
+  const showSamsungUnderbar = location.pathname.startsWith('/food/samsung');
+  const showNCUnderbar = location.pathname.startsWith('/food/nc');
+  const showHanhwaUnderbar = location.pathname.startsWith('/food/hanhwa');
 
   return (
     <>
@@ -63,19 +72,22 @@ const MainContent = () => {
       <Routes>
         <Route path="/login" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
+
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
         <Route path="/winrate" element={<WinRate />} />
         <Route path="/calendar" element={<Calendar />} />
+        <Route path="/food" element={<Food/>}/>
         <Route path="/food/kia" element={<KiaFood />} />
-        <Route path="/food/jamsil" element={<LG_DSFood/>}/>
+        <Route path="/food/jamsil" element={<LG_DSFood />} />
         <Route path="/food/hanhwa" element={<HanhwaFood />} />
         <Route path="/food/kiwoom" element={<KiwoomFood />} />
         <Route path="/food/kt" element={<KTFood />} />
         <Route path="/food/lotte" element={<LotteFood />} />
         <Route path="/food/nc" element={<NCFood />} />
         <Route path="/food/samsung" element={<SamsungFood />} />
-        <Route path="/food/ssg" element={<SSGFood/>} />
-        <Route path='/' element={<Home/>}/>
+        <Route path="/food/ssg" element={<SSGFood />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/modal" element={<Modal/>}/>
       </Routes>
     </>
   );

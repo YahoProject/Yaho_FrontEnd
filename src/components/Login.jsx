@@ -11,7 +11,9 @@ const Login = () => {
 
   return (
     <div className="LoginPage">
-        <div className="text">당신의 야구 놀이를 더 즐겁게</div>
+      <div className="text">
+        나의 <span className="textBold">야구직관 메이트</span>
+        </div>
         <div>
         <img className='LoginIcon' src={yahoIcon} alt="Yaho" /></div>
     

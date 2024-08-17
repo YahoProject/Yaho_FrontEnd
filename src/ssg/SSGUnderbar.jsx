@@ -18,6 +18,13 @@ import ssgburgerthree from "../assets/ssgburgerthree.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
+import React, { useEffect, useRef, useContext } from 'react';
+import { CategoryContext } from '../components/categoryProvider.jsx';
+import '../styles/KiaUnderbar.css';
+import bookchonsonmando from "../../public/ssg/bookchonsonmando.svg"
+import hergal from "../../public/ssg/hergal.svg"
+import ssburger from "../../public/ssg/ssgbuger.svg"
+import stationssg from "../../public/ssg/stastionssg.svg"
 
 
 const SSGUnderbar = () => {
@@ -31,6 +38,7 @@ const SSGUnderbar = () => {
     closePopup,
     handleClassChange,
   } = useUnderbar();
+  const { setSelectedCategory } = useContext(CategoryContext);
 
   const categories = [
     {
@@ -44,6 +52,9 @@ const SSGUnderbar = () => {
       popupimgone: station_ssgone,
       popupimgtwo: station_ssgtwo,
       popupimgthree: station_ssgthree
+,
+      map:stationssg,
+      pin:[245,20]
     },
     {
       name: "heogal",
@@ -56,6 +67,9 @@ const SSGUnderbar = () => {
       popupimgone: heogalone,
       popupimgtwo: heogaltwo,
       popupimgthree: heogalthree
+      ,
+      map:hergal,
+      pin:[135,34]
     },
     {
       name: "bukchon",
@@ -68,6 +82,9 @@ const SSGUnderbar = () => {
       popupimgone: bukchonone,
       popupimgtwo: bukchontwo,
       popupimgthree: bukchonthree
+      ,
+      map: bookchonsonmando,
+      pin:[68,137]
     },   
     {
       name: "ssgburger",
@@ -80,30 +97,39 @@ const SSGUnderbar = () => {
       popupimgone: ssgburgerone,
       popupimgtwo: ssgburgertwo,
       popupimgthree: ssgburgerthree
+      ,
+      map:ssburger,
+      pin:[318,70]
     }, 
   ];
+
+  const handleClick = (category) => {
+    handleCategoryClick(category);
+    setSelectedCategory(category);
+  };
 
   return (
     <div className={`underbar ${className}`} style={{ marginTop, height }}>
       <div className='bar' onMouseDown={handleMouseDown}>
-        <img src={bar} /><br />
+        <img src={bar} alt="drag bar" />
       </div>
       <h3>필수 방문 맛집</h3>
       <div className="underbarButton">
-        <button className="firstButton" onClick={() => handleClassChange('f1')}>1F</button>
+        <button className="firstButton" onClick={() => handleClassChange('f1f2')}>1F&2F</button>
+        <button onClick={() => handleClassChange('f3f4')}>3F&4F</button>
         <button onClick={() => handleClassChange('all')}>전체보기</button>
-      </div><br /><br />
+      </div>
 
       <div>
         {categories
-          .filter(category => className === 'all' || category.floor === className)
+          .filter(category => className === 'all' || category.floor.includes(className))
           .map(category => (
-            <div key={category.name} onClick={() => handleCategoryClick(category)}>
+            <div key={category.name} onClick={() => handleClick(category)}>
               <img src={category.img} alt={category.text} />
-              <br />
             </div>
           ))}
       </div>
+
       {selectedCategory && (
         <Popup category={selectedCategory} onClose={closePopup} />
       )}
