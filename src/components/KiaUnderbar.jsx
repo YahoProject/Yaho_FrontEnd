@@ -2,11 +2,15 @@ import React, { useEffect, useRef, useContext } from 'react';
 import xoxo from "../assets/xoxoHotdog.svg";
 import xoxoone from "../assets/xoxoone.svg";
 import xoxotwo from "../assets/xoxotwo.svg";
+import xoxothree from "../assets/xoxothree.svg";
 import maseong from "../assets/maseong.svg";
 import maseongone from "../assets/maseongone.svg";
 import maseongtwo from "../assets/maseongtwo.svg";
+import maseongthree from "../assets/maseongthree.svg";
 import family from "../assets/family.svg";
 import familyone from "../assets/familyone.svg";
+import familytwo from "../assets/familytwo.svg";
+import familythree from "../assets/familythree.svg";
 import station from "../assets/station.svg";
 import stationone from "../assets/stationone.svg";
 import stationtwo from "../assets/stationtwo.svg";
@@ -51,6 +55,7 @@ const Underbar = () => {
       popupfloor: "1F",
       popupimgone: xoxoone,
       popupimgtwo: xoxotwo,
+      popupimgthree: xoxothree,
       pin: [226+30, 243+30],
       map: xoxoMap
     },
@@ -64,6 +69,7 @@ const Underbar = () => {
       popupfloor: "3F",
       popupimgone: maseongone,
       popupimgtwo: maseongtwo,
+      popupimgthree: maseongthree,
       pin: [152+30, 361+30],
       map: masungMap
     },
@@ -76,6 +82,8 @@ const Underbar = () => {
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "3F",
       popupimgone: familyone,
+      popupimgtwo: familytwo,
+      popupimgthree: familythree,
       pin: [220, 520+180],
       map: ZzacataeMap
     },
