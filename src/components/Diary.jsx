@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Diary.css'; 
+import CalendarMonthIcon from '../assets/Calendar_month.svg';
 
 const Diary = () => {
   const [entry, setEntry] = useState('');
@@ -41,19 +42,20 @@ const Diary = () => {
         <div className="diary-bar"></div>
         <h2>축하해요!<br/>오늘도 승리했어요!</h2>
         <div className="result-card">
-          <div className="result-status">승리</div>
+          <div className="result-status"><p>승리</p></div>
           <div className="result-image">
             <img src="/Mask group (1).svg" alt="Victory" />
           </div>
           <p className="result-text">오늘의 직관감정</p>
           <p className="result-text2">우승가자</p>
           <button className="save-button" onClick={handleSave}>
-            <img src="path/to/your/image.png" alt="Save Icon" className="save-icon" />
+            <img src={CalendarMonthIcon} alt="Save Icon" className="save-icon" />
             저장하기
           </button>
         </div>
         <div className="mvp-section">
           <p>오늘의 MVP</p>
+
           <div className="input-wrapper">
             <input 
               type="text" 
@@ -74,7 +76,7 @@ const Diary = () => {
             className="mvp-image-button" 
             onClick={() => document.getElementById('mvp-image-input').click()}
           >
-            +
+            
           </button>
           {mvpImage && <img src={mvpImage} alt="MVP Preview" className="mvp-preview" />}
         </div>
