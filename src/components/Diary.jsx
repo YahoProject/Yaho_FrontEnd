@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // axios 가져오기
-import '../styles/Diary.css';
+import '../styles/Diary.css'; 
 
 const Diary = () => {
   const [entry, setEntry] = useState('');
@@ -22,29 +21,14 @@ const Diary = () => {
     }
   };
 
-  const handleSave = async () => {
+  const handleSave = () => {
     if (entry.trim() !== '' || mvp.trim() !== '') {
-      try {
-        const response = await axios.post(
-          'https://your-api-url/diarys/{gameId}/write',
-          {
-            date: new Date().toISOString().split('T')[0], // 예: 2024-08-17
-            emoticon: '승리', // 예시 데이터
-            mvp: mvp,
-            content: entry,
-            location: '고척스카이돔'
-          }
-        );
-        console.log('Response:', response.data);
-        // 응답 데이터 처리
-      } catch (error) {
-        console.error('Error:', error);
-        // 에러 처리
-      } finally {
-        setEntry('');
-        setMvp('');
-        setMvpImage(null); // 이미지 초기화
-      }
+      console.log('Entry saved:', entry);
+      console.log('MVP saved:', mvp);
+      console.log('MVP Image saved:', mvpImage); // 이미지 URL 저장
+      setEntry(''); 
+      setMvp('');
+      setMvpImage(null); // 이미지 초기화
     }
   };
 
