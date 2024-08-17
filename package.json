@@ -9,7 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "serve": "vite preview",
-    "start" : "vite start"
+    "start" : "vite start",
+    "postinstall": "npm install rollup @rollup/plugin-node-resolve @rollup/plugin-commonjs"
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
@@ -33,6 +34,5 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "vite": "^5.3.4"
-  },
-  "postinstall": "npm install rollup @rollup/plugin-node-resolve @rollup/plugin-commonjs"
+  }
 }

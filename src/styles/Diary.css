@@ -12,7 +12,6 @@
     padding: 10px;
     border-radius: 8px;
     color: #fff;
-    font-family: 'Arial', sans-serif;
   }
   
   .diary-header {
@@ -51,23 +50,30 @@
     border-radius: 16px;
     padding: 15px;
     text-align: center;
+    justify-content: center;
     margin: 0px;
     width: 297px;
     height : 423px;
     box-sizing: border-box;
   }
   
-  .result-status { /*승리 뒤에 있는 star*/
-    background-color: #FFA076;
-    border-radius: 50px;
-    padding: 5px 10px;
+  .result-status p{ 
     font-size: 20px;
     font-weight: 500;
+  }
+  .result-status {
+    background-image: url('../assets/Star.svg');
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-size: cover; /* 이미지 크기를 컨테이너에 맞게 조절 (옵션) */
+    background-position: center; /* 이미지 위치 조정 (옵션) */
     position: relative;
-    top: -20px;
-    right: -100px;
-    width : 50px;
-    height: 50px;
+    top: 10px;
+    right: -190px;
+    width: 65px;
+    height: 65px;
+    display: flex; /* Flexbox를 사용하여 자식 요소를 정렬 */
+    align-items: center; /* 세로 방향 가운데 정렬 */
+    justify-content: center; /* 가로 방향 가운데 정렬 */
   }
   
   .result-image img {
@@ -90,7 +96,7 @@
   }
   
   .save-button {
-    margin: 0px;
+    margin: 0 auto;
     background-color: #FF7C42;
     color: white;
     border: none;
@@ -99,6 +105,10 @@
     cursor: pointer;
     width: 200px;
     height : 42px;
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 방향 중앙 정렬 */
+    justify-content: center; /* 가로 방향 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 (필요에 따라) */
   }
   .save-button:focus {
     border: none;
@@ -111,11 +121,14 @@
   }
   
   .mvp-section {
+    background-image: url('../assets/Teamlogo/Ssg.svg'); /* 이미지 경로 */
+    background-size: cover; /* 이미지 크기를 컨테이너에 맞게 조절 */
+    background-position: center; /* 이미지 위치 조정 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
     margin-top: 20px;
     border-radius: 10px;
     width: 349px;
     height: 122px;
-    background: linear-gradient(to bottom, #FF7C42, #FF4E00);
   }
 
   .mvp-section p {
@@ -149,13 +162,20 @@
 
   
   .mvp-image-button {
-    background-color: #ffb74d;
-    color: #fff;
+    background-image: url('../assets/add_photo_alternate.svg');
+    background-size: cover; /* 이미지 크기를 컨테이너에 맞게 조절 */
+    background-position: center; /* 이미지 위치 조정 */
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width : 40px;
+    height: 40px;
     border: none;
-    border-radius: 50%;
     padding: 10px;
     font-size: 20px;
     cursor: pointer;
+    position: relative;
+    top: -40px;
+    left: 280px;
   }
   .mvp-image-button:focus {
     border: none; 
