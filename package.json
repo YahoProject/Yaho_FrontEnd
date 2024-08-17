@@ -13,11 +13,14 @@
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
     "axios": "^1.7.2",
-    "date-fns": "^3.6.0",
+    "date-fns": "^2.23.0",
+    "html2canvas": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-google-login": "^5.2.2",
+    "react-easy-panzoom": "^0.4.4",
+    "react-pinch-zoom-pan": "^1.4.5",
     "react-router-dom": "^6.26.0",
+    "styled-components": "^6.1.12",
     "zustand": "^4.5.4"
   },
   "devDependencies": {

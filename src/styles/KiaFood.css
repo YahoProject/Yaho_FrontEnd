@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Pretendard";
+    src: url("/PretendardVariable.ttf");
+  } 
+.IphoneHeader{
+    width: 390px;
+    height: 59px;
+}
+.header{
+    border-bottom: 1px solid rgb(204, 200, 200);
+    width: 390px;
+    height: 85px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Pretendard';
+}
+
+.Button{
+    display: flex;
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    background-color: white;
+}
+
+.ImgContainer{
+  height: 427px;
+    width: 389px;
+    overflow: hidden; /* 이 설정은 PanZoom 영역 밖으로 이미지가 벗어나지 않도록 합니다 */
+    position: relative;
+}
+.Image{
+    height: 427px;
+    width: 389px;
+    overflow: hidden; /* 이 설정은 PanZoom 영역 밖으로 이미지가 벗어나지 않도록 합니다 */
+    position: relative;
+
+}
