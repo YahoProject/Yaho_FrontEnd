@@ -4,6 +4,7 @@ import menu from "../assets/menu.svg";
 import icon from "../assets/sidebar.svg";
 import close from "../assets/close.svg";
 import "../styles/Sidebar.css";
+import Modal from "./Modal";
 
 const categories = [
   {
@@ -31,6 +32,7 @@ const categories = [
 const Sidebar = () => {
   const [user, setUser] = useState(null);
   const [isOpen, setOpen] = useState(false);
+  const [isModalOpen, setModalOpen]=useState(false);
   const location=useLocation();
 
   const toggleOpen = () => {
@@ -50,6 +52,14 @@ const Sidebar = () => {
 
   //const nickname=localStorage.getItem("Nickname");
   //const team=localStorage.getItem("Team");
+
+  const handleModal=()=>{
+    setModalOpen(true);
+  };
+
+  const cancelLogout=()=>{
+    setModalOpen(false);
+  }
 
 
   return (
@@ -83,7 +93,7 @@ const Sidebar = () => {
                 {c.text}
               </Link>
             ))}
-            <button className="logoutButton" onClick={handleLogout}>
+            <button className="logoutButton" onClick={handleModal}>
               야호 로그아웃
             </button>
             <p className="unregisterLink">
@@ -96,6 +106,13 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
+
+      {isModalOpen&&(
+        <Modal
+        onClose={cancelLogout}
+        onConfirm={handleLogout}
+        />
+      )}
     </>
   );
 };
