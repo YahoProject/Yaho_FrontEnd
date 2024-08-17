@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite preview"
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
@@ -18,7 +19,8 @@
     "react-dom": "^18.3.1",
     "react-easy-panzoom": "^0.4.4",
     "react-pinch-zoom-pan": "^1.4.5",
-    "react-router-dom": "^6.25.1",
+    "react-router-dom": "^6.26.0",
+    "styled-components": "^6.1.12",
     "zustand": "^4.5.4"
   },
   "devDependencies": {

@@ -30,7 +30,7 @@ import SamsungFood from './samsung/SamsungFood.jsx';
 import SSGFood from './ssg/SSGFood.jsx';
 import Home from './components/Home.jsx';
 import Modal from './components/Modal.jsx';
-
+import Diary from './components/Diary.jsx';
 
 
 import { CategoryProvider } from './components/categoryProvider.jsx'; // CategoryProvider 추가
@@ -88,6 +88,7 @@ const MainContent = () => {
         <Route path="/food/ssg" element={<SSGFood />} />
         <Route path="/" element={<Home />} />
         <Route path="/modal" element={<Modal/>}/>
+        <Route path="/diary" element={<Diary/>}/>
       </Routes>
     </>
   );
