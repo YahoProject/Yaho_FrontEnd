@@ -95,7 +95,7 @@ const LotteUnderbar = () => {
         <button onClick={() => handleClassChange('f3f4')}>3F&4F</button>
         <button onClick={() => handleClassChange('all')}>전체보기</button>
       </div>
-
+      
       <div>
         {categories
           .filter(category => className === 'all' || category.floor.includes(className))
@@ -105,10 +105,12 @@ const LotteUnderbar = () => {
             </div>
           ))}
       </div>
-
+          
       {selectedCategory && (
         <Popup category={selectedCategory} onClose={closePopup} />
       )}
+
+      
     </div>
   );
 };
