@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/Diary.css'; 
+
 import CalendarMonthIcon from '../assets/Calendar_month.svg';
+
 
 const Diary = () => {
   const [entry, setEntry] = useState('');
