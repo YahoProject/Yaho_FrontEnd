@@ -6,6 +6,7 @@ import cheilthree from "../assets/cheilthree.svg";
 import ssago from "../assets/ssago.svg";
 import ssagoone from "../assets/ssagoone.svg";
 import ssagotwo from "../assets/ssagotwo.svg";
+import ssagothree from "../assets/ssagothree.svg";
 import gongryong from "../assets/gongryong.svg";
 import gongryongone from "../assets/gongryongone.svg";
 import gongryongtwo from "../assets/gongryongtwo.svg";
@@ -61,7 +62,8 @@ const NCUnderbar = () => {
       popupaddress: "맛있다구 동글동 3거리 22-4",
       popupfloor: "1F",
       popupimgone: ssagoone,
-      popupimgtwo: ssagotwo
+      popupimgtwo: ssagotwo,
+      popupimgthree: ssagothree
     },
     {
       name: "gongryong",

@@ -9,6 +9,8 @@ import boyoung_kttwo from "../assets/boyoung_kttwo.svg";
 import boyoung_ktthree from "../assets/boyoung_ktthree.svg";
 import samgu from "../assets/samgu.svg";
 import samguone from "../assets/samguone.svg";
+import samgutwo from "../assets/samgutwo.svg";
+import samguthree from "../assets/samguthree.svg";
 import idaero from "../assets/idaero.svg";
 import idaeroone from "../assets/idaeroone.svg";
 import idaerotwo from "../assets/idaerotwo.svg";
@@ -64,6 +66,8 @@ const KTUnderbar = () => {
       popupaddress: "그린존 2층 하단",
       popupfloor: "2F",
       popupimgone: samguone,
+      popupimgtwo: samgutwo,
+      popupimgthree: samguthree
     },   
     {
       name: "idaero",

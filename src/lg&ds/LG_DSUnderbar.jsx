@@ -6,6 +6,7 @@ import jamsiloneshotthree from "../assets/jamsiloneshotthree.svg";
 import tongbap from "../assets/tongbap.svg";
 import tongbapone from "../assets/tongbapone.svg";
 import tongbaptwo from "../assets/tongbaptwo.svg";
+import tongbapthree from "../assets/tongbapthree.svg";
 import igane from "../assets/igane.svg";
 import iganeone from "../assets/iganeone.svg";
 import iganetwo from "../assets/iganetwo.svg";
@@ -58,6 +59,7 @@ const LG_DSUnderbar = () => {
       popupfloor: "2.5F",
       popupimgone: tongbapone,
       popupimgtwo: tongbaptwo,
+      popupimgthree: tongbapthree
     },
     {
       name: "igane",
