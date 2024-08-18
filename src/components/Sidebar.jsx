@@ -9,7 +9,6 @@ import Modal from "./Modal";
 const categories = [
   { name: "mypage", text: "MY 페이지", path: "/mypage" },
   { name: "diary", text: "야구일기", path: "/calendar" },
-  { name: "schedule", text: "야구일정", path: "/schedule" },
   { name: "food", text: "야구음식", path: "/food" },
 ];
 
