@@ -95,7 +95,6 @@
     overflow: hidden;
     white-space: nowrap;
     transform: 10px;
-
 }
 
 .sidebar img {
@@ -141,7 +140,7 @@
   background-color: #FF7C42;
   position:fixed;
   color:white;
-  margin-top: 600px;
+  margin-top: 550px;
   margin-left:35px;
   width:220px;
   height:40px;
@@ -156,7 +155,6 @@
 
 .sidebar a{
   color:white;
-margin-left: 40px;
 }
 
 
@@ -187,27 +185,18 @@ margin-left: 40px;
   font-size:1.6em;
 }
 
-.mypageCategory{
-  margin-top: -70px;
-  margin-bottom: -20px;
+.sidebar .menu .category{
+  margin-top: -100px;
+  margin-left: 45px;
+  line-height: 400%;
+  margin-bottom: 100px;
 }
 
-.diaryCategory{
- margin-bottom: -30px;
-}
-
-.scheduleCategory{
-  margin-bottom: -30px;
-}
-
-.foodCategory{
-  margin-bottom: -30px;
-}
 
 .unregisterLink{
   font-weight: 100;
   font-size: 12px;
-  margin-top: 120px;
+  margin-top:-30px;
   margin-left: 35px;
   color:rgba(255, 255, 255, 0.767);
 }
