@@ -23,7 +23,7 @@ const RedirectPage = () => {
           const storedName = localStorage.getItem("name");
           //setName(res.data.result.member.nickname);
         console.log("저장된 이름:", storedName);
-          window.location.replace("/"); 
+          window.location.replace("/home"); 
         })
         .catch((err) => {
           console.log("소셜로그인 에러", err);

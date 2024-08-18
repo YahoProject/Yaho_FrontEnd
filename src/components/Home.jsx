@@ -53,6 +53,7 @@ const Home = () => {
                 <li className="teamName">팀이름</li>
                 <li className="userNickname">사용자 닉네임</li>
               </ul>
+              <div className="category">
               {categories.map((c) => (
                 <Link
                   to={c.path}
@@ -64,9 +65,11 @@ const Home = () => {
                   {c.text}
                 </Link>
               ))}
+              </div>
               <button className="logoutButton" onClick={handleModal}>
                 야호 로그아웃
               </button>
+              <div className="unregisterContainer">
               <p className="unregisterLink">
                 야호를 탈퇴하려면{" "}
                 <Link to="/unregister" className="withdrawLink">
@@ -74,6 +77,7 @@ const Home = () => {
                 </Link>
                 를 눌러주세요
               </p>
+              </div>
             </div>
           </div>
         
