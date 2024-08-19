@@ -5,6 +5,7 @@ import icon from "../assets/sidebar.svg";
 import close from "../assets/close.svg";
 import "../styles/Sidebar.css";
 import Modal from "./Modal";
+import getNickname from "./GetNickname";
 
 const categories = [
   { name: "mypage", text: "MY 페이지", path: "/mypage" },
@@ -17,7 +18,10 @@ const Sidebar = () => {
   const [isOpen, setOpen] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isInitial, setIsInitial] = useState(true); 
+  const [nickname, setNickname]=useState("");
   const location = useLocation();
+
+  const memberId = localStorage.getItem("memberId");
 
   const toggleOpen = () => {
     setOpen(true);
@@ -41,6 +45,19 @@ const Sidebar = () => {
     setModalOpen(false);
   };
 
+  /*useEffect(() => {
+    const fetchNickname = async () => {
+      console.log(memberId);
+
+        console.log("닉내임은 : ",nickname);
+        const fetchedNickname = await getNickname(memberId); // getNickname 호출
+        setNickname(fetchedNickname); // 닉네임 상태 설정
+        console.log("닉내임은 : ",nickname);
+      
+    };
+    fetchNickname();
+  }, [memberId]);*/
+
   useEffect(() => {
     setIsInitial(true); 
   }, [location]);
@@ -48,6 +65,9 @@ const Sidebar = () => {
   useEffect(() => {
     console.log("isInitial updated:", isInitial);
   }, [isInitial]);
+
+
+
 
   return (
     <>
@@ -65,7 +85,7 @@ const Sidebar = () => {
               <img src={icon} alt="ICON" />
               <ul>
                 <li className="teamName">팀이름</li>
-                <li className="userNickname">사용자 닉네임</li>
+                <li className="userNickname">{nickname || "사용자 닉네임"}</li>
               </ul>
               <div className="category">
               {categories.map((c) => (
