@@ -7,7 +7,10 @@ import { KAKAO_AUTH_URL } from "./OAuth_kakao";
 const Login = () => {
 
   const name = localStorage.getItem("name");
+
   console.log("name : ",name);
+  console.log(localStorage.getItem("res"));
+
 
   return (
     <div className="LoginPage">

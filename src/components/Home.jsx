@@ -35,6 +35,9 @@ const Home = () => {
     setModalOpen(false);
   };
 
+  console.log(localStorage.getItem("id"));
+  console.log(localStorage.getItem("email"));
+
   useEffect(() => {
     setIsInitial(true); 
   }, [location]);

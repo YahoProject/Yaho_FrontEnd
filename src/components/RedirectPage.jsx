@@ -10,7 +10,7 @@ const RedirectPage = () => {
     if (code) {
       axios({
         method: "GET",
-        url: `http://localhost:8080/oauth/callback/kakao?code=${code}`, 
+        url: `https://dev.yahho.shop/oauth/callback/kakao?code=${code}`, 
         headers: {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*", 
@@ -18,7 +18,10 @@ const RedirectPage = () => {
       })
         .then((res) => {
           console.log(res);
+          localStorage.setItem("res",res);
           localStorage.setItem("name",res.data.result.member.nickname);
+          localStorage.setItem("id",res.data.result.member.id);
+          localStorage.setItem("email",res.data.result.memeber.email);
 
           const storedName = localStorage.getItem("name");
           //setName(res.data.result.member.nickname);
