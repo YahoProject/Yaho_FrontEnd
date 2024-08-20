@@ -72,7 +72,7 @@ const MainContent = () => {
       {showLotteUnderbar && <LotteUnderbar />}
       <Sidebar />
       <Routes>
-        <Route path="/" exact element={<Login />} />
+        <Route path="login/" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
 
         <Route path="/unregister" element={<Unregister/>}/>
@@ -95,7 +95,7 @@ const MainContent = () => {
         <Route path="/diary" element={<Diary/>}/>
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/fixpage" element={<FixPage/>}/>
-        <Route path="/lottie" element={<Lottie/>}/>
+        <Route path="/" element={<Lottie/>}/>
         <Route path="/diaryentry" element={<DiaryEntry/>}/>
       </Routes>
     </>

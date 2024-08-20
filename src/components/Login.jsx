@@ -20,7 +20,7 @@ const Login = () => {
         나의 <span className="textBold">야구직관 메이트</span>
         </div>
         <div>
-        <Lottie loop animationData={ball} play />
+        <img src="/yaho.svg" alt="Victory" />
         </div>
     
 
