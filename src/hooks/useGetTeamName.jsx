@@ -1,4 +1,4 @@
-const getNickname = async (memberId) => {
+const useGetTeamName = async (memberId) => {
   const url = `https://dev.yahho.shop/members/${memberId}`;
 
   try {
@@ -18,17 +18,17 @@ const getNickname = async (memberId) => {
     const data = await response.json();
 
     if (data.isSuccess) {
-     // localStorage.setItem('nickname',"성공");
-      return data.result.nickname;
+      //localStorage.setItem('nickname',"성공");
+      return data.result.favoriteClub;
     } else {
       console.error(data.message); 
       return data.message;
     }
   } catch (error) {
-   // localStorage.setItem('nickname',"실패");
+    //localStorage.setItem('nickname',"실패");
     console.error('There has been a problem with your fetch operation:', error);
   }
 };
 
 
-export default getNickname;
+export default useGetTeamName;
