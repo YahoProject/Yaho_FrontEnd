@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import arrow from "../assets/arrow_back.svg";
+import arrow from "../../public/arrow_back.svg";
+import sticker3 from '../assets/Mask group (2).svg';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Food.css';
 
@@ -92,7 +93,7 @@ const Food = () => {
                 오늘 방문한 구장은?
             </div>
             <div className="image">
-                <img src="/Mask group (2).svg" alt="스티커 3" />
+              <img src={sticker3} alt="스티커 3" />
             </div>
             <div className="stadium-selection-container">
                 <div 
