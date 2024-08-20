@@ -1,24 +1,23 @@
 const checkNickname = async (nickname) => {
-  const url = `https://dev.yahho.shop/members/check/nickname?nickname=${encodeURIComponent(nickname)}`;
 
   try {
-    const response = await fetch(url, {
+    const response = await fetch(`https://dev.yahho.shop/members/check/nickname?nickname=${encodeURIComponent(nickname)}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
     const data = await response.json();
 
-    if (data.isSuccess) {
-      return data.result; // true: 사용 가능, false: 중복된 닉네임
-    } else {
-      throw new Error(data.message || '닉네임 중복 확인 실패');
-    }
+    return !data.result;
   } catch (error) {
-    console.error('닉네임 중복 확인 중 오류 발생:', error);
-    return false; // 오류가 발생하면 기본적으로 중복된 것으로 처리
+    console.error('Error checking nickname:', error);
+    return false; 
   }
 };
 
