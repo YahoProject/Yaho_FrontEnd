@@ -33,7 +33,7 @@ import Modal from './components/Modal.jsx';
 import Diary from './components/Diary.jsx';
 import MyPage from './components/MyPage.jsx';
 import FixPage from './components/FixPage.jsx';
-
+import Lottie from "./components/Lottie.jsx";
 
 import { CategoryProvider } from './components/categoryProvider.jsx'; // CategoryProvider 추가
 
@@ -92,6 +92,7 @@ const MainContent = () => {
         <Route path="/diary" element={<Diary/>}/>
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/fixpage" element={<FixPage/>}/>
+        <Route path="/lottie" element={<Lottie/>}/>
       </Routes>
     </>
   );

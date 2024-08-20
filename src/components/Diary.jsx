@@ -2,12 +2,26 @@ import React, { useState } from 'react';
 import '../styles/Diary.css'; 
 
 import CalendarMonthIcon from '../assets/Calendar_month.svg';
-
+import Search from "../assets/search.svg";
 
 const Diary = () => {
   const [entry, setEntry] = useState('');
   const [mvp, setMvp] = useState('');
   const [mvpImage, setMvpImage] = useState(null);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [stadiumName, setStadiumName] = useState('고척스카이돔');
+  const [isHeaderWhite, setHeaderWhite] = useState(false); // 배경색 상태 추가
+
+  const stadiums = [
+    "고척스카이돔",
+    "기아 챔피언스 필드",
+    "대구 삼성 라이온즈파크",
+    "사직 야구장",
+    "수원 kt위즈파크",
+    "인천 SSG랜더스 필드",
+    "잠실 야구장",
+    "창원 NC파크"
+  ];
 
   const handleInputChange = (e) => {
     setEntry(e.target.value);
@@ -20,7 +34,7 @@ const Diary = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setMvpImage(URL.createObjectURL(file)); // 이미지 미리보기 URL 생성
+      setMvpImage(URL.createObjectURL(file));
     }
   };
 
@@ -28,17 +42,43 @@ const Diary = () => {
     if (entry.trim() !== '' || mvp.trim() !== '') {
       console.log('Entry saved:', entry);
       console.log('MVP saved:', mvp);
-      console.log('MVP Image saved:', mvpImage); // 이미지 URL 저장
+      console.log('MVP Image saved:', mvpImage);
       setEntry(''); 
       setMvp('');
-      setMvpImage(null); // 이미지 초기화
+      setMvpImage(null);
     }
+  };
+
+  const toggleDropdown = () => {
+    setDropdownVisible(!isDropdownVisible);
+    setHeaderWhite(!isHeaderWhite); // 배경색 상태 변경
+  };
+
+  const handleStadiumSelect = (stadium) => {
+    setStadiumName(stadium);
+    setDropdownVisible(false);
+    setHeaderWhite(false); // 선택 시 배경색 초기화 (선택 사항)
   };
 
   return (
     <div className="diary-container">
-      <header className="diary-header">
-        <span className="stadium-name">고척스카이돔</span>
+      <header className={`diary-header ${isHeaderWhite ? 'white-background' : ''}`}>
+        <span className="stadium-name">{stadiumName}</span>
+        <img 
+          src={Search} 
+          alt="Search Icon" 
+          className="search-icon" 
+          onClick={toggleDropdown} 
+        />
+        {isDropdownVisible && (
+          <ul className="dropdown-menu">
+            {stadiums.map((stadium, index) => (
+              <li key={index} onClick={() => handleStadiumSelect(stadium)}>
+                {stadium}
+              </li>
+            ))}
+          </ul>
+        )}
       </header>
       <div className="diary-content">
         <div className="diary-bar"></div>
@@ -57,7 +97,6 @@ const Diary = () => {
         </div>
         <div className="mvp-section">
           <p>오늘의 MVP</p>
-
           <div className="input-wrapper">
             <input 
               type="text" 
