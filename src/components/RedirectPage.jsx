@@ -21,7 +21,8 @@ const RedirectPage = () => {
           localStorage.setItem("res",res);
           localStorage.setItem("name",res.data.result.member.nickname);
           localStorage.setItem("id",res.data.result.member.id);
-          localStorage.setItem("email",res.data.result.memeber.email);
+          localStorage.setItem("token",res.data.result.accessToken);
+          localStorage.setItem("code",code);
 
           const storedName = localStorage.getItem("name");
           //setName(res.data.result.member.nickname);
@@ -34,6 +35,7 @@ const RedirectPage = () => {
             console.log("서버 응답 에러:", err.response.data);
           }
           window.alert("로그인에 실패하였습니다");
+          console.log("코드 : ",code);
         });
     }
   }, [code]);
