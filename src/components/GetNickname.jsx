@@ -1,4 +1,8 @@
 const getNickname = async (memberId) => {
+  if (!memberId) {
+    console.warn('Invalid memberId:', memberId);
+    return null; 
+  }
   const url = `https://dev.yahho.shop/members/${memberId}`;
 
   try {

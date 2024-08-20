@@ -9,7 +9,7 @@ const ProfilePage = () => {
   const [profileImage, setProfileImage] = useState(ProfileImg);
   const [nickname, setNickname] = useState('');
   const [teamName, setTeamName] = useState('팀네임');
-  const [isNicknameChecked, setIsNicknameChecked] = useState(null); 
+  const [isNicknameChecked, setIsNicknameChecked] = useState(''); 
   const [favoriteTeam, setFavoriteTeam] = useState('');
   const memberId = localStorage.getItem("id");
 
@@ -19,18 +19,23 @@ const ProfilePage = () => {
   ];
 
   useEffect(() => {
-    const fetchNicknameAndTeamName = async () => {
+    const fetchProfileData = async () => {
       if (memberId) {
-        const fetchedNickname = await getNickname(memberId); 
-        setNickname(fetchedNickname);
+        try {
+          const fetchedNickname = await getNickname(memberId);
+          setNickname(fetchedNickname || '');
+          
+          const fetchedTeamName = await useGetTeamName(memberId);
+          setTeamName(fetchedTeamName || '');
 
-        const fetchedTeamName = await useGetTeamName(memberId);
-        setTeamName(fetchedTeamName);
-        setFavoriteTeam(fetchedTeamName);
+          setFavoriteTeam(fetchedTeamName || '');
+        } catch (error) {
+          console.error('Error fetching profile data:', error);
+        }
       }
     };
 
-    fetchNicknameAndTeamName();
+    fetchProfileData();
   }, [memberId]);
 
   const handleImageChange = (event) => {
@@ -63,66 +68,48 @@ const ProfilePage = () => {
     if (nickname.trim()) {
       const isValid = await checkNickname(nickname);
       setIsNicknameChecked(isValid);
+      
+      if (!isValid) {
+        console.log('이미 사용 중인 닉네임입니다.');
+      } else {
+        console.log('사용 가능한 닉네임입니다.');
+      }
     } else {
-      alert('닉네임을 입력해주세요.');
+      console.log('닉네임을 입력해주세요.');
     }
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
-    if (isNicknameChecked === null) {
-      console.error('닉네임 중복 확인을 해주세요.');
+  
+    const memberId = localStorage.getItem("id");
+  
+    if (!memberId) {
+      alert("로그인이 필요합니다.");
       return;
     }
-
-    if (!isNicknameChecked) {
-      console.error('사용할 수 없는 닉네임입니다.');
-      return;
-    }
-
-    
-    const uploadProfileImage = async () => {
-      if (profileImage === ProfileImg) return null; 
-
-      const formData = new FormData();
-      formData.append('file', profileImage);
-      
+  
+    try {
       const response = await fetch(`https://dev.yahho.shop/members/${memberId}`, {
-        method: 'POST',
-        body: formData,
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nickname,
+          profileImgUrl: profileImage,
+          favoriteClub: favoriteTeam,
+        }),
       });
-
+  
       if (response.ok) {
-        const data = await response.json();
-        return data.imageUrl; 
+        console.log('프로필이 성공적으로 업데이트되었습니다.');
+        localStorage.setItem('nickname', nickname); 
       } else {
-        console.error('프로필 이미지 업로드에 실패했습니다.');
-        return null;
+        console.error('프로필 업데이트에 실패했습니다.');
       }
-    };
-
-    const imageUrl = await uploadProfileImage();
-
-    const response = await fetch(`https://dev.yahho.shop/members/${memberId}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        nickname,
-        teamName: favoriteTeam,
-        profileImage: imageUrl,
-      }),
-    });
-
-    if (response.ok) {
-      console.error('프로필 설정이 성공적으로 업데이트되었습니다.');
-      localStorage.setItem('nickname', nickname);
-      localStorage.setItem('teamName', favoriteTeam);
-      localStorage.setItem('profileImage', imageUrl);
-    } else {
-      console.error('프로필 설정 업데이트에 실패했습니다.');
+    } catch (error) {
+      console.error('프로필 업데이트 중 오류가 발생했습니다:', error);
     }
   };
 
@@ -132,7 +119,7 @@ const ProfilePage = () => {
       <h1 className="title">프로필 설정</h1>
 
       <div className="profile-img" onClick={handleImageClick}>
-        <img src={ProfileImg} alt="Profile" width="100" height="100" />
+        <img src={profileImage} alt="Profile" width="100" height="100" />
       </div>
       <input
         id="file-upload"
