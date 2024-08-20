@@ -12,13 +12,13 @@ import sticker9 from '../assets/Mask group (8).svg';
 import '../styles/StickerScreen.css'; 
 
 const StickerScreen = ({ selectedDate }) => {
-  const navigate = useNavigate(); // useNavigate 훅을 사용하여 페이지 이동
+  const navigate = useNavigate(); 
 
   const handleStickerClick = (stickerId) => {
     if (stickerId === 2) {
-      navigate('/diary'); // 스티커 1 클릭 시 /diary로 이동
+      navigate('/diary'); 
     }
-    // 다른 스티커에 대한 처리도 여기에 추가할 수 있습니다.
+    
   };
 
   return (
