@@ -7,7 +7,7 @@
 
 .title{
     position: relative;
-    margin-top:-80px;
+    margin-top:-50px;
     font-weight: bolder;
 }
 
@@ -18,7 +18,7 @@
     background-color:#fafafa;
     width: 400px;
     height: 36px;
-    top:70px;
+    top:90px;
     gap: 0px;
 
 }
