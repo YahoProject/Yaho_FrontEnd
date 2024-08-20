@@ -1,7 +1,7 @@
 .custom-calendar-wrapper{
   background-color: white;
   padding-top:50px;
-  margin-top:-230px;
+  margin-top:-180px;
   padding-bottom:20px;
   padding-right:20px;
   padding-left:20px;
@@ -58,9 +58,9 @@
 }
 .calendar-border {
   position:relative;
-  max-width:370px;
-  max-height:343px;
-  margin-top:-240px;
+  max-width:350px;
+  max-height:300px;
+  margin-top:-260px;
   border: 2px solid #f0f0f0;
   border-radius: 8px; 
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
