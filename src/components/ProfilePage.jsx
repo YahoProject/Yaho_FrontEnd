@@ -55,7 +55,7 @@ const ProfilePage = () => {
         onChange={handleImageChange}
       />
 
-      <form className="profile-form" onSubmit={handleFormSubmit}>
+      <form className="profile-form">
         <label className="name-label">닉네임</label>
         <input
           type="text"
