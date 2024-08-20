@@ -6,6 +6,7 @@ import Modal from "./Modal";
 import getNickname from "./GetNickname";
 import useGetTeamName from "../hooks/useGetTeamName";
 
+
 const categories = [
   { name: "mypage", text: "MY 페이지", path: "/mypage" },
   { name: "diary", text: "야구일기", path: "/calendar" },
