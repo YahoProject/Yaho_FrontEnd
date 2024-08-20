@@ -34,7 +34,7 @@ import Diary from './components/Diary.jsx';
 import MyPage from './components/MyPage.jsx';
 import FixPage from './components/FixPage.jsx';
 import Lottie from "./components/Lottie.jsx";
-
+import DiaryEntry from "./components/DiaryEntry.jsx";
 import { CategoryProvider } from './components/categoryProvider.jsx'; // CategoryProvider 추가
 
 function App() {
@@ -93,6 +93,7 @@ const MainContent = () => {
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/fixpage" element={<FixPage/>}/>
         <Route path="/lottie" element={<Lottie/>}/>
+        <Route path="/diaryentry" element={<DiaryEntry/>}/>
       </Routes>
     </>
   );
