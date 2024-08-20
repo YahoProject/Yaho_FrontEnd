@@ -3,21 +3,20 @@ import CustomCalendar from './CustomCalendar';
 import WinRate from './WinRate';
 import TodayGame from './TodayGame';
 import '../styles/Calendar.css';
-
+import { useNavigate } from 'react-router-dom';
 
 const Calendar = () => {
   const [activeButton, setActiveButton] = useState('diary'); // 현재 활성화된 버튼 상태
-
+  const nav=useNavigate()
   const handleButtonClick = (buttonType) => {
     setActiveButton(buttonType);
 
 
+    };
     
-  };
-  
 
   return (
-    <div className="header">
+    <div className="heeder">
       <p className="title">야구일기</p>
 
       <div className="button-container">
@@ -43,4 +42,3 @@ const Calendar = () => {
 };
 
 export default Calendar;
-

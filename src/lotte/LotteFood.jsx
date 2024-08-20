@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 import '../styles/KiaFood.css';
-import arrow from "../../public/arrow_back.svg";
+import arrow from "../assets/arrow_back.svg";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
-import lotte from"../../public/lotte/lotte.svg"
+import lotte from"../assets/lotte/lotte.svg"
 
 const LotteFood = () => {
   const { closePopup, selectedCategory } = useContext(CategoryContext);

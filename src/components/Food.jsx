@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import arrow from "../../public/arrow_back.svg";
+import arrow from "../assets/arrow_back.svg";
 import { useNavigate } from 'react-router-dom';
 import '../styles/Food.css';
 

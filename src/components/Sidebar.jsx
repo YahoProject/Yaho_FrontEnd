@@ -33,7 +33,9 @@ const Sidebar = () => {
   };
 
   const handleLogout = () => {
+    console.log("로컬",localStorage)
     localStorage.removeItem("name");
+    console.log(localStorage)
     setUser(null);
   };
 
@@ -64,6 +66,8 @@ const Sidebar = () => {
 
   useEffect(() => {
     console.log("isInitial updated:", isInitial);
+    console.log(localStorage.getItem("name"));
+    console.log(localStorage.getItem("accessToken"));
   }, [isInitial]);
 
 

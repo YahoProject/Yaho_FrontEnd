@@ -25,12 +25,12 @@ import nongsimtwo from "../assets/nongsimtwo.svg";
 import nongsimthree from "../assets/nongsimthree.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
-import bigchop from "../../public/hanhwa/bigchop.svg"
-import boyoungmando from "../../public/hanhwa/boyoungmando.svg"
-import pizza from "../../public/hanhwa/gopizza.svg"
-import nongsimgarac from "../../public/hanhwa/nongsimgarac.svg"
-import snack from "../../public/hanhwa/snackbar.svg"
-import surif from "../../public/hanhwa/suri.svg"
+import bigchop from "../assets/hanhwa/bigchop.svg"
+import boyoungmando from "../assets/hanhwa/boyoungmando.svg"
+import pizza from "../assets/hanhwa/gopizza.svg"
+import nongsimgarac from "../assets/hanhwa/nongsimgarac.svg"
+import snack from "../assets/hanhwa/snackbar.svg"
+import surif from "../assets/hanhwa/suri.svg"
 
   
 import React, { useEffect, useRef, useContext } from 'react';
