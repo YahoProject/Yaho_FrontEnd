@@ -32,7 +32,7 @@ const ProfilePage = () => {
 
   const handleNicknameChange = (e) => {
     setNickname(e.target.value);
-    setIsNicknameChecked(null);
+    setIsNicknameValid(true); 
   };
 
   const handleTeamChange = (e) => {
