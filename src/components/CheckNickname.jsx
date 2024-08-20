@@ -1,13 +1,12 @@
 const checkNickname = async (nickname) => {
-  const url =  `https://dev.yahho.shop/members/check/nickname`;
+  const url = `https://dev.yahho.shop/members/check/nickname?nickname=${encodeURIComponent(nickname)}`;
 
   try {
     const response = await fetch(url, {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ nickname }),
     });
 
     const data = await response.json();
