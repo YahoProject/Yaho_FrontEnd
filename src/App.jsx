@@ -74,7 +74,6 @@ const MainContent = () => {
       <Routes>
         <Route path="/" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
-
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
         <Route path="/winrate" element={<WinRate />} />
         <Route path="/calendar" element={<Calendar />} />
