@@ -6,6 +6,7 @@ import close from "../assets/close.svg";
 import "../styles/Sidebar.css";
 import Modal from "./Modal";
 import getNickname from "./GetNickname";
+import useGetTeamName from "../hooks/useGetTeamName";
 
 const categories = [
   { name: "mypage", text: "MY 페이지", path: "/mypage" },
@@ -19,9 +20,11 @@ const Sidebar = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isInitial, setIsInitial] = useState(true); 
   const [nickname, setNickname]=useState("");
+  const [teamName, setTeamName]=useState("팀네임");
   const location = useLocation();
 
-  const memberId = localStorage.getItem("memberId");
+  const memberId = localStorage.getItem("id");
+  const accessToken= localStorage.getItem("token");
 
   const toggleOpen = () => {
     setOpen(true);
@@ -45,18 +48,30 @@ const Sidebar = () => {
     setModalOpen(false);
   };
 
-  /*useEffect(() => {
+  useEffect(() => {
     const fetchNickname = async () => {
-      console.log(memberId);
+      console.log('아이디 :',memberId);
 
-        console.log("닉내임은 : ",nickname);
         const fetchedNickname = await getNickname(memberId); // getNickname 호출
         setNickname(fetchedNickname); // 닉네임 상태 설정
-        console.log("닉내임은 : ",nickname);
+        console.log("닉네임은 : ",nickname);
+        console.log("코드는 : ",localStorage.getItem('code'));
+        console.log('nickname : ',localStorage.getItem('nickname'));
       
     };
     fetchNickname();
-  }, [memberId]);*/
+  }, [memberId]);
+
+  const fetchedTeamname = useGetTeamName(memberId); 
+
+  useEffect(() => {
+    const fetchTeamname = async () => {
+        
+        setTeamName(fetchedTeamname); 
+      
+    };
+    fetchTeamname();
+  }, [memberId]);
 
   useEffect(() => {
     setIsInitial(true); 
