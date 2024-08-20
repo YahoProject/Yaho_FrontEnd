@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, isSameDay } from 'date-fns';
 import '../styles/CustomCalendar.css';

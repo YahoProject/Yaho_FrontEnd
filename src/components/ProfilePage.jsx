@@ -1,6 +1,6 @@
 import '../styles/ProfilePage.css';
 import { useState } from 'react';
-import ProfileImg from '/public/profile.svg';
+import ProfileImg from '../assets/profile.svg';
 
 const ProfilePage = () => {
   const [profileImage, setProfileImage] = useState(ProfileImg);

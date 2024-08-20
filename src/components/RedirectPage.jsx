@@ -27,6 +27,7 @@ const RedirectPage = () => {
           const storedName = localStorage.getItem("name");
           //setName(res.data.result.member.nickname);
         console.log("저장된 이름:", storedName);
+        console.log("tk",localStorage)
           window.location.replace("/home"); 
         })
         .catch((err) => {
