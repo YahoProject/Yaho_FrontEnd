@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../styles/Diary.css'; 
 
 import CalendarMonthIcon from '../assets/Calendar_month.svg';
 import Search from "../assets/search.svg";
+import sticker1 from '../assets/Mask group.svg';
+import sticker2 from '../assets/Mask group (1).svg';
+import sticker3 from '../assets/Mask group (2).svg';
+import sticker4 from '../assets/Mask group (3).svg';
+import sticker5 from '../assets/Mask group (4).svg';
+import sticker6 from '../assets/Mask group (5).svg';
+import sticker7 from '../assets/Mask group (6).svg';
+import sticker8 from '../assets/Mask group (7).svg';
+import sticker9 from '../assets/Mask group (8).svg';
 
 const Diary = () => {
+  const location = useLocation();
   const [entry, setEntry] = useState('');
   const [mvp, setMvp] = useState('');
   const [mvpImage, setMvpImage] = useState(null);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [stadiumName, setStadiumName] = useState('고척스카이돔');
-  const [isHeaderWhite, setHeaderWhite] = useState(false); // 배경색 상태 추가
+  const [isHeaderWhite, setHeaderWhite] = useState(false); 
+  const [stickerImage, setStickerImage] = useState(null);
+  const [resultText, setResultText] = useState(''); 
+  const [showCongratulation, setShowCongratulation] = useState(false);
 
   const stadiums = [
     "고척스카이돔",
@@ -22,6 +36,31 @@ const Diary = () => {
     "잠실 야구장",
     "창원 NC파크"
   ];
+
+  const stickerImages = [
+    sticker1, sticker2, sticker3, sticker4, sticker5,
+    sticker6, sticker7, sticker8, sticker9
+  ];
+
+  const stickerTexts = [
+    '완전 최고', '우승가자', '폼미쳤다', '스윕좋다', '우천취소',
+    '연패그만', '특타하자', '펑고하자', '반성하자'
+  ];
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const stickerId = parseInt(queryParams.get('stickerId'), 10);
+    
+    if (stickerId >= 1 && stickerId <= 9) {
+      setStickerImage(stickerImages[stickerId - 1]);
+      setResultText(stickerTexts[stickerId - 1]); // result-text2 설정
+      setShowCongratulation(stickerId <= 4); // Id가 1,2,3,4일때만축하메세지뜨게했어요
+    } else {
+      setStickerImage(null);
+      setResultText(''); // 이 부분 멘트는 pm님께 여쭤보고 넣어야 할 거 같아요
+      setShowCongratulation(false);
+    }
+  }, [location.search]);
 
   const handleInputChange = (e) => {
     setEntry(e.target.value);
@@ -57,7 +96,6 @@ const Diary = () => {
   const handleStadiumSelect = (stadium) => {
     setStadiumName(stadium);
     setDropdownVisible(false);
-    setHeaderWhite(false); // 선택 시 배경색 초기화 (선택 사항)
   };
 
   return (
@@ -82,14 +120,16 @@ const Diary = () => {
       </header>
       <div className="diary-content">
         <div className="diary-bar"></div>
-        <h2>축하해요!<br/>오늘도 승리했어요!</h2>
+        {showCongratulation && (
+          <h2>축하해요!<br/>오늘도 승리했어요!</h2>
+        )}
         <div className="result-card">
           <div className="result-status"><p>승리</p></div>
           <div className="result-image">
-            <img src="/Mask group (1).svg" alt="Victory" />
+            {stickerImage && <img src={stickerImage} alt="Sticker" />}
           </div>
           <p className="result-text">오늘의 직관감정</p>
-          <p className="result-text2">우승가자</p>
+          <p className="result-text2">{resultText}</p> {/* 스티커와동일한텍스트 */}
           <button className="save-button" onClick={handleSave}>
             <img src={CalendarMonthIcon} alt="Save Icon" className="save-icon" />
             저장하기
