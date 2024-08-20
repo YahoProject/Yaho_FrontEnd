@@ -5,8 +5,8 @@ const useUnderbar = () => {
   const [className, setClassName] = useState('all');
   const [isResizing, setIsResizing] = useState(false);
   const [initialY, setInitialY] = useState(0);
-  const [marginTop, setMarginTop] = useState(543);
-  const [height, setHeight] = useState(450);
+  const [marginTop, setMarginTop] = useState(440);
+  const [height, setHeight] = useState(420);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleMouseDown = (e) => {

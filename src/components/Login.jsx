@@ -1,13 +1,18 @@
 import "../styles/Login.css";
 import kakaoIcon from "../assets/kakao.svg";
 import yahoIcon from "../assets/yaho.svg";
-
 import { KAKAO_AUTH_URL } from "./OAuth_kakao";
+
+import Lottie from "lottie-react";
+import ball from "../assets/Lottie/ball.json";
 
 const Login = () => {
 
   const name = localStorage.getItem("name");
+
   console.log("name : ",name);
+  console.log(localStorage.getItem("res"));
+
 
   return (
     <div className="LoginPage">
@@ -15,7 +20,8 @@ const Login = () => {
         나의 <span className="textBold">야구직관 메이트</span>
         </div>
         <div>
-        <img className='LoginIcon' src={yahoIcon} alt="Yaho" /></div>
+        <Lottie loop animationData={ball} play />
+        </div>
     
 
       <br />

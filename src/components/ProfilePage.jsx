@@ -1,6 +1,5 @@
 import '../styles/ProfilePage.css';
 import { useState } from 'react';
-import ProfileImg from '/public/profile.svg';
 import getNickname from './GetNickname';
 import checkNickname from './CheckNickname'; 
 import useGetTeamName from "../hooks/useGetTeamName";

@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import kia from "../../public/Kia.svg";
+
 import '../styles/KiaFood.css';
-import arrow from "../../public/arrow_back.svg";
+import arrow from "../assets/arrow_back.svg";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
-import hanhwa from "../../public/hanhwa/hanhwa.svg"
+import hanhwa from "../assets/hanhwa/hanhwa.svg"
 
 const HanhwaFood = () => {
   const { closePopup, selectedCategory } = useContext(CategoryContext);

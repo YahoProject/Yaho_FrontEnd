@@ -15,10 +15,10 @@ import gangneungtwo from "../assets/gangneungtwo.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-import icecream from"../../public/kiwoom/icecream.svg"
-import mawangjokbal from"../../public/kiwoom/mawangjokbal.svg"
-import shrim1p from"../../public/kiwoom/shrimp.svg"
-import street from"../../public/kiwoom/street.svg"
+import icecream from"../assets/kiwoom/icecream.svg"
+import mawangjokbal from"../assets/kiwoom/mawangjokbal.svg"
+import shrim1p from"../assets/kiwoom/shrimp.svg"
+import street from"../assets/kiwoom/street.svg"
   
 import React, { useEffect, useRef, useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
