@@ -16,7 +16,7 @@ import sticker9 from "../assets/Mask group (8).svg";
 
 import initialTeamLogo from '../assets/Teamlogo/Kia.svg'
 
-import useSaveDiary from "../hooks/useSaveDiary";
+//import useSaveDiary from "../hooks/useSaveDiary";
 
 const Diary = () => {
   const location = useLocation();
@@ -31,8 +31,9 @@ const Diary = () => {
   const [showCongratulation, setShowCongratulation] = useState(false);
 
   const [teamLogo, setTeamLogo]= useState(initialTeamLogo);
+  const [emotionImageUrl,setEmotionImageUrl]=useState(null);
 
-  const saveDiary = useSaveDiary();
+  //const saveDiary = useSaveDiary();
 
   const stadiums = [
     "고척스카이돔",
@@ -111,43 +112,48 @@ const Diary = () => {
     }
   };*/
 
-  //API호출 반영한 handleSave
-  const handleSave = async () => {
-    if (entry.trim() !== "" || mvp.trim() !== "") {
-      const memberId = localStorage.getItem("memberId");
+
+  const memberId = localStorage.getItem("memberId");
       const date = new Date().toISOString().split("T")[0];
       //date부분 어케돼있는지모름. 여기서 오류날수도
-      const emotionImageUrl = stickerImage;
+      //const emotionImageUrl = stickerImage;
       const locationIndex = stadiums.indexOf(stadiumName) + 1;
+      console.log("내가 보내는 거 ",memberId,
+        date,
+        emotionImageUrl,
+        mvp,
+        entry,
+        locationIndex );
 
-      try {
-        await saveDiary(
-          memberId,
-          date,
-          emotionImageUrl,
-          mvp,
-          entry,
-          locationIndex
-        );
-        console.log("Entry saved:", entry);
-        console.log("MVP saved:", mvp);
-        console.log("MVP Image saved:", mvpImage);
 
-        localStorage.setItem(`emoticon${stickerId}`, "true");
+        console.log(`https://dev.yahho.shop/diarys/${memberId}/write?date=${date}&emotionImageUrl=${encodeURIComponent(emotionImageUrl)}&mvp=${encodeURIComponent(mvp)}&content=${encodeURIComponent(entry)}&location=${locationIndex}`);
+  //API호출 반영한 handleSave
+  const handleSave = () => {
+    const url = `https://dev.yahho.shop/diarys/${memberId}/write?date=${date}&emotionImageUrl=${encodeURIComponent(emotionImageUrl)}&mvp=${encodeURIComponent(mvp)}&content=${encodeURIComponent(entry)}&location=${locationIndex}`;
 
-        // 상태 초기화
-        setEntry("");
-        setMvp("");
-        setMvpImage(null);
-      } catch (error) {
-        console.error("일기 저장 중 오류 발생:", error);
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Accept': '*/*',
+      },
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
       }
-    }
+      return response.json();
+    })
+    .then(result => {
+      console.log('일기 작성 성공:', result);
+    })
+    .catch(error => {
+      console.error('일기 작성 중 오류 발생:', error);
+    });
   };
 
   //몇번째 이모티콘인지 서버에 보내고 팀 로고? 받아오는 로직
   const handleTeamLogo = () => {
-    fetch(`/diarys/${localStorage.getItem("memberId")}/emotion`, {
+    fetch(`https://dev.yahho.shop/diarys/${localStorage.getItem("memberId")}/emotion`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -165,7 +171,8 @@ const Diary = () => {
       .then((data) => {
         console.log("성공:", data);
         if (data.isSuccess) {
-          setTeamLogo(data.result.favoriteClubImageUrl); 
+          setTeamLogo(data.result.favoriteClubImageUrl);
+          setEmotionImageUrl(data.result.emotionImageUrl); 
         } else {
           console.error("서버에서 성공적이지 않은 응답:", data.message);
         }
