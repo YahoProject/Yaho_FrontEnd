@@ -4,23 +4,24 @@ import ProfileImg from '../assets/profile.svg';
 import checkNickname from './CheckNickname'; 
 
 const ProfilePage = () => {
-  const [profileImage, setProfileImage] = useState(ProfileImg);
+  const [profileImage, setProfileImage] = useState(null); // 초기값을 null로 설정
   const [nickname, setNickname] = useState('');
   const [favoriteTeam, setFavoriteTeam] = useState('');
   const [isNicknameChecked, setIsNicknameChecked] = useState(null); 
   const [socialId, setSocialId] = useState(localStorage.getItem("socialId")); 
 
   const teams = [
-    'LG 트윈스', 'KT 위즈', 'SSG 랜더스', 'NC 다이노스', '두산 베어스',
-    'KIA 타이거즈', '롯데 자이언츠', '삼성 라이온즈', '한화 이글스', '키움 히어로즈'
+    'LG_TWINS', 'KT_WIZ', 'SSG_LANDERS', 'NC_DINOS', 'DOOSAN_BEARS',
+    'KIA_TIGERS', 'LOTTE_GIANTS', 'SAMSUNG_LIONS', 'HANHWA_EAGLES', 'KIWOOM_HEROES'
   ];
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file && file.type.startsWith('image/')) {
+      setProfileImage(file); // File 객체를 상태에 저장
       const reader = new FileReader();
       reader.onload = (e) => {
-        setProfileImage(e.target.result);
+        document.getElementById('profile-image-preview').src = e.target.result; // 미리보기 추가
       };
       reader.readAsDataURL(file);
     } else {
@@ -35,10 +36,12 @@ const ProfilePage = () => {
   const handleNicknameChange = (e) => {
     setNickname(e.target.value);
     setIsNicknameChecked(null);
+    localStorage.setItem("nickname",e.target.value);
   };
 
   const handleTeamChange = (e) => {
     setFavoriteTeam(e.target.value);
+    localStorage.setItem("favoriteClub",e.target.value);
   };
 
   const handleCheckNickname = async () => {
@@ -74,7 +77,9 @@ const ProfilePage = () => {
       formData.append('socialId', socialId);
       formData.append('nickname', nickname);
       formData.append('favoriteClub', favoriteTeam);
-      formData.append('profileImg', profileImage);
+      if (profileImage) {
+        formData.append('profileImg', profileImage); // File 객체 추가
+      }
 
       const response = await fetch('https://dev.yahho.shop/members/create', {
         method: 'POST',
@@ -83,8 +88,9 @@ const ProfilePage = () => {
 
       if (response.ok) {
         const data = await response.json();
-        const memberId = data.memberId;
+        const memberId = data.result.id;
         localStorage.setItem("memberId", memberId); 
+        console.log("멤버아이디 : ",memberId);
         console.log('회원 정보가 성공적으로 생성되었습니다.');
       } else {
         console.error('회원 생성에 실패했습니다.');
@@ -102,7 +108,7 @@ const ProfilePage = () => {
       <h1 className="title">프로필 설정</h1>
 
       <div className="profile-img" onClick={handleImageClick}>
-        <img src={profileImage} alt="Profile" width="100" height="100" />
+        <img id="profile-image-preview" src={ProfileImg} alt="Profile" width="100" height="100" />
       </div>
       <input
         id="file-upload"
@@ -140,9 +146,7 @@ const ProfilePage = () => {
         <button type="button" className="team-check">설정완료</button>
                 
         <div>
-        
-        <button type="submit" className="next-btn">다음으로</button>        
-        
+          <button type="submit" className="next-btn">다음으로</button>        
         </div>
       </form>
     </div>

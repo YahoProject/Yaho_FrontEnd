@@ -52,7 +52,7 @@ const Home = () => {
     console.log("isInitial updated:", isInitial);
   }, [isInitial]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchNickname = async () => {
       console.log('아이디 :',memberId);
 
@@ -77,9 +77,11 @@ const Home = () => {
       
     };
     fetchTeamname();
-  }, [memberId]);
+  }, [memberId]);*/
 
 
+  console.log("멤버아이디는 : ",localStorage.getItem("memberId"));
+  console.log("최애구단 : ",localStorage.getItem("favoriteClub"));
 
 
   return(
@@ -90,8 +92,8 @@ const Home = () => {
             <div className="menu">
               <img src={icon} alt="ICON" />
               <ul>
-              <li className="teamName">팀이름</li>
-              <li className="userNickname">{nickname || "사용자 닉네임"}</li>
+              <li className="teamName">{localStorage.getItem("favoriteClub") || "팀 이름"}</li>
+                <li className="userNickname">{localStorage.getItem("nickname") || "사용자 닉네임"}</li>
               </ul>
               <div className="category">
               {categories.map((c) => (

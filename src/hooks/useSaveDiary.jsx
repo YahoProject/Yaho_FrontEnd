@@ -1,21 +1,12 @@
-const useSaveDiary=async (socialId,date,emotionImageUrl,mvp,content,location)=>{
-  const url = `https://dev.yahho.shop/diarys/${socialId}/write?date=${date}&emotionImageUrl=${encodeURIComponent(emotionImageUrl)}&mvp=${encodeURIComponent(mvp)}&content=${encodeURIComponent(content)}&location=${location}`;
-
-  const diaryData = {
-    date: date,
-    emotionImageUrl: emotionImageUrl,
-    mvp: mvp,
-    content: content
-};
+/*const useSaveDiary=async (memberId,date,emotionImageUrl,mvp,content,location)=>{
+  const url = `https://dev.yahho.shop/diarys/${memberId}/write?date=${date}&emotionImageUrl=${encodeURIComponent(emotionImageUrl)}&mvp=${encodeURIComponent(mvp)}&content=${encodeURIComponent(content)}&location=${location}`;
 
   try {
       const response = await fetch(url, {
           method: 'POST',
           headers: {
-              'Content-Type': 'application/json',
-              'Accept':'*/*',
+              'Accept':'*//**',
           },
-          body: JSON.stringify(diaryData),
       });
 
       if (!response.ok) {
@@ -30,4 +21,4 @@ const useSaveDiary=async (socialId,date,emotionImageUrl,mvp,content,location)=>{
 }
 
 
-export default useSaveDiary;
+export default useSaveDiary;*/

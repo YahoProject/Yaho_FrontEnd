@@ -50,7 +50,7 @@ const Sidebar = () => {
     setModalOpen(false);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchNickname = async () => {
       console.log('아이디 :',socialId);
 
@@ -73,7 +73,7 @@ const Sidebar = () => {
       
     };
     fetchTeamname();
-  }, [socialId]);
+  }, [socialId]);*/
 
   useEffect(() => {
     setIsInitial(true); 
