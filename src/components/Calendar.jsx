@@ -14,8 +14,8 @@ const Calendar = () => {
   };
 
   return (
-    <div className="calendar-container">
-      <p className="title">야구일기</p>
+    <div className="calendar-container"style={{ backgroundColor: 'white', width: '100vw', height: '100vh' }}>
+      
 
       <div className="button-container">
         <button
