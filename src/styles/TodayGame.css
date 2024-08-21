@@ -1,8 +1,9 @@
 
 .today-game-wrapper {
     width: 100%;
+    height:15vh;
     background-color: white;
-    padding: 0;
+    padding: 10px;
     box-sizing: border-box;
     position: relative; 
 }
