@@ -72,10 +72,10 @@ const MainContent = () => {
       {showLotteUnderbar && <LotteUnderbar />}
       <Sidebar />
       <Routes>
-        <Route path="login/" exact element={<Login />} />
+        <Route path="/login" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
-        <Route path="/winrate" element={<WinRate />} />
+        <Route path="/calendar/winrate" element={<WinRate />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/food" element={<Food/>}/>
         <Route path="/food/kia" element={<KiaFood />} />

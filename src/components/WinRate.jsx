@@ -5,6 +5,9 @@ import Winfairy from "../assets/WinFairy.svg";
 import save from "../assets/save.svg";
 import share from "../assets/share.svg";
 import html2canvas from 'html2canvas';
+import Link from "../../public/Link.svg"
+const { Kakao } = window;
+import clear from "../../public/clear.svg"
 
 const WinRate = () => {
     const [monthlyGone, setMonthlyGone] = useState(1);
@@ -32,6 +35,17 @@ const WinRate = () => {
         }
     };
 
+    const shareLink =()=>{
+        const currentUrl = window.location.href; // 현재 페이지의 URL 가져오기
+        navigator.clipboard.writeText(currentUrl) // 클립보드에 URL 복사
+            .then(() => {
+                alert('URL이 복사되었습니다!');
+            })
+            .catch((err) => {
+                console.error('복사 실패:', err);
+            });
+    }
+
     const handleSaveClick = () => {
         if (winFairyRef.current) {
             winFairyRef.current.style.backgroundColor = 'white';
@@ -45,50 +59,7 @@ const WinRate = () => {
             winFairyRef.current.style.boxShadow= "grey";
         }
     };
-
-    useEffect(() => {
-        if (window.Kakao) {
-            if (!window.Kakao.isInitialized()) {
-                window.Kakao.init('c691c3d2a52c8d5f9b2322a1c2548fe4');
-            }
-            setIsKakaoInitialized(true);
-        } else {
-            console.error('Kakao SDK not found');
-        }
-    }, []);
-
-    const shareToKakao = () => {
-        if (isKakaoInitialized && window.Kakao.Link) {
-            window.Kakao.Link.sendDefault({
-                objectType: 'feed',
-                content: {
-                    title: '공유할 제목',
-                    description: '공유할 설명',
-                    imageUrl:share,
-                    link: {
-                        mobileWebUrl: window.location.href,
-                        webUrl: window.location.href,
-                    },
-                },
-                buttons: [
-                    {
-                        title:"웹으로 보기",
-                        link: {
-                            mobileWebUrl: window.location.href,
-                            webUrl: window.location.href,
-                        },
-                    },
-                ],
-            });
-        } else {
-            // 카카오톡 PC 환경에서 웹 공유를 직접 유도
-            window.open(
-                `https://sharer.kakao.com/talk/friends/picker/link?app_key=YOUR_APP_KEY&redirect_uri=${encodeURIComponent(window.location.href)}`,
-                '_blank'
-            );
-        }
-    };
-    
+   
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -185,16 +156,17 @@ const WinRate = () => {
                         <div className='upmodal'>
                         <div className='titlemodal'>공유하기</div>
                         <button onClick={closeModal} className="close-modal">
-                            닫기
+                        <img src= {clear} alt="Share Link" />
                         </button>
                         </div>
                         <div className='downmodal'>
-                        <button onClick={shareToKakao} className="kakao-share">
-                            카카오톡
+                        
+                        <button className="link-share" onClick={shareLink}>
+                        <img src= {Link} alt="Share Link" />
                         </button>
-                        <button className="link-share">
-                            링크복사
-                        </button>
+                        <div className='Link'>링크복사</div>
+                        
+                        
                         
                         </div>
                     </div>
