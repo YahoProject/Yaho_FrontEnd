@@ -1,21 +1,20 @@
 .custom-calendar-wrapper {
   background-color: white;
-  padding: 50px;
+  padding: 0; 
   display: flex;
   justify-content: center;
-  height:100vh; 
-  margin-top:-300px;
+  height: 60vh;
+  margin-top: -30px; 
 }
 
 .custom-calendar {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 90%; 
-  height: auto;
-  max-height: 80%; 
+  max-width: 600px; 
+  height: 100%; 
+  max-height: 90%; 
 }
-
 
 .calendar-header {
   display: flex;
@@ -26,14 +25,12 @@
   width: 100%;
 }
 
-
 .calendar-title-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 15px;
 }
-
 
 .calendar-title {
   font-weight: bold;
@@ -41,11 +38,11 @@
 }
 
 .calendar-title__month {
-  font-size: 5vw; 
+  font-size: 7vw; 
 }
 
 .calendar-title__year {
-  font-size: 3vw; 
+  font-size: 5vw; 
 }
 
 .calendar-border {
@@ -56,7 +53,7 @@
   border: 2px solid #f0f0f0;
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 5px;
+  padding: 10px; 
   background-color: white;
 }
 
@@ -66,27 +63,28 @@
   border: 2px solid #f0f0f0;
   border-radius: 50%;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
-  font-size: 3vw; 
-  width: 8vw;
-  height: 8vw;
+  font-size: 5vw; 
+  width: 12vw;
+  height: 12vw;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* (요일) */
+/* 요일(S, M, T, 등) 스타일 */
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
+  gap: 6px;
+  text-align: center; /* 가운데 정렬 */
 }
 
+/* 요일 텍스트 스타일 */
 .calendar-weekday {
   font-weight: bold;
-  text-align: center;
-  padding: 5px;
-  font-size: 3vw; 
+  padding: 12px; 
+  font-size: 4vw; 
 }
 
 /* 달력 날짜 스타일 */
@@ -103,14 +101,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  font-size: 3vw; 
+  padding: 12px; 
+  font-size: 4vw; 
 }
+
 
 .calendar-day.today {
   background-color: #FF4E00;
   color: white;
   border-radius: 50%;
+  height:5vh;
 }
 
 /* 오버레이 */
