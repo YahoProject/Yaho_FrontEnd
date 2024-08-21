@@ -4,21 +4,33 @@ import '../styles/TodayGame.css';
 const TodayGame = () => {
   const games = [
     {
-      homeTeam: '삼성',
-      awayTeam: 'LG',
-      stadium: '잠실 주경기장',
-      time: '18:30 pm',
-    },
-    {
       homeTeam: '롯데',
-      awayTeam: 'SSG',
-      stadium: '인천 SSG랜더스 필드',
+      awayTeam: 'KIA',
+      stadium: '기아 챔피언스 필드',
       time: '18:30 pm',
     },
     {
-      homeTeam: '한화',
+      homeTeam: 'NC',
+      awayTeam: '한화',
+      stadium: '한화 이글스파크',
+      time: '18:30 pm',
+    },
+    {
+      homeTeam: '두산',
+      awayTeam: '삼성',
+      stadium: '포항 삼성 라이온즈파크',
+      time: '18:30 pm',
+    },
+    {
+      homeTeam: '키움',
       awayTeam: 'KT',
       stadium: '수원 KT위즈 파크',
+      time: '18:30 pm',
+    },
+    {
+      homeTeam: 'SSG',
+      awayTeam: 'LG',
+      stadium: '잠실 야구장',
       time: '18:30 pm',
     },
     
@@ -48,3 +60,4 @@ const TodayGame = () => {
 };
 
 export default TodayGame;
+
