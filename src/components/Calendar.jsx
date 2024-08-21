@@ -1,34 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CustomCalendar from './CustomCalendar';
+import WinRate from './WinRate';
+import TodayGame from './TodayGame';
 import '../styles/Calendar.css';
-import { useNavigate, useLocation } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 const Calendar = () => {
+  const [activeButton, setActiveButton] = useState('diary'); // 현재 활성화된 버튼 상태
   const nav = useNavigate();
-  const location = useLocation();
-
-  const [activeButton, setActiveButton] = useState('diary');
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const view = params.get('view');
-
-    if (view === 'diary') {
-      setActiveButton('diary');
-    } else if (view === 'stats') {
-      setActiveButton('stats');
-    } else {
-      setActiveButton('diary');
-    }
-  }, [location]);
-
   const handleButtonClick = (buttonType) => {
     setActiveButton(buttonType);
-    nav(`?view=${buttonType}`);
   };
 
   return (
-    <div className="calendar-container" style={{ backgroundColor: 'white', width: '100vw', height: '100vh' }}>
+    <div className="calendar-container">
+    <div className="calendar-container"style={{ backgroundColor: 'white', width: '100vw', height: '100vh' }}>
+
+
       <div className="button-container">
         <button
           className={`cal-button ${activeButton === 'diary' ? 'active' : ''}`}
@@ -43,9 +30,17 @@ const Calendar = () => {
           승률 계산
         </button>
       </div>
-
+      <div className="calendar-content">
+        {activeButton === 'diary' && (
+          <>
+            <CustomCalendar />
+            <TodayGame />
+          </>
+        )}
+        {activeButton === 'stats' && <WinRate />}
+      </div>
+    </div>
     </div>
   );
 };
-
 export default Calendar;
