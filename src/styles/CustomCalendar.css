@@ -1,5 +1,4 @@
 body{
-
   background-color: white;
   overflow-y: auto;
 }
@@ -9,7 +8,7 @@ body{
   display: flex;
   justify-content: center;
   height: 60vh;
-  margin-top:10px;
+  margin-top: 53px;
 }
 
 .custom-calendar {
@@ -20,17 +19,15 @@ body{
   height: 80%;
   max-height: 90%; 
 }
-
 .calendar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px;
-  margin-top:15px;
+  margin-top:30px;
   color: black;
   width: 100%;
 }
-
 .calendar-title-container {
   display: flex;
   flex-direction: column;
@@ -42,15 +39,12 @@ body{
   font-weight: bold;
   text-align: center;
 }
-
 .calendar-title__month {
   font-size: 7vw; 
 }
-
 .calendar-title__year {
   font-size: 5vw; 
 }
-
 .calendar-border {
   display: flex;
   flex-direction: column;
@@ -78,28 +72,24 @@ body{
   align-items: center;
   justify-content: center;
 }
-
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 6px;
   text-align: center; 
 }
-
 .calendar-weekday {
   font-weight: bold;
   color:black;
   padding: 12px; 
   font-size: 4vw; 
 }
-
 /* 달력 날짜 스타일 */
 .calendar-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
 }
-
 .calendar-day {
   background: white;
   color: black;
@@ -110,8 +100,6 @@ body{
   padding: 10px; 
   font-size: 4vw; 
 }
-
-
 .calendar-day.today {
   background-color: #FF4E00;
   color: white;
