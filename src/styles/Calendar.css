@@ -5,14 +5,14 @@
 
 .title{
     position: absolute;
-    margin-top: -30px;
+    margin-top: -40px;
     font-weight: bolder;
 }
 .button-container {
     position: absolute;
     display: flex;
     border-bottom: 2px solid #FF4E00; 
-    background-color:#fafafa;
+    background-color:white;
     width: 400px;
     height: 36px;
     top:100px;
@@ -23,7 +23,7 @@
 .cal-button {
     position: relative;
     top: -2.7px;
-    width: 160px;
+    width: 150px;
     left: 8px;
     background: #FFCDB7;
     border: 2px solid #FF4E00;
