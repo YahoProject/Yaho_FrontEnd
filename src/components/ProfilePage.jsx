@@ -1,42 +1,19 @@
 import '../styles/ProfilePage.css';
 import { useState } from 'react';
 import ProfileImg from '../assets/profile.svg';
-import getNickname from './GetNickname';
 import checkNickname from './CheckNickname'; 
-import useGetTeamName from "../hooks/useGetTeamName";
 
 const ProfilePage = () => {
   const [profileImage, setProfileImage] = useState(ProfileImg);
   const [nickname, setNickname] = useState('');
-  const [teamName, setTeamName] = useState('팀네임');
-  const [isNicknameChecked, setIsNicknameChecked] = useState(''); 
   const [favoriteTeam, setFavoriteTeam] = useState('');
-  const memberId = localStorage.getItem("id");
+  const [isNicknameChecked, setIsNicknameChecked] = useState(null); 
+  const [socialId, setSocialId] = useState(localStorage.getItem("socialId")); 
 
   const teams = [
     'LG 트윈스', 'KT 위즈', 'SSG 랜더스', 'NC 다이노스', '두산 베어스',
     'KIA 타이거즈', '롯데 자이언츠', '삼성 라이온즈', '한화 이글스', '키움 히어로즈'
   ];
-
-  useEffect(() => {
-    const fetchProfileData = async () => {
-      if (memberId) {
-        try {
-          const fetchedNickname = await getNickname(memberId);
-          setNickname(fetchedNickname || '');
-          
-          const fetchedTeamName = await useGetTeamName(memberId);
-          setTeamName(fetchedTeamName || '');
-
-          setFavoriteTeam(fetchedTeamName || '');
-        } catch (error) {
-          console.error('Error fetching profile data:', error);
-        }
-      }
-    };
-
-    fetchProfileData();
-  }, [memberId]);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -82,34 +59,40 @@ const ProfilePage = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
   
-    const memberId = localStorage.getItem("id");
-  
-    if (!memberId) {
+    if (!isNicknameChecked) {
+      alert('닉네임 중복 확인을 해주세요.');
+      return;
+    }
+
+    if (!socialId) {
       alert("로그인이 필요합니다.");
       return;
     }
-  
+
     try {
-      const response = await fetch(`https://dev.yahho.shop/members/${memberId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          nickname,
-          profileImgUrl: profileImage,
-          favoriteClub: favoriteTeam,
-        }),
+      const formData = new FormData();
+      formData.append('socialId', socialId);
+      formData.append('nickname', nickname);
+      formData.append('favoriteClub', favoriteTeam);
+      formData.append('profileImg', profileImage);
+
+      const response = await fetch('https://dev.yahho.shop/members/create', {
+        method: 'POST',
+        body: formData,
       });
-  
+
       if (response.ok) {
-        console.log('프로필이 성공적으로 업데이트되었습니다.');
-        localStorage.setItem('nickname', nickname); 
+        const data = await response.json();
+        const memberId = data.memberId;
+        localStorage.setItem("memberId", memberId); 
+        console.log('회원 정보가 성공적으로 생성되었습니다.');
       } else {
-        console.error('프로필 업데이트에 실패했습니다.');
+        console.error('회원 생성에 실패했습니다.');
+        const errorData = await response.json(); 
+        console.error('오류 메시지:', errorData);
       }
     } catch (error) {
-      console.error('프로필 업데이트 중 오류가 발생했습니다:', error);
+      console.error('회원 생성 중 오류가 발생했습니다:', error);
     }
   };
 
