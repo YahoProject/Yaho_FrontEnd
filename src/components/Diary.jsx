@@ -16,7 +16,6 @@ import sticker9 from "../assets/Mask group (8).svg";
 
 import initialTeamLogo from '../assets/Teamlogo/Kia.svg'
 
-//import useSaveDiary from "../hooks/useSaveDiary";
 
 const Diary = () => {
   const location = useLocation();
@@ -147,6 +146,7 @@ const Diary = () => {
     })
     .then(result => {
       console.log('일기 작성 성공:', result);
+      localStorage.setItem(`sticker${stickerId}`,"true");
     })
     .catch(error => {
       console.error('일기 작성 중 오류 발생:', error);
