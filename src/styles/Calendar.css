@@ -1,3 +1,5 @@
+
+
 .title {
     position: absolute;
     margin-top: -40px;
@@ -25,13 +27,13 @@
     background: #FFCDB7;
     color: black;
     border: 2px solid #FF4E00;
-    border-bottom:transparent;
+    border-bottom: transparent;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin: 0 5px;
-    top:-3px;
+    top: -3px;
 }
 
 .cal-button.active {
@@ -40,12 +42,46 @@
     margin-bottom: -2.5px;
     z-index: 2;
 }
+
 .calendar-content {
-    margin-top:-100px;
+    margin-top: 70px; 
+    padding-bottom: 50px; 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    flex-grow: 1; 
-  }
+    flex-grow: 1;
+}
+
+.today-game-wrapper {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.today-game-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.game-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px #00000040;
+    border-radius: 10px;
+    max-width: 360px;
+}
+
   
