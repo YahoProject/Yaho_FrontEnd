@@ -1,13 +1,15 @@
-
 import React, { useState } from 'react';
-import { format, addMonths, subMonths, startOfMonth, endOfMonth, isSameDay } from 'date-fns';
+import { format, addMonths, subMonths, startOfMonth, endOfMonth, isSameDay, addDays } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 import '../styles/CustomCalendar.css';
+import '../styles/StickerScreen.css'; 
 import StickerScreen from './StickerScreen';
 
 const CustomCalendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [showCalendar, setShowCalendar] = useState(true);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [showStickerScreen, setShowStickerScreen] = useState(false);
+  const navigate = useNavigate();
 
   const handlePreviousMonth = () => {
     setCurrentDate(subMonths(currentDate, 1));
@@ -20,11 +22,8 @@ const CustomCalendar = () => {
   const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
   const start = startOfMonth(currentDate);
   const end = endOfMonth(currentDate);
-
-  // 현재 날짜
   const today = new Date();
 
-  // 달력 생성 함수
   const generateCalendar = () => {
     const days = [];
     let day = start;
@@ -36,21 +35,32 @@ const CustomCalendar = () => {
 
     // 현재 달의 날짜 생성
     while (day <= end) {
-      const isToday = isSameDay(day, today); 
+      const isTodayDate = isSameDay(day, today);
+      const isFutureDate = day > today; // 미래 날짜 확인
+      const isBeforeToday = isTodayDate || day < today;
 
       days.push(
         <div
-          className={`calendar-day ${isToday ? 'today' : ''}`} 
+          className={`calendar-day ${isTodayDate ? 'today' : ''}`}
           key={day.toString()}
           onClick={() => {
-            setSelectedDate(new Date(day));
-            setShowCalendar(false);
+            setSelectedDate(day);
+            if (isTodayDate) {
+              // 오늘 날짜 클릭하면 스티커 화면으로
+              setShowStickerScreen(true);
+            } else if (isBeforeToday) {
+              // 오늘 이전 날짜 클릭하면 diaryentry 화면으로
+              navigate(`/diaryentry?date=${format(day, 'yyyy-MM-dd')}`);
+            } else {
+              // 미래 날짜 클릭해도 스티커 화면 표시
+              setShowStickerScreen(true);
+            }
           }}
         >
           {day.getDate()}
         </div>
       );
-      day.setDate(day.getDate() + 1);
+      day = addDays(day, 1); 
     }
 
     return days;
@@ -73,25 +83,27 @@ const CustomCalendar = () => {
           </div>
           <button onClick={handleNextMonth} aria-label="Next month">&gt;</button>
         </div>
-        {showCalendar ? (
-          <div className="calendar-border">
-            <div className="calendar-weekdays">
-              {daysOfWeek.map((day, index) => (
-                <div className="calendar-weekday" key={index}>
-                  {day}
-                </div>
-              ))}
-            </div>
-            <div className="calendar-days">
-              {generateCalendar()}
-            </div>
+        <div className="calendar-border">
+          <div className="calendar-weekdays">
+            {daysOfWeek.map((day, index) => (
+              <div className="calendar-weekday" key={index}>
+                {day}
+              </div>
+            ))}
           </div>
-        ) : (
-          <div className="overlay">
-            <StickerScreen selectedDate={selectedDate} />
+          <div className="calendar-days">
+            {generateCalendar()}
           </div>
-        )}
+        </div>
       </div>
+      {showStickerScreen && (
+        <>
+          <div className="overlay" />
+          <div className="sticker-screen-container">
+            <StickerScreen />
+          </div>
+        </>
+      )}
     </div>
   );
 };

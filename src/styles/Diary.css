@@ -1,5 +1,5 @@
 #root{
-  background: linear-gradient(to bottom, #FFAE8A, #FFEBE2);
+
   width: 100vw;
 }
 @font-face {
@@ -19,7 +19,37 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    margin-top: 20px;
   }
+  .diary-header {
+    position: relative;
+    margin-right: 20px;
+  }
+  .diary-header.white-background {
+    background-color: white;
+    width: 348px;
+    border-radius: 10px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9dcce;
+    border-radius: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    z-index: 1000;
+    color : black;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
   
   .stadium-name {
     font-size: 20px;
@@ -27,7 +57,10 @@
     margin-left: 20px;
   }
 
-  
+  .stadium-name :hover{
+    background-color: white;
+  }
+
   .diary-content h2 {
     text-align: center;
     font-size: 24px;
@@ -37,8 +70,10 @@
   }
   .diary-bar {
     background-color: white;
-    width: 348px;
+    width: 330px;
     height : 1px;
+    margin-right: 38px;
+    margin-left: 18px;
   }
   .diary-content {
     display: flex;
@@ -121,7 +156,7 @@
   }
   
   .mvp-section {
-    background-image: url('../assets/Teamlogo/Ssg.svg'); /* 이미지 경로 */
+    background-image: url('../assets/Teamlogo/Kia.svg'); /* 이미지 경로 */
     background-size: cover; /* 이미지 크기를 컨테이너에 맞게 조절 */
     background-position: center; /* 이미지 위치 조정 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */

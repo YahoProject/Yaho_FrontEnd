@@ -8,7 +8,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import './App.css';
 import WinRate from './components/WinRate.jsx';
 import ProfilePage from './components/ProfilePage.jsx';
-
+import Unregister from './components/Unregister.jsx';
 import Food from './components/Food.jsx';
 import KiaUnderbar from './components/KiaUnderbar.jsx';
 import KiaFood from './components/KiaFood.jsx';
@@ -33,8 +33,8 @@ import Modal from './components/Modal.jsx';
 import Diary from './components/Diary.jsx';
 import MyPage from './components/MyPage.jsx';
 import FixPage from './components/FixPage.jsx';
-
-
+import Lottie from "./components/Lottie.jsx";
+import DiaryEntry from "./components/DiaryEntry.jsx";
 import { CategoryProvider } from './components/categoryProvider.jsx'; // CategoryProvider 추가
 
 function App() {
@@ -72,8 +72,10 @@ const MainContent = () => {
       {showLotteUnderbar && <LotteUnderbar />}
       <Sidebar />
       <Routes>
-        <Route path="/" exact element={<Login />} />
+        <Route path="login/" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
+
+        <Route path="/unregister" element={<Unregister/>}/>
 
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
         <Route path="/winrate" element={<WinRate />} />
@@ -93,6 +95,8 @@ const MainContent = () => {
         <Route path="/diary" element={<Diary/>}/>
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/fixpage" element={<FixPage/>}/>
+        <Route path="/" element={<Lottie/>}/>
+        <Route path="/diaryentry" element={<DiaryEntry/>}/>
       </Routes>
     </>
   );

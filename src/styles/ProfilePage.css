@@ -58,6 +58,18 @@
   color: white;
 }
 
+.name-success {
+  position: absolute;
+  width: 136px;
+  height: 16px;
+  top: 406px;
+  left: 40px;
+  font-size: 12px;
+  color: green;
+  margin-top: -5px;
+  white-space: nowrap;
+}
+
 .name-error {
   position: absolute;
   width: 136px;
@@ -66,6 +78,8 @@
   left: 40px;
   font-size: 12px;
   color: #BF4139;
+  margin-top: -5px;
+  white-space: nowrap;
 }
 
 .team-label {

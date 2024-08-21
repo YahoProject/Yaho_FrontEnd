@@ -1,8 +1,10 @@
 import "../styles/Login.css";
 import kakaoIcon from "../assets/kakao.svg";
 import yahoIcon from "../assets/yaho.svg";
-
 import { KAKAO_AUTH_URL } from "./OAuth_kakao";
+
+import Lottie from "lottie-react";
+import ball from "../assets/Lottie/ball.json";
 
 const Login = () => {
 
@@ -18,7 +20,8 @@ const Login = () => {
         나의 <span className="textBold">야구직관 메이트</span>
         </div>
         <div>
-        <img className='LoginIcon' src={yahoIcon} alt="Yaho" /></div>
+        <img src="/yaho.svg" alt="Victory" />
+        </div>
     
 
       <br />

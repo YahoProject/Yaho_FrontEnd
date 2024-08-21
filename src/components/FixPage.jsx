@@ -1,6 +1,6 @@
 import '../styles/FixPage.css';
 import { useState } from 'react';
-import ProfileImg from '/public/profile.svg';
+import ProfileImg from '../assets/profile.svg';
 
 const FixPage = () => {
   const [profileImage, setProfileImage] = useState(ProfileImg);

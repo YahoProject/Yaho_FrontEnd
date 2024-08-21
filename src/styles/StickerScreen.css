@@ -1,24 +1,49 @@
-.sticker-screen {
-    width: 390px;
-    height: 544px;
-    margin-top:340px;
-    gap: 0px;
-    border-radius: 15px 15px 0px 0px;
-    opacity: 0px;
-    background-color: white;
 
+
+.sticker-screen-container {
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 60%; 
+    z-index: 1000; 
 }
-.stickers {
-    margin-top:35px;
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+}
+
+.sticker-screen {
+    width: 100%;
+    height: 100%; 
+    background-color: white;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 17px 17px 0 0;
+}
+
+.stickers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
     gap: 15px;
-    justify-content: center;
+    width: 100%;
+    height: calc(100% - 40px); 
+    overflow-y: auto; 
+    padding-bottom: 20px; 
 }
 
 .sticker {
-    width: 95px;
-    height: 140px; 
+    width: 90%; 
+    height: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +53,7 @@
 }
 
 .sticker img {
-    width: 90%; 
+    width: 100%; 
     height: auto; 
     border-radius: 8px;
 }
@@ -39,4 +64,5 @@
     text-align: center;
     padding-bottom: 5px; 
 }
+
 
