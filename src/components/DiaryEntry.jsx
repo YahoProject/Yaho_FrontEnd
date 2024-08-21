@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/DiaryEntry.css'; 
 import CalendarMonthIcon from '../assets/Calendar_month.svg';
+import emotionImage from '../assets/verygood.svg';
 
 const DiaryEntry = () => {
   const [diary, setDiary] = useState({
@@ -50,7 +51,6 @@ const DiaryEntry = () => {
       <div className="diary-content">
         <div className="diary-bar"></div>
         <div className="result-image">
-            <img src={diary.emotionImageUrl} alt="Emotion" />
         </div>
         <div className="mvp-section">
           <p>오늘의 MVP</p>
