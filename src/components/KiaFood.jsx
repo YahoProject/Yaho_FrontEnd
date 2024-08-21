@@ -62,7 +62,7 @@ const KiaFood = () => {
           >
         <img
           ref={imageRef}
-          src={selectedCategory.name=='kia'?kia:selectedCategory.name}
+          src={selectedCategory.name=='kia'?kia:selectedCategory.map}
           alt="Kia Stadium Map"
           style={{
             width: '100%',

@@ -140,7 +140,7 @@
     background-color: #FF7C42;
     position: fixed;
     color: white;
-    margin-top: 580px;
+    margin-top: 560px;
     margin-left: 35px;
     width: 220px;
     height: 40px;
@@ -276,5 +276,9 @@
   .confirmButton {
     background-color: rgba(255, 124, 66, 1); /* 확인 버튼 색상 */
     width: 178px;
+  }
+
+  .unregisterLink{
+
   }
 }

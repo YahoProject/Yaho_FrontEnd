@@ -1,16 +1,16 @@
 import "../styles/Unregister.css"
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from "react-router-dom";
 
 const Unregister=()=>{
+    const nav=useNavigate()
     const [agreed, setAgreed] = useState(false);
 
     const handleCheckboxChange = () => {
       setAgreed(!agreed);
     };
-    localStorage.clear()
-    console.log("stor",localStorage)
+
     const handleUnregister = async() => {
       const accessToken = localStorage.getItem('token'); 
       try {
@@ -21,10 +21,10 @@ const Unregister=()=>{
           headers: {
             'Authorization': `Bearer ${accessToken}`, 
             'Content-Type': 'application/json;charset=utf-8', 
+            'Accept':"*"
           }
         });
-
-
+        nav("/");
         console.log('백엔드 회원탈퇴 완료', serverResponse.data,"token",accessToken);
       
       }

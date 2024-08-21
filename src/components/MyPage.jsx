@@ -15,6 +15,7 @@ import '../styles/MyPage.css';
 
 function MyPage() {
     const navigate = useNavigate();
+    const [nickname, setNickname] = useState("");
 
     const handleGoBack = () => {
         navigate(-1); 
@@ -63,6 +64,35 @@ function MyPage() {
         loadStickers();
     }, []);
 
+    useEffect(() => {
+      const fetchNickname = async () => {
+          const memberId = localStorage.getItem("memberId");
+          if (!memberId) {
+              console.error("Member ID not found in localStorage");
+              return;
+          }
+          try {
+              const response = await fetch(`https://dev.yahho.shop/members/${memberId}`, {
+                  method: 'GET',
+                  headers: {
+                      'accept': '*/*'
+                  }
+              });
+              if (response.ok) {
+                  const data = await response.json();
+                  setNickname(data.result.nickname); 
+              } else {
+                  console.error('Failed to fetch nickname');
+                  setNickname("닉네임 불러오기 실패");
+              }
+          } catch (error) {
+              console.error('Error fetching nickname:', error);
+              setNickname("닉네임 불러오기 실패");
+          }
+      };
+      fetchNickname();
+  }, []);
+
     return (
         <div className="mypage-wrapper">
             <div className="background-color" />
@@ -76,7 +106,7 @@ function MyPage() {
                 </div>
                 <div className="profile-section">
                     <div className="profile-info">
-                        <h1>행복한 아빠</h1>
+                        <h1>{nickname}</h1>
                         <button className="edit_button" onClick={handleGoToFixPage}>
                             내 정보 수정
                         </button>
