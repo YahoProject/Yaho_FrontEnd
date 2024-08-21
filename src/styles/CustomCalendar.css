@@ -1,6 +1,5 @@
 body{
   background-color: white;
-  overflow-y: auto;
 }
 .custom-calendar-wrapper {
   background-color: white;
@@ -8,7 +7,7 @@ body{
   display: flex;
   justify-content: center;
   height: 60vh;
-  margin-top: 53px;
+  margin-top: 20px;
 }
 
 .custom-calendar {
@@ -119,6 +118,5 @@ body{
   justify-content: center;
   z-index: 1000;
 }
-
 
 
