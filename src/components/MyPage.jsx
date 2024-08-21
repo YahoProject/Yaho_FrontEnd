@@ -71,7 +71,6 @@ function MyPage() {
               console.error("Member ID not found in localStorage");
               return;
           }
-
           try {
               const response = await fetch(`https://dev.yahho.shop/members/${memberId}`, {
                   method: 'GET',
@@ -79,7 +78,6 @@ function MyPage() {
                       'accept': '*/*'
                   }
               });
-
               if (response.ok) {
                   const data = await response.json();
                   setNickname(data.result.nickname); 
@@ -92,7 +90,6 @@ function MyPage() {
               setNickname("닉네임 불러오기 실패");
           }
       };
-
       fetchNickname();
   }, []);
 
