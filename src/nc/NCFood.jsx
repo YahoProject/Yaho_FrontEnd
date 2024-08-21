@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
 
-import nc from "../assets/nc/nc.svg"
+import nc from "../../public/nc/nc.svg"
 
 
 const NCFood = () => {
@@ -65,7 +65,7 @@ const NCFood = () => {
           >
         <img
           ref={imageRef}
-          src={selectedCategory.name!='' ? selectedCategory.map : nc}
+          src={selectedCategory.name=='nc'?nc:selectedCategory.map}
           alt="Kia Stadium Map"
           style={{
             width: '100%',

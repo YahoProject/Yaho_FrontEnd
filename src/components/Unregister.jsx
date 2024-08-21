@@ -1,31 +1,38 @@
 import "../styles/Unregister.css"
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+
 
 const Unregister=()=>{
     const [agreed, setAgreed] = useState(false);
-    const navigate = useNavigate();
+
     const handleCheckboxChange = () => {
       setAgreed(!agreed);
     };
-    const accessToken = localStorage.getItem('token'); 
-  
+    localStorage.clear()
+    console.log("stor",localStorage)
     const handleUnregister = async() => {
-      const serverResponse = await axios({
-        method: 'GET',
-        url: `https://dev.yahho.shop/oauth/callback/unlink/kakao?accessToken=${accessToken}`,  
-        headers: {
-          'Authorization': `Bearer ${accessToken}`, 
-          'Content-Type': 'application/json;charset=utf-8', 
-        }
-      });
-        localStorage.clear();
-        navigate("/");
+      const accessToken = localStorage.getItem('token'); 
+      try {
+
+        const serverResponse = await axios({
+          method: 'GET',
+          url: `https://dev.yahho.shop/oauth/callback/logout/kakao?accessToken=${accessToken}`,  
+          headers: {
+            'Authorization': `Bearer ${accessToken}`, 
+            'Content-Type': 'application/json;charset=utf-8', 
+          }
+        });
+
+
         console.log('백엔드 회원탈퇴 완료', serverResponse.data,"token",accessToken);
       
-    };
-  
+      }
+    catch (error) {
+      console.error('회원탈퇴 중 오류 발생:', error);
+      window.alert('탈퇴중 오류가 발생했습니다.');
+    }
+  };
     return (
       <div className="all">
         <button className="closeButton" onClick={() => window.history.back()}>X</button>

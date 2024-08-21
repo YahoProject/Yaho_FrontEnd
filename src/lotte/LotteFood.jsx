@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
-import lotte from"../assets/lotte/lotte.svg"
+import lotte from"../../public/lotte/lotte.svg"
 
 const LotteFood = () => {
   const { closePopup, selectedCategory } = useContext(CategoryContext);
@@ -63,7 +63,7 @@ const LotteFood = () => {
           >
         <img
           ref={imageRef}
-          src={selectedCategory.name!='' ? selectedCategory.map : lotte}
+          src={selectedCategory.name=='lotte'?lotte:selectedCategory.map}
           alt="Kia Stadium Map"
           style={{
             width: '100%',

@@ -25,11 +25,11 @@ import '../styles/KiaUnderbar.css';
 import React, { useEffect, useRef, useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import '../styles/KiaUnderbar.css';
-import ohjic from "../assets/samsung/5jic.svg"
-import Dangdangchickin from "../assets/samsung/Dangdangchickin.svg"
-import hanmando from "../assets/samsung/hanmando.svg"
-import happychesse from "../assets/samsung/happychesse.svg"
-import stationSamsung from "../assets/samsung/stationSamsung.svg"
+import ohjic from "../../public/samsung/5jic.svg"
+import Dangdangchickin from "../../public/samsung/Dangdangchickin.svg"
+import hanmando from "../../public/samsung/hanmando.svg"
+import happychesse from "../../public/samsung/happychesse.svg"
+import stationSamsung from "../../public/samsung/stationSamsung.svg"
 
 const SamsungUnderbar = () => {
   const {

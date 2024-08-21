@@ -19,8 +19,7 @@ const RedirectPage = () => {
         .then((res) => {
           console.log(res);
           localStorage.setItem("res",res);
-          localStorage.setItem("name",res.data.result.member.nickname);
-          localStorage.setItem("id",res.data.result.member.id);
+          localStorage.setItem("socialId",res.data.result.socialId)
           localStorage.setItem("token",res.data.result.accessToken);
           localStorage.setItem("code",code);
 

@@ -49,7 +49,7 @@ const WinRate = () => {
     useEffect(() => {
         if (window.Kakao) {
             if (!window.Kakao.isInitialized()) {
-                window.Kakao.init('c691c3d2a52c8d5f9b2322a1c2548fe4');
+                window.Kakao.init('677600b0ce9a892f1061f498c658437f');
             }
             setIsKakaoInitialized(true);
         } else {
@@ -64,7 +64,7 @@ const WinRate = () => {
                 content: {
                     title: '공유할 제목',
                     description: '공유할 설명',
-                    imageUrl: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F025%2F2020%2F08%2F24%2F0003028666_001_20200824212906436.jpg&type=a340',
+                    imageUrl:share,
                     link: {
                         mobileWebUrl: window.location.href,
                         webUrl: window.location.href,
@@ -72,7 +72,6 @@ const WinRate = () => {
                 },
                 buttons: [
                     {
-                        title: '웹으로 보기',
                         link: {
                             mobileWebUrl: window.location.href,
                             webUrl: window.location.href,
@@ -81,9 +80,14 @@ const WinRate = () => {
                 ],
             });
         } else {
-            console.error("Kakao SDK가 초기화되지 않았거나 Link 객체가 존재하지 않습니다.");
+            // 카카오톡 PC 환경에서 웹 공유를 직접 유도
+            window.open(
+                `https://sharer.kakao.com/talk/friends/picker/link?app_key=YOUR_APP_KEY&redirect_uri=${encodeURIComponent(window.location.href)}`,
+                '_blank'
+            );
         }
     };
+    
 
     const openModal = () => {
         setIsModalOpen(true);

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
-import kt from "../assets/kt/kt.svg"
+import kt from "../../public/kt/kt.svg"
 
 const KTFood = () => {
   const { closePopup, selectedCategory } = useContext(CategoryContext);
@@ -63,7 +63,7 @@ const KTFood = () => {
           >
         <img
           ref={imageRef}
-          src={selectedCategory.name!='' ? selectedCategory.map : kt}
+          src={selectedCategory.name=='kt'?kt:selectedCategory.map}
           alt="Kia Stadium Map"
           style={{
             width: '100%',
