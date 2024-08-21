@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import arrow from "../../public/arrow_back_white.svg";
 import icon from "../assets/sidebar.svg";
+import sticker1 from '../assets/Mask group.svg';
+import sticker2 from '../assets/Mask group (1).svg';
+import sticker3 from '../assets/Mask group (2).svg';
+import sticker4 from '../assets/Mask group (3).svg';
+import sticker5 from '../assets/Mask group (4).svg';
+import sticker6 from '../assets/Mask group (5).svg';
+import sticker7 from '../assets/Mask group (6).svg';
+import sticker8 from '../assets/Mask group (7).svg';
+import sticker9 from '../assets/Mask group (8).svg';
 import '../styles/MyPage.css';
 
 function MyPage() {
@@ -14,6 +23,18 @@ function MyPage() {
     const handleGoToFixPage = () => {
         navigate('/fixpage'); 
     };
+
+    const stickerImages = [
+        { id: 1, img: sticker1 },
+        { id: 2, img: sticker2 },
+        { id: 3, img: sticker3 },
+        { id: 4, img: sticker4 },
+        { id: 5, img: sticker5},
+        { id: 6, img: sticker6 },
+        { id: 7, img: sticker7 },
+        { id: 8, img: sticker8 },
+        { id: 9, img: sticker9 },
+    ];
 
     const [cards, setCards] = useState([
         { id: 1, img: null },
@@ -28,20 +49,18 @@ function MyPage() {
     ]);
 
     useEffect(() => {
-        const loadImages = async () => {
-            const fetchedImages = [
-                "image1_url",
-                "image2_url",
-                "image3_url",
-            ];
-
-            setCards(cards.map((card, index) => ({
-                ...card,
-                img: fetchedImages[index] || null
-            })));
+        const loadStickers = () => {
+            const updatedCards = cards.map((card) => {
+                const isStickerSaved = localStorage.getItem(`sticker${card.id}`) === "true";
+                return {
+                    ...card,
+                    img: isStickerSaved ? stickerImages.find(sticker => sticker.id === card.id)?.img : null
+                };
+            });
+            setCards(updatedCards);
         };
 
-        loadImages();
+        loadStickers();
     }, []);
 
     return (
@@ -71,7 +90,7 @@ function MyPage() {
                     <div className="cards-container">
                         {cards.map((card) => (
                             <div key={card.id} className={`card ${card.img ? '' : 'grey'}`}>
-                                {card.img ? <img src={card.img} alt={''} /> : ''}
+                                {card.img ? <img src={card.img} alt={`스티커 ${card.id}`} /> : ''}
                             </div>
                         ))}
                     </div>
