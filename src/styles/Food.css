@@ -52,6 +52,7 @@
 
 .selected-option {
     background-color: white;
+    color:black;
     padding: 10px;
     border-radius: 10px;
     font-size: 16px;
@@ -66,6 +67,7 @@
     left: 0;
     right: 0;
     background-color: #FFE4D8;
+    color:black;
     border: 1px solid #FFE4D8;
     border-radius: 10px;
     list-style: none;
@@ -100,3 +102,4 @@
     width: 20px;
     height: 20px;
 }
+
