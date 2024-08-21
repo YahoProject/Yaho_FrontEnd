@@ -1,15 +1,12 @@
 .custom-calendar-wrapper{
   background-color: white;
-  padding-top:50px;
-  margin-top:-160px;
-  padding-bottom:20px;
   padding-right:20px;
   padding-left:20px;
 }
 .custom-calendar {
   position:absolute;
   display:flex;
-  height:360px;
+  height:320px;
   width: 100%;
   max-width: 370px;
   top:120px;
@@ -21,12 +18,12 @@
 .calendar-header {
   position:absolute;
   display: flex;
-  top:30px;
-  max-width:390px;
+  top:25px;
+  max-width:370px;
   width:90%;
-  left:15px;
+  left:20px;
   align-items: center;
-  padding: 5px;
+  padding:15px;
   color:black;
 }
 .calendar-header button{
@@ -46,13 +43,12 @@
 
 /* 달력 제목 */
 .calendar-title {
-  font-size: 20px;
   font-weight: bold;
   text-align: center;
 }
 
 .calendar-title__month {
-  font-size: 33px;
+  font-size: 25px;
 }
 
 .calendar-title__year {
@@ -77,15 +73,16 @@
   border: 2px solid #f0f0f0;
   border-radius: 50%;
   box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.2);
-  font-size: 20px;
-  width: 50px;
-  height: 50px;
+  font-size: 15px;
+  width: 10px;
+  height: 40px;
   display: flex;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   margin-top:10px;
 }
+
 
 /* (요일) */
 .calendar-weekdays {
@@ -98,7 +95,7 @@
 .calendar-weekday {
   font-weight: bold;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
 
 }
 
@@ -116,7 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .calendar-day.today {
