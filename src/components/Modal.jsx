@@ -8,7 +8,7 @@ const Modal = ({ onClose }) => {
   const handleConfirm = async () => {
 
     const accessToken = localStorage.getItem('token'); 
-    console.log(accessToken)
+
     try {
 
       const serverResponse = await axios({
@@ -21,7 +21,7 @@ const Modal = ({ onClose }) => {
       });
         localStorage.removeItem('token')
         navigate('/');
-        console.log('백엔드 로그아웃 성공:', serverResponse.data,"token",accessToken);
+        console.log('백엔드 로그아웃 성공:', serverResponse.data);
       
     } catch (error) {
       console.error('로그아웃 중 오류 발생:', error);
