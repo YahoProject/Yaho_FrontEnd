@@ -6,21 +6,21 @@
     border-bottom: 1px solid #CACACA;
     margin-left:0;
   }
-  .title-box p{
+.title-box p {
     font-size:20px;
     margin-left:25px;
     font-weight:500;
     font-family:Pretendard Variable;
-  }
+}
   
-  .title {
+.title {
     position: absolute;
     height: 24px;
     top: 75px;
     left: 45px;
     font-size: 20px;
     white-space: nowrap;
-  }
+}
   
   .profile-img {
     position: absolute;
