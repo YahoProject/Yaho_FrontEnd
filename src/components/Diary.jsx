@@ -38,7 +38,8 @@ const Diary = () => {
     "수원 kt위즈파크",
     "인천 SSG랜더스 필드",
     "잠실 야구장",
-    "창원 NC파크"
+    "창원 NC파크",
+    "한화 이글스 파크"
   ];
 
   const stickerImages = [
