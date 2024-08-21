@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import CustomCalendar from './CustomCalendar';
-import WinRate from './WinRate';
-import TodayGame from './TodayGame';
 import '../styles/Calendar.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -9,10 +7,9 @@ const Calendar = () => {
   const nav = useNavigate();
   const location = useLocation();
 
-  const [activeButton, setActiveButton] = useState('diary'); // 현재 활성화된 버튼 상태
+  const [activeButton, setActiveButton] = useState('diary');
 
   useEffect(() => {
-    // URL 파라미터를 가져와서 활성화된 버튼 상태를 설정
     const params = new URLSearchParams(location.search);
     const view = params.get('view');
 
@@ -21,14 +18,12 @@ const Calendar = () => {
     } else if (view === 'stats') {
       setActiveButton('stats');
     } else {
-      setActiveButton('diary'); // 기본값
+      setActiveButton('diary');
     }
   }, [location]);
 
   const handleButtonClick = (buttonType) => {
     setActiveButton(buttonType);
-
-    // 버튼 타입에 따라 URL 파라미터 변경
     nav(`?view=${buttonType}`);
   };
 
@@ -49,15 +44,6 @@ const Calendar = () => {
         </button>
       </div>
 
-      <div className="calendar-content">
-        {activeButton === 'diary' && (
-          <>
-            <CustomCalendar />
-            <TodayGame />
-          </>
-        )}
-        {activeButton === 'stats' && <WinRate />}
-      </div>
     </div>
   );
 };
