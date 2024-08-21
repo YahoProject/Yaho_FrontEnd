@@ -49,7 +49,7 @@ const WinRate = () => {
     useEffect(() => {
         if (window.Kakao) {
             if (!window.Kakao.isInitialized()) {
-                window.Kakao.init('677600b0ce9a892f1061f498c658437f');
+                window.Kakao.init('c691c3d2a52c8d5f9b2322a1c2548fe4');
             }
             setIsKakaoInitialized(true);
         } else {
@@ -72,6 +72,7 @@ const WinRate = () => {
                 },
                 buttons: [
                     {
+                        title:"웹으로 보기",
                         link: {
                             mobileWebUrl: window.location.href,
                             webUrl: window.location.href,
