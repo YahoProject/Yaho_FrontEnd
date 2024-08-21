@@ -9,7 +9,7 @@ body{
   display: flex;
   justify-content: center;
   height: 60vh;
-  margin-top: 60px;
+  margin-top: 53px;
 }
 
 .custom-calendar {
@@ -35,7 +35,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5px;
+  margin: 2px;
 }
 
 .calendar-title {
@@ -59,7 +59,7 @@ body{
   border: 2px solid #f0f0f0;
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 10px; 
+  padding: 12px; 
   background-color: white;
 }
 
@@ -71,8 +71,8 @@ body{
   border-radius: 50%;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
   font-size: 4vw; 
-  width: 11vw;
-  height: 11vw;
+  width: 12vw;
+  height: 12vw;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -115,6 +115,7 @@ body{
 .calendar-day.today {
   background-color: #FF4E00;
   color: white;
+
   border-radius: 50%;
 }
 
@@ -130,6 +131,5 @@ body{
   justify-content: center;
   z-index: 1000;
 }
-
 
 
