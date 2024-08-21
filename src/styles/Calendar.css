@@ -1,16 +1,12 @@
-
-
 .title {
-    position:static;
     margin-top: -45px;
     font-weight: bolder;
     margin-left:20px;
     font-weight:700;
     color:black;
 }
-
 .button-container {
-    position: relative;
+    position:absolute;
     display: flex;
     justify-content: space-around;
     align-items: flex-end; 
@@ -18,7 +14,7 @@
     background-color: white;
     width: 100%;
     height: 36px;
-    top: 70px;
+    top: 80px;
     padding: 0 40px; 
 }
 
@@ -36,14 +32,12 @@
     margin: 0 5px;
     top: -3px;
 }
-
 .cal-button.active {
     background: white;
     border-bottom: 2px solid white;
     margin-bottom: -2.5px;
     z-index: 2;
 }
-
 .calendar-content {
     margin-top: 70px; 
     padding-bottom: 50px; 
@@ -53,6 +47,7 @@
     width: 100%;
     flex-grow: 1;
 }
+
 
 
   
