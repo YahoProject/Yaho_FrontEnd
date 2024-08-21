@@ -74,7 +74,6 @@ const MainContent = () => {
       <Routes>
         <Route path="login/" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
-     
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />
         <Route path="/winrate" element={<WinRate />} />
         <Route path="/calendar" element={<Calendar />} />
@@ -88,7 +87,6 @@ const MainContent = () => {
         <Route path="/food/nc" element={<NCFood />} />
         <Route path="/food/samsung" element={<SamsungFood />} />
         <Route path="/food/ssg" element={<SSGFood />} />
-        <Route path="/food/hanhwa" element={<HanhwaFood/>}/>
         <Route path="/home" element={<Home />} />
         <Route path="/modal" element={<Modal/>}/>
         <Route path="/diary" element={<Diary/>}/>
