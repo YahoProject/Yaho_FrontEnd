@@ -45,6 +45,9 @@ const Food = () => {
             case "창원 NC파크":
                 navigate('./nc');
                 break;
+            case "한화 이글스파크":
+                navigate('./hanhwa');
+                break;
             default:
                 break;
         }
@@ -58,7 +61,8 @@ const Food = () => {
         "수원 kt위즈파크",
         "인천 SSG랜더스 필드",
         "잠실 야구장",
-        "창원 NC파크"
+        "창원 NC파크",
+        "한화 이글스파크"
     ];
 
     useEffect(() => {
@@ -120,7 +124,7 @@ const Food = () => {
                     onClick={handleSearchClick} 
                     disabled={selectedStadium === "구장 선택"}
                 >
-                    <img src="/search.svg" alt="스티커 2" />
+                    <img src="./search.svg" alt="스티커 2" />
                 </button>
             </div>
         </div>
@@ -128,3 +132,4 @@ const Food = () => {
 }
 
 export default Food;
+
