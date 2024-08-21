@@ -82,10 +82,12 @@ const FixPage = () => {
   const handleNicknameChange = (e) => {
     setNickname(e.target.value);
     setIsNicknameChecked(null);
+    localStorage.setItem("nickname",e.target.value);
   };
 
   const handleTeamChange = (e) => {
     setFavoriteTeam(e.target.value);
+    localStorage.setItem("favoriteClub",e.target.value);
   };
 
   const handleCheckNickname = async () => {
