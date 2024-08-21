@@ -7,23 +7,26 @@ import StickerScreen from './StickerScreen';
 
 const CustomCalendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(null);
   const [showStickerScreen, setShowStickerScreen] = useState(false);
   const navigate = useNavigate();
 
   const handlePreviousMonth = () => {
     setCurrentDate(subMonths(currentDate, 1));
   };
+
   const handleNextMonth = () => {
     setCurrentDate(addMonths(currentDate, 1));
   };
+
   const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
   const start = startOfMonth(currentDate);
   const end = endOfMonth(currentDate);
   const today = new Date();
+
   const generateCalendar = () => {
     const days = [];
     let day = start;
+
     // 달의 첫 주에서 시작 전에 빈 칸 생성
     for (let i = 0; i < start.getDay(); i++) {
       days.push(<div className="calendar-day empty" key={`empty-${i}`} />);
@@ -32,22 +35,22 @@ const CustomCalendar = () => {
     // 현재 달의 날짜 생성
     while (day <= end) {
       const isTodayDate = isSameDay(day, today);
-      const isFutureDate = day > today; // 미래 날짜 확인
-      const isBeforeToday = isTodayDate || day < today;
+      const isFutureDate = day > today;
+      const isPastDate = day < today;
 
       days.push(
         <div
-        className={`calendar-day ${isTodayDate ? 'today' : ''}`}
+          className={`calendar-day ${isTodayDate ? 'today' : ''}`}
           key={day.toString()}
           onClick={() => {
-            setSelectedDate(day);
+            const formattedDate = format(day, 'yyyy-MM-dd');
             if (isTodayDate) {
               // 오늘 날짜 클릭하면 스티커 화면으로
               setShowStickerScreen(true);
-            } else if (isBeforeToday) {
-              // 오늘 이전 날짜 클릭하면 diaryentry 화면으로
-              navigate(`/diaryentry?date=${format(day, 'yyyy-MM-dd')}`);
-            } else {
+            } else if (isPastDate) {
+              // 오늘 이전 날짜 클릭하면 DiaryEntry 페이지로
+              navigate(`/diaryentry?date=${formattedDate}`, { state: { date: formattedDate } });
+            } else if (isFutureDate) {
               // 미래 날짜 클릭해도 스티커 화면 표시
               setShowStickerScreen(true);
             }
@@ -61,6 +64,7 @@ const CustomCalendar = () => {
 
     return days;
   };
+
   return (
     <div className="custom-calendar-wrapper">
       <div className="custom-calendar">
@@ -89,7 +93,7 @@ const CustomCalendar = () => {
           <div className="calendar-days">
             {generateCalendar()}
           </div>
-          </div>
+        </div>
       </div>
       {showStickerScreen && (
         <>
@@ -102,4 +106,5 @@ const CustomCalendar = () => {
     </div>
   );
 };
+
 export default CustomCalendar;
