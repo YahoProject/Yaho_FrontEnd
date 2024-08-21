@@ -14,6 +14,8 @@ import sticker7 from '../assets/Mask group (6).svg';
 import sticker8 from '../assets/Mask group (7).svg';
 import sticker9 from '../assets/Mask group (8).svg';
 
+import useSaveDiary from '../hooks/useSaveDiary';
+
 const Diary = () => {
   const location = useLocation();
   const [entry, setEntry] = useState('');
@@ -25,6 +27,8 @@ const Diary = () => {
   const [stickerImage, setStickerImage] = useState(null);
   const [resultText, setResultText] = useState(''); 
   const [showCongratulation, setShowCongratulation] = useState(false);
+
+  const saveDiary = useSaveDiary();
 
   const stadiums = [
     "고척스카이돔",
@@ -53,6 +57,7 @@ const Diary = () => {
     
     if (stickerId >= 1 && stickerId <= 9) {
       setStickerImage(stickerImages[stickerId - 1]);
+      console.log("스티커는 지금 : ", stickerId);
       setResultText(stickerTexts[stickerId - 1]); // result-text2 설정
       setShowCongratulation(stickerId <= 4); // Id가 1,2,3,4일때만축하메세지뜨게했어요
     } else {
@@ -77,7 +82,7 @@ const Diary = () => {
     }
   };
 
-  const handleSave = () => {
+ /* const handleSave = () => {
     if (entry.trim() !== '' || mvp.trim() !== '') {
       console.log('Entry saved:', entry);
       console.log('MVP saved:', mvp);
@@ -86,7 +91,33 @@ const Diary = () => {
       setMvp('');
       setMvpImage(null);
     }
+  };*/
+
+  //API호출 반영한 handleSave
+  const handleSave = async () => {
+    if (entry.trim() !== '' || mvp.trim() !== '') {
+      const memberId = localStorage.getItem("memberId"); 
+      const date = new Date().toISOString().split('T')[0];
+      //date부분 어케돼있는지모름. 여기서 오류날수도 
+      const emotionImageUrl = stickerImage; 
+      const locationIndex = stadiums.indexOf(stadiumName) + 1;
+
+      try {
+        await saveDiary(memberId, date, emotionImageUrl, mvp, entry, locationIndex);
+        console.log('Entry saved:', entry);
+        console.log('MVP saved:', mvp);
+        console.log('MVP Image saved:', mvpImage);
+        
+        // 상태 초기화
+        setEntry('');
+        setMvp('');
+        setMvpImage(null);
+      } catch (error) {
+        console.error('일기 저장 중 오류 발생:', error);
+      }
+    }
   };
+
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -97,6 +128,8 @@ const Diary = () => {
     setStadiumName(stadium);
     setDropdownVisible(false);
   };
+
+  
 
   return (
     <div className="diary-container">

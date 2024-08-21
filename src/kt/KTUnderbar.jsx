@@ -113,8 +113,7 @@ const KTUnderbar = () => {
       </div>
       <h3>필수 방문 맛집</h3>
       <div className="underbarButton">
-        <button className="firstButton" onClick={() => handleClassChange('f1f2')}>1F&2F</button>
-        <button onClick={() => handleClassChange('f3f4')}>3F&4F</button>
+        <button className="firstButton" onClick={() => handleClassChange('f2')}>2F</button>
         <button onClick={() => handleClassChange('all')}>전체보기</button>
       </div>
 
