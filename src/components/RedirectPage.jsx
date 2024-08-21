@@ -4,6 +4,8 @@ import '../styles/RedirectPage.css';
 import yahoIcon from "../assets/yaho.svg";
 
 const RedirectPage = () => {
+  const now=new URL(window.location.href);
+  console.log("now",now.href);
   const code = new URL(window.location.href).searchParams.get("code");
 
   useEffect(() => {
