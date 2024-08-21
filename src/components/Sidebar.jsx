@@ -23,7 +23,7 @@ const Sidebar = () => {
   const [teamName, setTeamName]=useState("팀네임");
   const location = useLocation();
 
-  const memberId = localStorage.getItem("id");
+  const socialId = localStorage.getItem("socialId");
   const accessToken= localStorage.getItem("token");
 
   const toggleOpen = () => {
@@ -52,9 +52,9 @@ const Sidebar = () => {
 
   useEffect(() => {
     const fetchNickname = async () => {
-      console.log('아이디 :',memberId);
+      console.log('아이디 :',socialId);
 
-        const fetchedNickname = await getNickname(memberId); // getNickname 호출
+        const fetchedNickname = await getNickname(socialId); // getNickname 호출
         setNickname(fetchedNickname); // 닉네임 상태 설정
         console.log("닉네임은 : ",nickname);
         console.log("코드는 : ",localStorage.getItem('code'));
@@ -62,9 +62,9 @@ const Sidebar = () => {
       
     };
     fetchNickname();
-  }, [memberId]);
+  }, [socialId]);
 
-  const fetchedTeamname = useGetTeamName(memberId); 
+  const fetchedTeamname = useGetTeamName(socialId); 
 
   useEffect(() => {
     const fetchTeamname = async () => {
@@ -73,7 +73,7 @@ const Sidebar = () => {
       
     };
     fetchTeamname();
-  }, [memberId]);
+  }, [socialId]);
 
   useEffect(() => {
     setIsInitial(true); 
@@ -103,8 +103,8 @@ const Sidebar = () => {
             <div className="menu">
               <img src={icon} alt="ICON" />
               <ul>
-                <li className="teamName">팀이름</li>
-                <li className="userNickname">{nickname || "사용자 닉네임"}</li>
+                <li className="teamName">{localStorage.getItem("favoriteClub") || "팀 이름"}</li>
+                <li className="userNickname">{localStorage.getItem("nickname") || "사용자 닉네임"}</li>
               </ul>
               <div className="category">
               {categories.map((c) => (
