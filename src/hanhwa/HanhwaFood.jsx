@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
-import hanhwa from "../assets/hanhwa/hanhwa.svg"
+import hanhwa from "../../public/hanhwa/hanhwa.svg"
 
 const HanhwaFood = () => {
   const { closePopup, selectedCategory } = useContext(CategoryContext);
@@ -63,7 +63,7 @@ const HanhwaFood = () => {
           >
         <img
           ref={imageRef}
-          src={selectedCategory.name!='' ? selectedCategory.map : hanhwa}
+          src={selectedCategory.name=='hanhwa'?hanhwa:selectedCategory.map}
           alt="Kia Stadium Map"
           style={{
             width: '100%',

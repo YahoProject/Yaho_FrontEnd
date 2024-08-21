@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
-import ssg from "../assets/ssg/ssg.svg"
+import ssg from "../../public/ssg/ssg.svg"
 
 const SSGFood = () => {
   const { closePopup, selectedCategory } = useContext(CategoryContext);
@@ -63,7 +63,7 @@ const SSGFood = () => {
           >
         <img
           ref={imageRef}
-          src={selectedCategory.name!='' ? selectedCategory.map : ssg}
+          src={selectedCategory.name=='ssg'?ssg:selectedCategory.map}
           alt="Kia Stadium Map"
           style={{
             width: '100%',

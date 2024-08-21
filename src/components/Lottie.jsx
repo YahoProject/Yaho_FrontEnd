@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Lottie from "lottie-react";
+import Lottie from "react";
 import ball from "../assets/Lottie/ball.json";
 
 function LoadingScreen() {

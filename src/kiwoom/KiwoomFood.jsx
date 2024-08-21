@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
-import kiwoom from"../assets/kiwoom/kiwoom.svg"
+import kiwoom from"../../public/kiwoom/kiwoom.svg"
 
 const KiwoomFood = () => {
   const { closePopup, selectedCategory } = useContext(CategoryContext);
@@ -62,7 +62,7 @@ const KiwoomFood = () => {
           >
         <img
           ref={imageRef}
-          src={selectedCategory.name!='' ? selectedCategory.map : kiwoom}
+          src={selectedCategory.name=='kiwoom'?kiwoom:selectedCategory.map}
           alt="Kia Stadium Map"
           style={{
             width: '100%',
