@@ -242,6 +242,7 @@ body{
 }
 
 .modal-content {
+    position: fixed;
     width: 348px;
     height: 209px;
     background-color: white;
@@ -253,6 +254,7 @@ body{
 }
 
 .upmodal, .downmodal{
+
     display: flex;
 }
 .titlemodal{
