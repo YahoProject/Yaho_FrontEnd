@@ -11,10 +11,9 @@ const FixPage = () => {
   const [memberId, setMemberId] = useState(localStorage.getItem("memberId")); 
 
   const teams = [
-    'LG 트윈스', 'KT 위즈', 'SSG 랜더스', 'NC 다이노스', '두산 베어스',
-    'KIA 타이거즈', '롯데 자이언츠', '삼성 라이온즈', '한화 이글스', '키움 히어로즈'
+    'LG_TWINS', 'KT_WIZ', 'SSG_LANDERS', 'NC_DINOS', 'DOOSAN_BEARS',
+    'KIA_TIGERS', 'LOTTE_GIANTS', 'SAMSUNG_LIONS', 'HANHWA_EAGLES', 'KIWOOM_HEROES'
   ];
-
   useEffect(() => {
     const fetchUserData = async () => {
       if (!memberId) return;
