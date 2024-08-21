@@ -1,5 +1,3 @@
-
-
 .sticker-screen-container {
     position: fixed; 
     bottom: 0; 
@@ -23,6 +21,7 @@
     width: 100%;
     height: 100%; 
     background-color: white;
+    color:black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,35 +33,38 @@
 .stickers {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 15px;
+    grid-auto-rows: minmax(100px, auto); 
+    gap: 10px;
     width: 100%;
     height: calc(100% - 40px); 
-    overflow-y: auto; 
-    padding-bottom: 20px; 
+    padding-bottom: 0;
 }
 
 .sticker {
-    width: 90%; 
-    height: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
     font-size: 14px;
+    width: 100%; 
+    height: auto;
 }
 
 .sticker img {
-    width: 100%; 
+    width: 80%; 
     height: auto; 
     border-radius: 8px;
 }
 
 .sticker-text {
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 15px;
+    margin-top: 5px;
     text-align: center;
     padding-bottom: 5px; 
+    color:black;
+    
 }
+
 
 
