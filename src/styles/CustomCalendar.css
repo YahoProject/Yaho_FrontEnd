@@ -1,10 +1,15 @@
+body{
+
+  background-color: white;
+  overflow-y: auto;
+}
 .custom-calendar-wrapper {
   background-color: white;
   padding: 0; 
   display: flex;
   justify-content: center;
-  height: 60vh;
-  margin-top: 10px; 
+  height: 50vh;
+  margin-top: 60px; 
 }
 
 .custom-calendar {
@@ -73,19 +78,17 @@
   justify-content: center;
 }
 
-/* 요일(S, M, T, 등) 스타일 */
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 6px;
-  text-align: center; /* 가운데 정렬 */
+  text-align: center; 
 }
 
-/* 요일 텍스트 스타일 */
 .calendar-weekday {
   font-weight: bold;
   padding: 12px; 
-  font-size: 3vw; 
+  font-size: 4vw; 
 }
 
 /* 달력 날짜 스타일 */
@@ -103,7 +106,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px; 
-  font-size: 3vw; 
+  font-size: 4vw; 
 }
 
 
@@ -113,7 +116,6 @@
   border-radius: 50%;
 }
 
-/* 오버레이 */
 .overlay {
   position: fixed;
   top: 0;
@@ -126,5 +128,4 @@
   justify-content: center;
   z-index: 1000;
 }
-
 
