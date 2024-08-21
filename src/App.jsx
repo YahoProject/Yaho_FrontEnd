@@ -8,7 +8,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import './App.css';
 import WinRate from './components/WinRate.jsx';
 import ProfilePage from './components/ProfilePage.jsx';
-
+import Unregister from './components/Unregister.jsx';
 import Food from './components/Food.jsx';
 import KiaUnderbar from './components/KiaUnderbar.jsx';
 import KiaFood from './components/KiaFood.jsx';
@@ -72,6 +72,7 @@ const MainContent = () => {
       {showLotteUnderbar && <LotteUnderbar />}
       <Sidebar />
       <Routes>
+        <Route path='/unregister' exact element={<Unregister/>}/>
         <Route path="/login" exact element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} /> 
         <Route path="/oauth/callback/kakao" element={<RedirectPage />} />

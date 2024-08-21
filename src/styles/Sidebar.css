@@ -277,4 +277,8 @@
     background-color: rgba(255, 124, 66, 1); /* 확인 버튼 색상 */
     width: 178px;
   }
+
+  .unregisterLink{
+    margin-top: 10px;
+  }
 }
