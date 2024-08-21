@@ -6,21 +6,21 @@
     border-bottom: 1px solid #CACACA;
     margin-left:0;
   }
-  .title-box p{
+.title-box p {
     font-size:20px;
     margin-left:25px;
     font-weight:500;
     font-family:Pretendard Variable;
-  }
+}
   
-  .title {
+.title {
     position: absolute;
     height: 24px;
     top: 75px;
     left: 45px;
     font-size: 20px;
     white-space: nowrap;
-  }
+}
   
   .profile-img {
     position: absolute;
@@ -46,6 +46,7 @@
     border-radius: 10px;
     background-color: #FAFAFA;
     border: 1px solid #D9D9D9;
+    color: black;
   }
   
   .name-check {
@@ -64,6 +65,18 @@
     color: white;
   }
   
+  .name-success {
+    position: absolute;
+    width: 136px;
+    height: 16px;
+    top: 406px;
+    left: 40px;
+    font-size: 12px;
+    color: green;
+    margin-top: -5px;
+    white-space: nowrap;
+  }
+
   .name-error {
     position: absolute;
     width: 136px;
@@ -72,6 +85,8 @@
     left: 40px;
     font-size: 12px;
     color: #BF4139;
+    margin-top: -5px;
+    white-space: nowrap;
   }
   
   .team-label {
