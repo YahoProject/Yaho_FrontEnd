@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import PanZoom from 'react-easy-panzoom';
-import Lg_Ds from "../assets/Lg_DS/Lg_Ds.svg"
+import jamsil from "../../public/Lg_DS/Lg_Ds.svg"
 const LG_DSFood = () => {
   const { closePopup, selectedCategory } = useContext(CategoryContext);
   const navigate = useNavigate();
@@ -35,6 +35,8 @@ const LG_DSFood = () => {
 
 
   const handleGoBack = () => {
+    selectedCategory.name="";
+    
     navigate(-1);
   };
 
@@ -62,7 +64,7 @@ const LG_DSFood = () => {
           >
         <img
           ref={imageRef}
-          src={selectedCategory.name!='' ? selectedCategory.map : Lg_Ds}
+          src={selectedCategory.name=='jamsil'?jamsil:selectedCategory.map}
           alt="Kia Stadium Map"
           style={{
             width: '100%',

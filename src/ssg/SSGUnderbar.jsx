@@ -21,10 +21,10 @@ import '../styles/KiaUnderbar.css';
 import React, { useEffect, useRef, useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import '../styles/KiaUnderbar.css';
-import bookchonsonmando from "../assets/ssg/bookchonsonmando.svg"
-import hergal from "../assets/ssg/hergal.svg"
-import ssburger from "../assets/ssg/ssgbuger.svg"
-import stationssg from "../assets/ssg/stastionssg.svg"
+import bookchonsonmando from "../../public/ssg/bookchonsonmando.svg"
+import hergal from "../../public/ssg/hergal.svg"
+import ssburger from "../../public/ssg/ssgbuger.svg"
+import stationssg from "../../public/ssg/stastionssg.svg"
 
 
 const SSGUnderbar = () => {

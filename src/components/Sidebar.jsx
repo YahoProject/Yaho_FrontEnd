@@ -122,15 +122,7 @@ const Sidebar = () => {
               <button className="logoutButton" onClick={handleModal}>
                 야호 로그아웃
               </button>
-              <div className="unregisterContainer">
-              <p className="unregisterLink">
-                야호를 탈퇴하려면{" "}
-                <Link to="/unregister" className="withdrawLink">
-                  여기
-                </Link>
-                를 눌러주세요
-              </p>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -88,13 +88,18 @@
   padding: 20px;
 }
 
+.poppup-content-container {
+  display: flex;
+  justify-content: center;
+}
+
 .popup-floor p {
-  position: absolute;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+  margin-left: 5px;
   width: 41px;
   height: 22px;
-  top: 62px;
-  left: 122px;
   border-radius: 30px;
   background-color: #FFE4D8;
   color: #FF4E00;
@@ -102,12 +107,12 @@
 }
 
 .popup-visit p {
-  position: absolute;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+  margin-left: 5px;
   width: 99px;
   height: 22px;
-  top: 62px;
-  left: 167px;
   border-radius: 30px;
   background-color: #FFE4D8;
   color: #FF4E00;

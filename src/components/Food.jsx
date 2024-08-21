@@ -3,8 +3,11 @@ import arrow from "../../public/arrow_back.svg";
 import sticker3 from '../assets/Mask group (2).svg';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Food.css';
+import { useContext } from 'react';
+import { CategoryContext } from '../components/categoryProvider.jsx';
 
 const Food = () => {
+    const { closePopup, selectedCategory } = useContext(CategoryContext);
     const navigate = useNavigate();
     const [selectedStadium, setSelectedStadium] = useState("구장 선택");
     const [isOpen, setIsOpen] = useState(false);
@@ -23,27 +26,39 @@ const Food = () => {
         switch (selectedStadium) {
             case "고척스카이돔":
                 navigate('./kiwoom');
+                selectedCategory.name='kiwoom';
                 break;
             case "기아 챔피언스 필드":
                 navigate('./kia');
+                selectedCategory.name='kia';
                 break;
             case "대구 삼성 라이온즈파크":
                 navigate('./samsung');
+                selectedCategory.name='samsung';
                 break;
             case "사직 야구장":
                 navigate('./lotte');
+                selectedCategory.name='lotte';
                 break;
             case "수원 kt위즈파크":
                 navigate('./kt');
+                selectedCategory.name='kt';
                 break;
             case "인천 SSG랜더스 필드":
                 navigate('./ssg');
+                selectedCategory.name='ssg';
                 break;
             case "잠실 야구장":
                 navigate('./jamsil');
+                selectedCategory.name='jamsil';
                 break;
             case "창원 NC파크":
                 navigate('./nc');
+                selectedCategory.name='nc';
+                break;
+            case "한화 이글스파크":
+                navigate('./hanhwa');
+                selectedCategory.name='hanhwa';
                 break;
             default:
                 break;
@@ -58,7 +73,8 @@ const Food = () => {
         "수원 kt위즈파크",
         "인천 SSG랜더스 필드",
         "잠실 야구장",
-        "창원 NC파크"
+        "창원 NC파크",
+        "한화 이글스파크"
     ];
 
     useEffect(() => {
@@ -120,7 +136,7 @@ const Food = () => {
                     onClick={handleSearchClick} 
                     disabled={selectedStadium === "구장 선택"}
                 >
-                    <img src="/search.svg" alt="스티커 2" />
+                    <img src="./search.svg" alt="스티커 2" />
                 </button>
             </div>
         </div>
@@ -128,3 +144,4 @@ const Food = () => {
 }
 
 export default Food;
+

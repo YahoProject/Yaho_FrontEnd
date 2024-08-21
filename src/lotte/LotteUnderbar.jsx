@@ -12,9 +12,9 @@ import ariaritwo from "../assets/ariaritwo.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-import dduck from"../assets/lotte/33dduck.svg"
-import ariari1 from"../assets/lotte/ariari.svg"
-import namdofood from"../assets/lotte/namdofood.svg"
+import dduck from"../../public/lotte/33dduck.svg"
+import ariari1 from"../../public/lotte/ariari.svg"
+import namdofood from"../../public/lotte/namdofood.svg"
 
 import React, { useEffect, useRef, useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';

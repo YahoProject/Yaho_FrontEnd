@@ -26,12 +26,12 @@ import koathree from "../assets/koathree.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-import pyonmilmil from "../assets/nc/pyonmilmil.svg"
-import shirmpshef from "../assets/nc/shirmpShef.svg"
-import ssaum from "../assets/nc/ssaum.svg"
-import gongyrongsanghwe from "../assets/nc/gongyrongsanghwe.svg"
-import jeilburger from "../assets/nc/jeilburger.svg"
-import Koa from "../assets/nc/koa.svg"
+import pyonmilmil from "../../public/nc/pyonmilmil.svg"
+import shirmpshef from "../../public/nc/shirmpShef.svg"
+import ssaum from "../../public/nc/ssaum.svg"
+import gongyrongsanghwe from "../../public/nc/gongyrongsanghwe.svg"
+import jeilburger from "../../public/nc/jeilburger.svg"
+import Koa from "../../public/nc/koa.svg"
 import React, { useEffect, useRef, useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import '../styles/KiaUnderbar.css';

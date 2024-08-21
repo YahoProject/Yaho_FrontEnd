@@ -25,12 +25,12 @@ import '../styles/KiaUnderbar.css';
 import React, { useEffect, useRef, useContext } from 'react';
 import { CategoryContext } from '../components/categoryProvider.jsx';
 import '../styles/KiaUnderbar.css';
-import gabddori from "../assets/Lg_DS/gabddori.svg"
-import Leeddukbocki from "../assets/Lg_DS/Leeddukbocki.svg"
-import mandoo from "../assets/Lg_DS/mandoo.svg"
+import gabddori from "../../public/Lg_DS/gabddori.svg"
+import Leeddukbocki from "../../public/Lg_DS/Leeddukbocki.svg"
+import mandoo from "../../public/Lg_DS/mandoo.svg"
 
-import tongBab from "../assets/Lg_DS/tongBob.svg"
-import oneshot from "../assets/Lg_DS/zamsilOneShot.svg"
+import tongBab from "../../public/Lg_DS/tongBob.svg"
+import oneshot from "../../public/Lg_DS/zamsilOneShot.svg"
 
 const LG_DSUnderbar = () => {
   const {

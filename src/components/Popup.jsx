@@ -10,11 +10,13 @@ const Popup = ({ category, onClose }) => {
       <div className="drag-handle" onClick={onClose}></div>
       <h2>{category.text}</h2>
       <div className="popup-content">
-        <div className="popup-floor">
-          <p>{category.popupfloor}</p>
-        </div>
-        <div className="popup-visit">
-          <p>{category.popupvisits}</p>
+        <div className="poppup-content-container">
+          <div className="popup-floor">
+            <p>{category.popupfloor}</p>
+          </div>
+          <div className="popup-visit">
+            <p>{category.popupvisits}</p>
+          </div>
         </div>
         <div className="popup-address">
           <p>{category.popupaddress}</p>

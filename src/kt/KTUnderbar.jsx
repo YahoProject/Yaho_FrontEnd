@@ -18,10 +18,10 @@ import idaerothree from "../assets/idaerothree.svg";
 import Popup from '../components/Popup'; 
 import bar from '../assets/bar.svg';
 import '../styles/KiaUnderbar.css';
-import idarotongsamgyup  from "../assets/kt/idarotongsamgyup.svg"
-import Jinmi from "../assets/kt/jinmi.svg"
-import ktBoyoungmando from "../assets/kt/ktBoyoungmando.svg"
-import sam from "../assets/kt/33.svg"
+import idarotongsamgyup  from "../../public/kt/idarotongsamgyup.svg"
+import Jinmi from "../../public/kt/jinmi.svg"
+import ktBoyoungmando from "../../public/kt/ktBoyoungmando.svg"
+import sam from "../../public/kt/33.svg"
 
   
 import React, { useEffect, useRef, useContext } from 'react';
