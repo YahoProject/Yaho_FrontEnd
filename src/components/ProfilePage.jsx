@@ -1,5 +1,5 @@
 import '../styles/ProfilePage.css';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import ProfileImg from '../assets/profile.svg';
 import checkNickname from './CheckNickname'; 
 
@@ -9,6 +9,7 @@ const ProfilePage = () => {
   const [favoriteTeam, setFavoriteTeam] = useState('');
   const [isNicknameChecked, setIsNicknameChecked] = useState(null); 
   const [socialId, setSocialId] = useState(localStorage.getItem("socialId")); 
+  const [ok, setOk]=useState(false);
 
   const teams = [
     'LG_TWINS', 'KT_WIZ', 'SSG_LANDERS', 'NC_DINOS', 'DOOSAN_BEARS',
@@ -92,6 +93,7 @@ const ProfilePage = () => {
         localStorage.setItem("memberId", memberId); 
         console.log("멤버아이디 : ",memberId);
         console.log('회원 정보가 성공적으로 생성되었습니다.');
+        setOk(true);
         window.location.replace("/home"); 
       } else {
         alert("사진, 닉네임, 최애구단 모두 설정하셨나요?");
@@ -103,6 +105,11 @@ const ProfilePage = () => {
       console.error('회원 생성 중 오류가 발생했습니다:', error);
     }
   };
+
+  useEffect(() => {
+    // ok 값이 변할 때마다 실행할 코드
+    console.log(`ok 값이 변경되었습니다: ${ok}`);
+}, [ok]);
 
   return (
     <div className="profile-page">
@@ -148,7 +155,11 @@ const ProfilePage = () => {
         <button type="button" className="team-check">설정완료</button>
                 
         <div>
-        <button type="submit" className="next-btn" onClick={() => window.location.href = '/home'}>
+        <button type="submit" className="next-btn"  onClick={() => {
+        if (ok) {
+            window.location.href = '/home';
+        }
+    }}>
     다음으로
 </button>
      
