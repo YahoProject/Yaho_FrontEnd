@@ -29,7 +29,12 @@ const RedirectPage = () => {
           //setName(res.data.result.member.nickname);
         console.log("저장된 이름:", storedName);
         console.log("tk",localStorage)
+        if(localStorage.getItem("memberId")!==null){//이미 가입
+          window.location.replace("/home"); 
+        }
+        else{
           window.location.replace("/profile"); 
+        }
         })
         .catch((err) => {
           console.log("소셜로그인 에러", err);
