@@ -32,7 +32,7 @@
 .game-card {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     width: calc(100% - 20px); 
     max-width: 600px; 
     border-radius: 10px;
@@ -46,20 +46,23 @@
 
 .game-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    align-items: flex-start; 
 }
 
 .teams {
     font-size: 20px;
     font-weight: 500;
     color: #FF4E00;
+    margin: 0; 
 }
 
 .stadium {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     opacity: 0.7;
     color: black;
+    margin: 0; 
 }
 
 .vs {
