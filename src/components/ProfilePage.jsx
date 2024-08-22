@@ -148,7 +148,10 @@ const ProfilePage = () => {
         <button type="button" className="team-check">설정완료</button>
                 
         <div>
-          <button type="submit" className="next-btn">다음으로</button>        
+        <button type="submit" className="next-btn" onClick={() => window.location.href = '/home'}>
+    다음으로
+</button>
+     
         </div>
       </form>
     </div>
