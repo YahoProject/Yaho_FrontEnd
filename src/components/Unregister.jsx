@@ -24,10 +24,11 @@ const Unregister=()=>{
             'Accept':"*"
           }
         });
-        nav("/");
+        
         console.log('백엔드 회원탈퇴 완료', serverResponse.data,"token",accessToken);
         localStorage.clear;
-      
+        console.log(localStorage.getItem('nickname'));
+        nav("/");
       }
     catch (error) {
       console.error('회원탈퇴 중 오류 발생:', error);
