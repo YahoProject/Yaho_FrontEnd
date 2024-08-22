@@ -16,7 +16,7 @@ const WinRate = () => {
     const [editWinTime, setEditWinTime] = useState(false);
     const [isKakaoInitialized, setIsKakaoInitialized] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 추가
-    const name = "야구 빠순이";
+    const name = localStorage.getItem("nickname");
     const Winner = " 승리요정";
     const Loser = " 패배요정";
     let decimalValue = winTime / monthlyGone;
