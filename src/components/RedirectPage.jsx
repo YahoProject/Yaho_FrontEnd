@@ -29,7 +29,7 @@ const RedirectPage = () => {
           //setName(res.data.result.member.nickname);
         console.log("저장된 이름:", storedName);
         console.log("tk",localStorage)
-          window.location.replace("/home"); 
+          window.location.replace("/profile"); 
         })
         .catch((err) => {
           console.log("소셜로그인 에러", err);
