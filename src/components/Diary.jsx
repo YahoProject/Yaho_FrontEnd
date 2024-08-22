@@ -13,7 +13,7 @@ import sticker6 from "../assets/Mask group (5).svg";
 import sticker7 from "../assets/Mask group (6).svg";
 import sticker8 from "../assets/Mask group (7).svg";
 import sticker9 from "../assets/Mask group (8).svg";
-
+import star from "../../public/Star 1.svg";
 import initialTeamLogo from '../assets/Teamlogo/Kia.svg'
 
 
@@ -31,7 +31,7 @@ const Diary = () => {
 
   const [teamLogo, setTeamLogo]= useState(initialTeamLogo);
   const [emotionImageUrl,setEmotionImageUrl]=useState(null);
-
+  
   //const saveDiary = useSaveDiary();
 
   const stadiums = [
@@ -75,6 +75,7 @@ const Diary = () => {
   const stickerId = parseInt(queryParams.get("stickerId"), 10);
 
   useEffect(() => {
+    
     if (stickerId >= 1 && stickerId <= 9) {
       setStickerImage(stickerImages[stickerId - 1]);
       console.log("스티커는 지금 : ", stickerId);
@@ -229,15 +230,18 @@ const Diary = () => {
             오늘도 승리했어요!
           </h2>
         )}
+        
         <div className="result-card">
           <div className="result-status">
+            <img src={star} alt="" />
             <p>승리</p>
           </div>
           <div className="result-image">
-            {stickerImage && <img src={stickerImage} alt="Sticker" />}
+            {<img src={stickerImage} alt="Sticker" />}
           </div>
-          <p className="result-text">오늘의 직관감정</p>
-          <p className="result-text2">{resultText}</p>{" "}
+          <div className="result-text">오늘의 직관감정</div>
+  
+          <div className="result-text2">{resultText}</div>
           {/* 스티커와동일한텍스트 */}
           <button className="save-button" onClick={handleSave}>
             <img
