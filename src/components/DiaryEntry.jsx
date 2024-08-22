@@ -25,7 +25,7 @@ const DiaryEntry = () => {
     "한화 이글스 파크"
   ];
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://dev.yahho.shop/diarys/3/get', {
@@ -39,31 +39,31 @@ const DiaryEntry = () => {
     };
 
     fetchData();
-  }, []);
+  }, []);*/
 
   return (
-    <div className="diary-container">
-      <header className="diary-header">
-        <span className="stadium-name">
+    <div className="Ediary-container">
+      <header className="Ediary-header">
+        <span className="Estadium-name">
           {stadiums[diary.location]}
         </span>
       </header>
-      <div className="diary-content">
-        <div className="diary-bar"></div>
-        <div className="result-image">
+      <div className="Ediary-content">
+        <div className="Ediary-bar"></div>
+        <div className="Eresult-image">
         </div>
-        <div className="mvp-section">
+        <div className="Emvp-section">
           <p>오늘의 MVP</p>
-          <div className="mvp-display">
-            <div className="mvp-name">{diary.mvp}</div>
+          <div className="Emvp-display">
+            <div className="Emvp-name">{diary.mvp}</div>
             {diary.mvpImageUrl && (
-              <img src={diary.mvpImageUrl} alt="MVP Preview" className="mvp-preview" />
+              <img src={diary.mvpImageUrl} alt="MVP Preview" className="Emvp-preview" />
             )}
           </div>
         </div>
-        <div className="entry-section">
+        <div className="Eentry-section">
           <h3>경기 한 줄 일기</h3>
-          <div className="diary-text">
+          <div className="Ediary-text">
             {diary.content}
           </div>
         </div>

@@ -37,17 +37,9 @@ function MyPage() {
         { id: 9, img: sticker9 },
     ];
 
-    const [cards, setCards] = useState([
-        { id: 1, img: null },
-        { id: 2, img: null },
-        { id: 3, img: null },
-        { id: 4, img: null },
-        { id: 5, img: null },
-        { id: 6, img: null },
-        { id: 7, img: null },
-        { id: 8, img: null },
-        { id: 9, img: null }
-    ]);
+    const [cards, setCards] = useState(
+        stickerImages.map(sticker => ({ id: sticker.id, img: sticker.img }))
+    );
 
     useEffect(() => {
         const loadStickers = () => {
@@ -55,7 +47,7 @@ function MyPage() {
                 const isStickerSaved = localStorage.getItem(`sticker${card.id}`) === "true";
                 return {
                     ...card,
-                    img: isStickerSaved ? stickerImages.find(sticker => sticker.id === card.id)?.img : null
+                    saved: isStickerSaved // saved 여부만 추가
                 };
             });
             setCards(updatedCards);
@@ -65,33 +57,33 @@ function MyPage() {
     }, []);
 
     useEffect(() => {
-      const fetchNickname = async () => {
-          const memberId = localStorage.getItem("memberId");
-          if (!memberId) {
-              console.error("Member ID not found in localStorage");
-              return;
-          }
-          try {
-              const response = await fetch(`https://dev.yahho.shop/members/${memberId}`, {
-                  method: 'GET',
-                  headers: {
-                      'accept': '*/*'
-                  }
-              });
-              if (response.ok) {
-                  const data = await response.json();
-                  setNickname(data.result.nickname); 
-              } else {
-                  console.error('Failed to fetch nickname');
-                  setNickname("닉네임 불러오기 실패");
-              }
-          } catch (error) {
-              console.error('Error fetching nickname:', error);
-              setNickname("닉네임 불러오기 실패");
-          }
-      };
-      fetchNickname();
-  }, []);
+        const fetchNickname = async () => {
+            const memberId = localStorage.getItem("memberId");
+            if (!memberId) {
+                console.error("Member ID not found in localStorage");
+                return;
+            }
+            try {
+                const response = await fetch(`https://dev.yahho.shop/members/${memberId}`, {
+                    method: 'GET',
+                    headers: {
+                        'accept': '*/*'
+                    }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setNickname(data.result.nickname); 
+                } else {
+                    console.error('Failed to fetch nickname');
+                    setNickname("닉네임 불러오기 실패");
+                }
+            } catch (error) {
+                console.error('Error fetching nickname:', error);
+                setNickname("닉네임 불러오기 실패");
+            }
+        };
+        fetchNickname();
+    }, []);
 
     return (
         <div className="mypage-wrapper">
@@ -119,8 +111,8 @@ function MyPage() {
                     <h2>이번달 나의 직관 카드 zip</h2>
                     <div className="cards-container">
                         {cards.map((card) => (
-                            <div key={card.id} className={`card ${card.img ? '' : 'grey'}`}>
-                                {card.img ? <img src={card.img} alt={`스티커 ${card.id}`} /> : ''}
+                            <div key={card.id} className={`card ${card.saved ? 'saved' : 'grey'}`}>
+                                <img src={card.img} alt={`스티커 ${card.id}`} />
                             </div>
                         ))}
                     </div>
