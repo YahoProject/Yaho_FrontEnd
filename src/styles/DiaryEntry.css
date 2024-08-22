@@ -1,238 +1,239 @@
 html, body {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #FFAE8A, #FFEBE2);
+  width: 100vw;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/PretendardVariable.ttf");
+} 
+.Ediary-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .Ediary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .Ediary-header {
+    position: relative;
+    margin-right: 20px;
+  }
+  .Ediary-header.white-background {
+    background-color: white;
+    width: 348px;
+    border-radius: 10px;
+  }
+
+  .Edropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9dcce;
+    border-radius: 10px;
+    list-style: none;
     padding: 0;
-    background: linear-gradient(to bottom, #FFAE8A, #FFEBE2);
-    width: 100vw;
+    margin: 0;
+    width: 200px;
+    z-index: 1000;
+    color : black;
   }
-  
-  #root {
-    height: 100%;
-    width: 100%;
+
+  .Edropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
   }
-  @font-face {
-    font-family: "Pretendard";
-    src: url("/PretendardVariable.ttf");
-  } 
-  .diary-container {
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 10px;
-      border-radius: 8px;
-      color: #fff;
-    }
-    
-    .diary-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
-    .diary-header {
-      position: relative;
-      margin-right: 20px;
-    }
-    .diary-header.white-background {
-      background-color: white;
-      width: 348px;
-      border-radius: 10px;
-    }
-    
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #f9dcce;
-      border-radius: 10px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      width: 200px;
-      z-index: 1000;
-      color : black;
-    }
-    
-    .dropdown-menu li {
-      padding: 10px;
-      cursor: pointer;
-    }
-    
-    
-    .stadium-name {
-      font-size: 20px;
-      font-weight: 500;
-      margin-left: 20px;
-    }
-  
-    .stadium-name :hover{
-      background-color: white;
-    }
-  
-    .diary-content h2 {
-      text-align: center;
-      font-size: 24px;
-      font-weight: 600;
-      color: black;
-      margin-top: 20px;
-    }
-    .diary-bar {
-      background-color: white;
-      width: 330px;
-      height : 1px;
-      margin-right: 38px;
-      margin-left: 18px;
-    }
-    .result-image {
-        width: 330px; /* 원하는 width */
-        height: 423px; /* 원하는 height */
-        background-image: url('../assets/cancel.svg'); /* 배경 이미지 설정 */
-        background-size: cover; /* 이미지가 div를 꽉 채우도록 설정 */
-        background-position: center; /* 이미지가 div의 중앙에 위치하도록 설정 */
-        background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
-        margin-top: 40px;
-        margin-bottom: 20px;
-      }
-    .result-text {
-      margin-top: 10px;
-      margin-bottom: 5px;
-      font-size: 16px;
-      font-weight: 400;
-    }
-    .result-text2 {
-      font-size: 36px;
-      font-weight: 600;
-      margin-top: 0px;
-      margin-bottom: 10px;
-  
-    }
-    
-    .save-button {
-      margin: 0 auto;
-      background-color: #FF7C42;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 20px;
-      cursor: pointer;
-      width: 200px;
-      height : 42px;
-      display: flex; /* Flexbox 사용 */
-      align-items: center; /* 세로 방향 중앙 정렬 */
-      justify-content: center; /* 가로 방향 중앙 정렬 */
-      text-align: center; /* 텍스트 중앙 정렬 (필요에 따라) */
-    }
-    .save-button:focus {
-      border: none;
-      outline: none;
+
+
+  .Estadium-name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 20px;
   }
-    .save-icon {
-      width: 20px; 
-      height: 20px; 
-      margin-right: 8px; 
-    }
-    
-    .mvp-section {
-      background-image: url('../assets/Teamlogo/Kia.svg'); /* 이미지 경로 */
-      background-size: cover; /* 이미지 크기를 컨테이너에 맞게 조절 */
-      background-position: center; /* 이미지 위치 조정 */
-      background-repeat: no-repeat; /* 이미지 반복 방지 */
-      margin-top: 20px;
-      border-radius: 10px;
-      width: 349px;
-      height: 122px;
-    }
-  
-    .mvp-section p {
-      font-size: 24px;
-      font-weight: 600;
-      margin-top: 20px;
-      margin-left: 20px;
-      margin-bottom: 0px;
-  
-    }
-  
-    .mvp-input {
-      border-radius: 8px;
-      background-color: #FF7C42;
-      border: 1px, #FF7C42;
-      margin-right: 10px;
-      margin-left: 30px;
-      margin-top: opx;
-      font-size: 16px;
-      font-weight: 400;
-      color: white;
-      background-color: transparent;
-    }
-    .mvp-input:focus {
-      border-color: transparent; 
-      outline: none; 
-    }
-    .mvp-input::placeholder {
-      color: white; 
-    }
-  
-    
-    .mvp-image-button {
-      background-image: url('../assets/add_photo_alternate.svg');
-      background-size: cover; 
-      background-position: center; 
-      background-repeat: no-repeat;
-      background-color: transparent;
-      width : 40px;
-      height: 40px;
-      border: none;
-      padding: 10px;
-      font-size: 20px;
-      cursor: pointer;
-      position: relative;
-      top: -40px;
-      left: 280px;
-    }
-    .mvp-image-button:focus {
-      border: none; 
-      outline: none; 
-    }
-    .entry-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
-    }
-    .entry-section h3 {
-      margin-bottom: 10px;
-      padding-right: 230px;
-      font-weight: 500;
-      font-size: 20px;
-      color:black;
-    }
-    
-    .diary-text {
-  
-      width: 349px;
-      height: 87px;
-      padding: 10px;
-      border-radius: 8px;
-      border : 1px solid #FDF0E9;
-      margin-bottom: 10px;
-      background-color: #FDF0E9;
-      color: #545454;
-    }
-  
-    .diary-textarea::placeholder {
-      color: #545454;
+
+  .Estadium-name :hover{
+    background-color: white;
   }
-  
-  .diary-textarea:focus {
+
+  .Ediary-content h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+    margin-top: 20px;
+  }
+  .Ediary-bar {
+    background-color: white;
+    width: 330px;
+    height : 1px;
+    margin-right: 38px;
+    margin-left: 18px;
+  }
+  .Eresult-image {
+      width: 330px; /* 원하는 width */
+      height: 423px; /* 원하는 height */
+      background-image: url('../assets/cancel.svg'); /* 배경 이미지 설정 */
+      background-size: cover; /* 이미지가 div를 꽉 채우도록 설정 */
+      background-position: center; /* 이미지가 div의 중앙에 위치하도록 설정 */
+      background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+      margin-top: 40px;
+      margin-bottom: 20px;
+      margin-left: 9px;
+    }
+  .Eresult-text {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .Eresult-text2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+  }
+
+  .Esave-button {
+    margin: 0 auto;
+    background-color: #FF7C42;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 200px;
+    height : 42px;
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 방향 중앙 정렬 */
+    justify-content: center; /* 가로 방향 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 (필요에 따라) */
+  }
+  .Esave-button:focus {
     border: none;
     outline: none;
+}
+  .Esave-icon {
+    width: 20px; 
+    height: 20px;
+    margin-right: 8px; 
   }
-    .save-entry-button {
-      width: 100%;
-      background-color: #ffb74d;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 10px;
-      cursor: pointer;
-    }
-    
+
+  .Emvp-section {
+    background-image: url('../assets/Teamlogo/Kia.svg'); /* 이미지 경로 */
+    background-size: cover; /* 이미지 크기를 컨테이너에 맞게 조절 */
+    background-position: center; /* 이미지 위치 조정 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 349px;
+    height: 122px;
+  }
+
+  .Emvp-section p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+  }
+
+  .Emvp-input {
+    border-radius: 8px;
+    background-color: #FF7C42;
+    border: 1px, #FF7C42;
+    margin-right: 10px;
+    margin-left: 30px;
+    margin-top: 0px;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    background-color: transparent;
+  }
+  .Emvp-input:focus {
+    border-color: transparent; 
+    outline: none; 
+  }
+  .Emvp-input::placeholder {
+    color: white; 
+  }
+
+
+  .Emvp-image-button {
+    background-image: url('../assets/add_photo_alternate.svg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width : 40px;
+    height: 40px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    top: -40px;
+    left: 280px;
+  }
+  .Emvp-image-button:focus {
+    border: none; 
+    outline: none; 
+  }
+  .Eentry-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-left: -30px;
+  }
+  .Eentry-section h3 {
+    margin-bottom: 10px;
+    padding-right: 230px;
+    font-weight: 500;
+    font-size: 20px;
+    color:black;
+  }
+
+  .Ediary-text {
+
+    width: 349px;
+    height: 87px;
+    padding: 10px;
+    border-radius: 8px;
+    border : 1px solid #FDF0E9;
+    margin-bottom: 10px;
+    background-color: #FDF0E9;
+    color: #545454;
+  }
+
+  .Ediary-textarea::placeholder {
+    color: #545454;
+}
+
+.Ediary-textarea:focus {
+  border: none;
+  outline: none;
+}
+  .Esave-entry-button {
+    width: 100%;
+    background-color: #ffb74d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+  }

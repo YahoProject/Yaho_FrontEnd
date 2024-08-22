@@ -147,8 +147,10 @@ const Diary = () => {
     .then(result => {
       console.log('일기 작성 성공:', result);
       localStorage.setItem(`sticker${stickerId}`,"true");
+      window.location.replace("/mypage"); 
     })
     .catch(error => {
+      alert("해당 구장에 경기가 없습니다");
       console.error('일기 작성 중 오류 발생:', error);
     });
   };
