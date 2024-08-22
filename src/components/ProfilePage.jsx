@@ -92,7 +92,9 @@ const ProfilePage = () => {
         localStorage.setItem("memberId", memberId); 
         console.log("멤버아이디 : ",memberId);
         console.log('회원 정보가 성공적으로 생성되었습니다.');
+        window.location.replace("/home"); 
       } else {
+        alert("사진, 닉네임, 최애구단 모두 설정하셨나요?");
         console.error('회원 생성에 실패했습니다.');
         const errorData = await response.json(); 
         console.error('오류 메시지:', errorData);

@@ -26,6 +26,7 @@ const Unregister=()=>{
         });
         nav("/");
         console.log('백엔드 회원탈퇴 완료', serverResponse.data,"token",accessToken);
+        localStorage.clear;
       
       }
     catch (error) {
